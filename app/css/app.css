@@ -367,6 +367,10 @@ body {
     background-color: red;
 }
 
+.equipTypeEquipment {
+    background-color: black;
+}
+
 .equipTypeDeployment {
     background-color: purple;
 }
