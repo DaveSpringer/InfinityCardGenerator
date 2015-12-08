@@ -1,0 +1,427 @@
+@media print {  
+  @page {
+    size: 80mm 120mm;
+    margin: 25mm;
+    margin-right: 45mm; /* for compatibility with both A4 and Letter */
+  }
+}
+
+body {
+  margin-bottom: 70px;
+}
+
+#footer {
+  position:fixed;
+  color: #CACACA;
+  text-align: center;
+  font-family: Arial,
+  height:55px;
+  background-color:#343E3D;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  margin-bottom:0px;
+  width: 100%;
+}
+
+#cardBackground {
+  height:424px;
+  width:302px;
+  background-image: url(https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/56478641e4b04fa71c754a24/565dd134e4b0ac2945f7dd4f/1448989001475/Infinity+Cards+Front_96.png);
+}
+
+#cardHeader {
+  position: relative;
+  margin-left: 2px;
+  width: 295px;
+  height: 120px;
+}
+
+#imageArea {
+  position: relative;
+  width: 90px;
+  float: left;
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 3px;
+}
+
+#unitSummary {
+  position: relative;
+  float: left;
+  height: 130px;
+  width: 180px;
+  margin-left: 10px;
+  margin-top: 13px;
+}
+
+#unitImage {
+  position: relative;
+  z-index: -1;
+  top: -18px;
+  margin-left: 8px
+}
+
+#unitHeader {
+  position: relative;
+  width: 230px;
+  height: 40px;
+  font: 8px Orbitron;
+  color: white;
+  float: left;
+  margin-left: 5px;
+  padding-top: 12px;
+}
+
+#soldierName {
+  font: 16px Orbitron;
+}
+
+#unitDetails {
+  float: left;
+  position: relative;
+  font: 14px Orbitron;
+  color: black;
+  width: 190px; 
+  height: 15px; 
+  margin-top: 0px;
+  margin-right: 0px;
+}
+
+.costNumber {
+  height: 25px;
+  float: left;
+}
+
+.upLabel {
+  font: 6px Orbitron;
+  float: left;
+  margin-right: 5px;
+}
+
+.itemList {
+  position: relative;
+  float: left;
+  font: 8px Orbitron;
+  height: 15px;
+  width: 180px;
+}
+
+#specType {
+  color: #333333;
+  font: 10px Orbitron;
+  width: 90px;
+  padding: 0px 0px 0px 0px;
+  margin: 2px 0px 0px 0px;
+  border-left: 2px solid;
+  height: 10px;
+  float: right;
+  text-align: right;
+}
+
+#unitWeapons {
+  position : relative;
+  float: none;
+  color: #0090A5;
+  height: 15px;
+  width: 190px;
+}
+
+#unitSecondaries {
+  position: relative;
+  color: #004D58;
+  height: 15px;
+  width: 190px;
+}
+
+#unitSkills {
+  position: relative;
+  color: #A54900;
+  height: 15px;
+  width: 190px;
+}
+
+.weaponList {
+  font: 10px Orbitron;
+  float: left;
+  margin-right: 7px
+}
+
+.skillList {
+  font: 10px Orbitron;
+  float: left;
+  margin-right: 7px
+}
+
+#unitEquip {
+  font: 10px Orbitron;
+  float: left;
+  margin-right: 7px;
+  color: #582700;
+}
+
+#statsDiv {
+  margin-top: 0px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  width: 280px;
+}
+
+#stats {
+  background-color: 0090a5;
+  position: relative;
+  float: none;
+  height: 35px;
+  width: 270px;
+  color: white;
+  font: 10px Orbitron;
+  text-align: center;
+  top: -8px;
+}
+
+#unitStats {
+  background-color: 0090a5;
+  height: 15px;
+  width: 270px;
+  color: white;
+  font: 10px Orbitron;
+}
+
+#orders {
+  position: relative;
+  height: 20px;
+}
+
+.cube {
+  background: url(https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/56478641e4b04fa71c754a24/565ddac6e4b07dd0e779efb0/1448991431059/cube_hackable_20px.png) 0 0 no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.cube-empty {
+  height: 20px;
+  width: 20px;
+}
+
+.hackable {
+  background: url(https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/56478641e4b04fa71c754a24/565ddac6e4b07dd0e779efb0/1448991431059/cube_hackable_20px.png) 0 -40px no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+#orderImg {
+  width: 20px;
+  height: 20px;
+  display:block;
+  background: url(https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/56478641e4b04fa71c754a24/565f3fd0e4b0db5309296445/1449082833127/orders.png) 0 0 no-repeat;
+}
+
+#orderImg.regular {
+  background-position: 0px 0px;
+}
+
+#orderImg.irregular {
+  background-position: 0px -20px;
+}
+
+#furyImg {
+  width: 20px;
+  height: 20px;
+  background: url(https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/56478641e4b04fa71c754a24/565f3fd0e4b0db5309296445/1449082833127/orders.png) 0 0 no-repeat;
+}
+
+#furyImg.notImpetuous {
+  background: transparent;
+}
+
+#furyImg.impetuous {
+  background-position: 0px -40px;
+  display:block;
+}
+
+#furyImg.exImpetuous {
+  background-position: 0px -80px;
+  display:block;
+}
+
+#furyImg.frenzy {
+  background-position: 0px -60px;
+  display:block;
+}
+
+#skillBox {
+  margin-left: 33px;
+  height: 60px;
+  width: 380px;
+  background-color: grey;
+}
+
+#scoresTop {
+  background-color: #0090a5;
+  height: 10px;
+  padding-bottom: 0px;
+}
+
+#scoresBottom {
+  background-color: #0090a5;
+  font: 12px Orbitron;
+  height: 15px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+#scoresTable {
+  width: 100%;
+}
+
+.scores {
+  width: 25%;
+  text-align: right;
+}
+
+.scoresInput {
+  width: 25%;
+  color: #444444;
+  padding-right: 30px;
+  font: 12px Orbitron;
+}
+
+#backgroundHeader {
+  background-color: #0090a5;
+  padding-bottom: 5px
+}
+
+/* Skill boxes. */
+.skillTypeAutomatic {
+  background-color: black;
+}
+
+.skillTypeShort {
+  background-color: green;
+}
+
+.skillTypeShort-Aro {
+  background-color: green;
+}
+
+.skillTypeEntire {
+  background-color: red;
+}
+
+.skillTypeDeployment {
+  background-color: purple;
+}
+
+.skillName {
+  float: left;
+}
+
+.skillType {
+  float: right;
+}
+
+/* End Skill boxes. */
+
+/* Equipment Type Boxes. */
+.equipTypeAutomatic {
+  background-color: black;
+}
+
+.equipTypeShort {
+  background-color: green;
+}
+
+.equipTypeShort-Aro {
+  background-color: green;
+}
+
+.equipTypeEntire {
+  background-color: red;
+}
+
+.equipTypeDeployment {
+  background-color: purple;
+}
+
+.equipName {
+  float: left;
+}
+
+.equipType {
+  float: right;
+}
+
+/* End Equipment Type. */
+
+/*
+The cutCorner stuff.  See here:
+http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-corner-in-css
+*/
+.cutCorner {
+  position:relative;
+  border-top:2px solid white; 
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+  display: inline-block;
+  margin-left: 8px;
+  width: 260px;
+  padding: 0px 10px 0px 10px;
+  font: 10px Orbitron;
+  color: white;
+}
+
+.cutCorner img {
+  display:block;
+}
+
+.cutCorner:before {
+  position:absolute; 
+  left:-1px; 
+  top:-1px; 
+  content:'';
+  border-top: 12px solid white;
+  border-right: 12px solid transparent;
+}
+
+.cutCorner:after {
+  position:absolute; 
+  left:-3px; 
+  top:-3px; 
+  content:'';
+  border-top: 12px solid #dcdddf;
+  border-right: 12px solid transparent;
+}
+
+.cutCornerBottom {
+  position:relative;
+  border-right:2px solid white; 
+  border-bottom:2px solid white; 
+  border-left:2px solid white; 
+  top: -4px;
+  display: inline-block;
+  margin-left: 8px;
+  width: 260px;
+  background-color: grey;
+  padding: 0px 10px 5px 10px;
+  font: 8px Orbitron;
+  color: white;
+}
+
+.cutCornerBottom:before {
+  position:absolute; 
+  right:-1px; 
+  bottom:-1px; 
+  content:'';
+  border-bottom: 12px solid white;
+  border-left: 12px solid transparent;
+}
+
+.cutCornerBottom:after {
+  position:absolute; 
+  right:-3px; 
+  bottom:-3px; 
+  content:'';
+  border-bottom: 12px solid #dcdddf;
+  border-left: 12px solid transparent;
+}
+/* End cutCorner */
