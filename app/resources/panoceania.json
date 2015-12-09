@@ -1,0 +1,172 @@
+{
+    "faction": "PanOceania",
+    "sectorials": ["Shock Army of Acontecimento", "Military Orders", "Neoterran Capitaline Army", "PanOceania"],
+    "units": [
+        {
+            "unitName": "Fusiliers",
+            "fullName": "Fusiliers",
+            "mov": "4-4",
+            "cc": "13",
+            "bs": "12",
+            "ph": "10",
+            "wip": "12",
+            "arm": "1",
+            "bts": "0",
+            "w": "1",
+            "s": "2",
+            "ava": {
+                "Vanilla" : "TOTAL",
+                "Acontecimento" : "0",
+                "MO" : "3",
+                "Neoterran" : "5"
+            },
+            "skills": [ ],
+            "linkable": true,
+            "ccWeapons": ["Pistol", "Knife"],
+            "hackable" : false,
+            "cube" : true,
+            "fury" : "notImpetuous",
+            "order" : "regular",
+            "loadouts": [
+                {
+                    "name": "FUSILIER - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0",
+                    "cost": "10",
+                    "canBeLt": true
+                }, {
+                    "name": "FUSILIER - Combi Rifle + Light Grenade Launcher",
+                    "weapons": ["Combi Rifle", "Light Grenade Launcher"],
+                    "swc": "1",
+                    "cost": "14"
+                }, {
+                    "name": "FUSILIER - HMG",
+                    "weapons": ["HMG"],
+                    "swc": "1",
+                    "cost": "18"
+                }, {
+                    "name": "FUSILIER - Missile Launcher",
+                    "weapons": ["Missile Launcher"],
+                    "swc": "1.5",
+                    "cost": "15"
+                }, {
+                    "name": "FUSILIER - MULTI Sniper Rifle",
+                    "weapons": ["MULTI Sniper Rifle"],
+                    "swc": "1.5",
+                    "cost": "18"
+                }, {
+                    "name": "FUSILIER (Hacking Device) - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0.5",
+                    "cost": "18",
+                    "equipment" : "Hacking Device",
+                    "specialist" : "Hacker"
+                }, {
+                    "name": "FUSILIER (Forward Observer, Deployable Repeater) - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0",
+                    "cost": "12",
+                    "skills": ["Forward Observer"],
+                    "equipment": ["Deployable Repeater"],
+                    "specialist" : "Forward Obs"
+                }, {
+                    "name": "FUSILIER Paramedic - Combi Rifle",
+                    "weapons": ["Rifle"],
+                    "swc": "0",
+                    "cost": "12",
+                    "equipment": ["MediKit"],
+                    "specialist": "Paramedic"
+                }, {
+                    "name": "FUSILIER Lieutenant - Combi Rifle",
+                    "weapons": ["Rifle"],
+                    "swc": "0",
+                    "cost": "10",
+                    "canBeLt": true
+                }
+            ]
+        }, {
+            "unitName": "Knight Hospitaller",
+            "fullName": "Holy Order of Hospitaller Knights of Saint John of Skovorodino",
+            "mov": "4-4",
+            "cc": "21",
+            "bs": "14",
+            "ph": "14",
+            "wip": "13",
+            "arm": "4",
+            "bts": "6",
+            "w": "2",
+            "s": "2",
+            "hackable": true,
+            "cube" : true,
+            "order" : "regular",
+            "fury" : "frenzy",
+            "ava": {
+                "Vanilla" : "TOTAL",
+                "Acontecimento" : "0",
+                "MO" : "3",
+                "Neoterran" : "5"
+            },
+            "skills": [ "Martial Arts L2", "Religious" ],
+            "linkable": true,
+            "ccWeapons": ["Pistol"],
+            "loadouts": [
+                {
+                    "name": "KNIGHT HOSPITALLER - MULTI Rifle AP CCW",
+                    "weapons" : ["MULTI Rifle"],
+                    "ccWeapons" : ["AP CCW"],
+                    "swc" : "0",
+                    "cost" : "37",
+                    "canBeLt" : true
+                }, {
+                    "name": "KNIGHT HOSPITALLER - MULTI Rifle DA CCW",
+                    "weapons" : ["MULTI Rifle"],
+                    "ccWeapons" : ["DA CCW"],
+                    "swc" : "0",
+                    "cost" : "38",
+                    "canBeLt" : true
+                }, {
+                    "name": "KNIGHT HOSPITALLER - HMG",
+                    "weapons" : ["HMG"],
+                    "ccWeapons" : ["AP CCW"],
+                    "swc" : "2",
+                    "cost" : "41"
+                }, {
+                    "name": "KNIGHT HOSPITALLER - Boarding Shotgun",
+                    "weapons" : ["Boarding Shotgun"],
+                    "ccWeapons" : ["DA CCW"],
+                    "swc" : "0",
+                    "cost" : "33"
+                }, {
+                    "name": "KNIGHT HOSPITALLER - Combi Rifle",
+                    "weapons" : ["Combi Rifle"],
+                    "ccWeapons" : ["AP CCW"],
+                    "swc" : "0",
+                    "cost" : "33"
+                }, {
+                    "name": "KNIGHT HOSPITALLER - Doctor (MediKit)",
+                    "weapons" : ["MULTI Rifle"],
+                    "ccWeapons" : ["AP CCW"],
+                    "swc" : "0",
+                    "cost" : "41",
+                    "specialist": "Doctor",
+                    "skills" : ["Doctor"],
+                    "equipment" : ["MediKit"]
+                }, {
+                    "name": "KNIGHT HOSPITALLER Lieutennant - MULTI Rifle AP CCW",
+                    "weapons" : ["MULTI Rifle"],
+                    "ccWeapons" : ["AP CCW"],
+                    "swc" : "0",
+                    "cost" : "37",
+                    "canBeLt" : true
+                }, {
+                    "name": "KNIGHT HOSPITALLER Lieutennant - MULTI Rifle DA CCW",
+                    "weapons" : ["MULTI Rifle"],
+                    "ccWeapons" : ["DA CCW"],
+                    "swc" : "0",
+                    "cost" : "38",
+                    "canBeLt" : true
+                }
+            ]
+        }
+    ]
+}

@@ -36,15 +36,15 @@
         "type": "Automatic",
         "desc": "When declaring Dodge or Engage in the Reactive Turn, you may move two additional inches."
     }, {
-        "name": "Martial Arts Level 1",
+        "name": "Martial Arts L1",
         "type": "Automatic",
         "desc": "Gives +1 to CC damage and -3 to Opponent CC. You also have Stealth and V: Courage."
     }, {
-        "name": "Martial Arts Level 2",
+        "name": "Martial Arts L2",
         "type": "Automatic",
         "desc": "Gives +3 to CC Damage, or +1 to CC Damage and -3 to Opponent CC. You also have Stealth and V: Courage."
     }, {
-        "name": "Martial Arts Level 3",
+        "name": "Martial Arts L3",
         "type": "Automatic",
         "desc": "Gives +3 to CC and -3 to Opponent CC, or +3 to CC Damage, or +1 to CC Damage and -3 to Opponent CC. You also have Stealth and V: Courage."
     }, {

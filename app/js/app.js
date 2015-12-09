@@ -40,6 +40,14 @@ function InfinityCardController($scope, $http) {
         "name": "Special Troop",
         "value": "Specialist"
     }];
+    /* Unit Designations */
+    $scope.units = [];
+    $http.get('resources/ariadna.json').success(function(data) {
+        $scope.units.push(data);
+    });
+    $http.get('resources/panoceania.json').success(function(data) {
+        $scope.units.push(data);
+    });
     /* Begin unit properties */
     $scope.model = {};
     $scope.model.name = "Travis Young";
@@ -76,6 +84,64 @@ function InfinityCardController($scope, $http) {
     $scope.model.hasCamo = false;
     $scope.model.canBeLt = false;
     /* End unit properties */
+    
+    /* Event Handlers */
+    $scope.setFaction = function() {
+        var faction = $scope.temp.faction;
+        if (typeof faction !== "undefined") {
+            $scope.model.faction = faction.faction;
+        }
+    }
+    
+    $scope.setUnit = function() {
+        var unit = $scope.temp.unit;
+        if (typeof faction === "undefined")
+            return;
+        var model = $scope.model;
+        model.unit = unit.unitName;
+        model.MOV = unit.mov;
+        model.CC = unit.cc;
+        model.BS = unit.bs;
+        model.PH = unit.ph;
+        model.WIP = unit.wip;
+        model.ARM = unit.arm;
+        model.BTS = unit.bts;
+        model.W = unit.w;
+        model.S = unit.s;
+        model.selectedSkills = unit.skills;
+        model.selectedEquipment = unit.equipment;
+        model.selectedWeapons = unit.weapons;
+        model.selectedSecondaries = unit.ccWeapons;
+        model.hackable = unit.hackable;
+        model.cube = unit.cube;
+        model.fury = unit.fury;
+        model.order = unit.order;
+    }
+    
+    $scope.setLoadout = function() {
+        $scope.setUnit();
+        var loadout = $scope.temp.loadout;
+        if (typeof loadout === "undefined")
+            return;
+        var model = $scope.model;
+        model.selectedWeapons = mergeArray(model.selectedWeapons, loadout.weapons);
+        model.selectedEquipment = mergeArray(model.selectedEquipment, loadout.equipment);
+        model.selectedSkills = mergeArray(model.selectedSkills, loadout.skills);
+        model.selectedSecondaries = mergeArray(model.selectedSecondaries, loadout.ccWeapons);
+        model.specialist = loadout.specialist;
+        model.cost = loadout.cost;
+        model.swc = loadout.swc;
+        model.hasCamo = loadout.hasCamo;
+        model.canBeLt = loadout.canBeLt;
+    }
+}
+
+function mergeArray(array1, array2) {
+    if (typeof array1 === "undefined")
+        return array2;
+    if (typeof array2 === "undefined")
+        return array1;
+    return array1.concat(array2)
 }
 
 /* json-text directive taken from here:

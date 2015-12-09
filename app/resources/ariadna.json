@@ -1,0 +1,141 @@
+{
+    "faction": "Ariadna",
+    "sectorials": ["Caledonia", "MRRF", "USARF"],
+    "units": [
+        {
+            "unitName": "Caledonian Volunteer",
+            "fullName": "Caledonian Volunteers Corps",
+            "mov": "4-4",
+            "cc": "13",
+            "bs": "10",
+            "ph": "11",
+            "wip": "12",
+            "arm": "1",
+            "bts": "0",
+            "w": "1",
+            "s": "2",
+            "avaVanilla": "2",
+            "avaSect": "TOTAL",
+            "skills": [
+                "MT: Mountain or Jungle"
+            ],
+            "sectorials" : [
+                "Vanilla",
+                "Caledonia"
+            ],
+            "hackable" : false,
+            "cube" : false,
+            "fury" : "notImpetuous",
+            "order" : "regular",
+            "linkable": true,
+             "ccWeapons": ["Pistol", "Knife"],
+            "loadouts": [
+                {
+                    "name": "VOLUNTEER - Rifle",
+                    "weapons": ["Rifle"],
+                    "swc": "0",
+                    "cost": "8",
+                    "canBeLt": true
+                }, {
+                    "name": "VOLUNTEER - Chain Rifle",
+                    "weapons": ["Chain Rifle", "Light Shotgun"],
+                    "swc": "0",
+                    "cost": "6"
+                }, {
+                    "name": "VOLUNTEER - HMG",
+                    "weapons": ["HMG"],
+                    "swc": "0.5",
+                    "cost": "19"
+                }, {
+                    "name": "VOLUNTEER - LGL",
+                    "weapons": ["Light Grenade Launcher", "Light Shotgun"],
+                    "swc": "0.5",
+                    "cost": "10"
+                }, {
+                    "name": "VOLUNTEER (CH: Limited Camo, Inferior Infiltration) - Rifle",
+                    "weapons": ["Rifle", "D-Charges"],
+                    "swc": "0",
+                    "cost": "11",
+                    "skills": ["CH: Limited Camo", "Inferior Infiltration"],
+                    "hasCamo": true
+                }, {
+                    "name": "VOLUNTEER (CH: Limited Camo, Inferior Infiltration) - LGL",
+                    "weapons": ["Light Grenade Launcher", "Light Shotgun"],
+                    "swc": "1",
+                    "cost": "13",
+                    "skills": ["CH: Limited Camo", "Inferior Infiltration"],
+                    "hasCamo": true
+                }, {
+                    "name": "VOLUNTEER Paramedic - Rifle",
+                    "weapons": ["Rifle"],
+                    "swc": "0",
+                    "cost": "10",
+                    "equipment": ["MediKit"],
+                    "specialist": "Paramedic"
+                }, {
+                    "name": "VOLUNTEER Lieutenant - Rifle",
+                    "weapons": ["Rifle"],
+                    "swc": "0",
+                    "cost": "8",
+                    "canBeLt": true
+                }
+            ]
+        }, {
+            "unitName": "Highlander Grey",
+            "fullName": "3rd Highlander Grey Rifles",
+            "mov": "4-4",
+            "cc": "16",
+            "bs": "13",
+            "ph": "13",
+            "wip": "12",
+            "arm": "3",
+            "bts": "0",
+            "w": "1",
+            "s": "2",
+            "skills": [
+                "Shock Immunity",
+                "V: Dogged"
+            ],
+            "sectorials" : [
+                "Vanilla",
+                "Caledonia"
+            ],
+            "hackable" : false,
+            "cube" : false,
+            "fury" : "frenzy",
+            "order" : "regular",
+            "linkable": true,
+            "ccWeapons": ["Pistol", "Knife"],
+            "loadouts": [
+                {
+                    "name": "HIGHLANDER GREY - Rifle, 2 Light Shotguns",
+                    "weapons": ["Rifle", "2 Light Shotguns", "Grenades", "Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "29",
+                    "canBeLt" : true
+                }, {
+                    "name": "HIGHLANDER GREY - T2 Rifle, 2 Light Shotguns",
+                    "weapons": ["T2 Rifle", "2 Light Shotguns", "Grenades", "Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "33"
+                }, {
+                    "name": "HIGHLANDER GREY - AP HMG",
+                    "weapons": ["AP HMG", "Smoke Grenades"],
+                    "swc": "1.5",
+                    "cost": "34"
+                }, {
+                    "name": "HIGHLANDER GREY - T2 Boarding Shotgun",
+                    "weapons": ["T2 Boarding Shotgun", "Grenades", "Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "25"
+                }, {
+                    "name": "HIGHLANDER GREY Lieutenant - Rifle, 2 Light Shotguns",
+                    "weapons": ["Rifle", "2 Light Shotguns", "Grenades", "Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "29",
+                    "canBeLt" : true
+                }
+            ]
+        }
+    ]
+}

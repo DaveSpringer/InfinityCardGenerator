@@ -12,6 +12,17 @@
 
 <body ng-controller="InfinityCardController">
     <div id="inputArea" ng-hide="hideInput">
+        <label>Unit Selection Area</label>
+        <p>Note: Selecting units here may override previously provided inputs.</p>
+        <select ng-model="temp.faction" ng-options="unit.faction for unit in units" ng-change="setFaction()">
+        </select>
+        <br>
+        <select ng-model="temp.unit" ng-options="unit.fullName for unit in temp.faction.units" ng-change="setUnit()">
+        </select>
+        <br>    
+        <select ng-model="temp.loadout" ng-options="loadout.name for loadout in temp.unit.loadouts" ng-change="setLoadout()">
+        </select>
+        <hr>
         <label>Name</label>
         <input type="text" ng-model="model.name">
         <hr>
