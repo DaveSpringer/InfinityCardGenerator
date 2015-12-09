@@ -1,6 +1,4 @@
-var infinityCardApp = angular.module('infinityCardApp', []);
-
-infinityCardApp.controller('InfinityCardCtrl', function ($scope) {
+function InfinityCardController($scope) {
     $scope.model = {};
     $scope.skills = [{
         "name": "AD: Combat Jump",
@@ -13,7 +11,7 @@ infinityCardApp.controller('InfinityCardCtrl', function ($scope) {
     }, {
         "name": "CH: Mimetism",
         "type": "Automatic",
-        "desc": "Opponents make BS Attacks against you at a -3 MOD."
+        "desc": "Opponents make BS Attacks against you at a -3 MOD to the relevant Attribute."
     }, {
         "name": "CH: Camo",
         "type": "Automatic",
@@ -261,12 +259,12 @@ infinityCardApp.controller('InfinityCardCtrl', function ($scope) {
     $scope.model.hasCamo = false;
     $scope.model.canBeLt = false;
     /* End unit properties */
-});
+}
 
 /* json-text directive taken from here:
 http://stackoverflow.com/questions/17893708/angularjs-textarea-bind-to-json-object-shows-object-object
 */
-infinityCardApp.directive('jsonText', function () {
+function jsonText() {
     return {
         restrict: 'A', // only activate on element attribute
         require: 'ngModel', // get a hold of NgModelController
@@ -317,4 +315,8 @@ infinityCardApp.directive('jsonText', function () {
             }
         }
     };
-});
+}
+
+angular.module('infinityCardApp', [])
+    .controller('InfinityCardController', InfinityCardController)
+    .directive('jsonText', jsonText);
