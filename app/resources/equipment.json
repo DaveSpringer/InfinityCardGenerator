@@ -1,0 +1,31 @@
+[
+    {
+        "name": "Assault Hacking Device",
+        "type": "Equipment",
+        "desc": "You may use the following Hacking Programs: CLAW Level 3. You may enlists REMs."
+    }, {
+        "name": "Defensive Hacking Device",
+        "type": "Equipment",
+        "desc": "You may use the following Hacking Programs: SHIELD Level 3, Gatget Level 1. If targeted by a Hacking Attack, you have Firewall MODs. You may enlist REMs."
+    }, {
+        "name": "Hacking Device",
+        "type": "Equipment",
+        "desc": "You may use the following Hacking Programs: CLAW Level 1, SWORD Level 1, SHIELD Level 1, and all GADGET. You may enlist REMs."
+    }, {
+        "name": "Hacking Device Plus",
+        "type": "Equipment",
+        "desc": "You may use the following Hacking Programs: CLAW Level 2, SWORD Level 1, SHIELD Level 2, all GADGET, Sucker Punch, Cyber Mask, and White Noise. You may enlist REMs."
+    }, {
+        "name": "MediKit",
+        "type": "Short",
+        "desc": "Target friendly trooper in the Unconscious state with 1+ W. If the target passes a PH-3 roll, recover 1 W and remove Unconcious state, else die."
+    }, {
+        "name": "Multispectral Visor L1",
+        "type": "Automatic",
+        "desc": "Your BS Attacks and Discover attempts are not modified by Mimetism, Camo, and Low Visibility Zone MODs. Your modifiers for TO Camo, ODD, and Poor Visibility Zones are -3 instead of -6."
+    }, {
+        "name": "Multispectral Visor L2",
+        "type": "Automatic",
+        "desc": "You are not effected by Camo, ODD, Low Visibility, and Poor Visibility. You may draw LoF through Zero Visibility Zones and ignore MODs. You ignore the Dodge effect of Smoke Special Ammunition."
+    }
+]

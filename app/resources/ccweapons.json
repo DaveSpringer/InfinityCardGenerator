@@ -1,0 +1,23 @@
+[
+    {
+        "name": "AP CCW",
+        "burst": "1",
+        "ammo": "AP",
+        "traits": "CC"
+    }, {
+        "name": "CCW",
+        "burst": "1",
+        "ammo": "N",
+        "traits": "CC"
+    }, {
+        "name": "Knife",
+        "burst": "1",
+        "ammo": "Shock",
+        "traits": "CC, Silent"
+    }, {
+        "name": "Pistol",
+        "burst": "2",
+        "ammo": "N",
+        "traits": "CC"
+    }
+]

@@ -1,0 +1,78 @@
+[
+    {
+        "name": "Boarding Shotgun",
+        "burst": "2",
+        "ammo": "N or AP",
+        "traits": "N: Small Teardrop; AP: None"
+    }, {
+        "name": "Chain Rifle",
+        "burst": "1",
+        "ammo": "N",
+        "traits": "Large Teardrop, Intuitive"
+    }, {
+        "name": "Combi Rifle",
+        "burst": "3",
+        "ammo": "N",
+        "traits": "Suppressive"
+    }, {
+        "name": "E/Mitter",
+        "burst": "1",
+        "ammo": "E/M",
+        "traits": "None"
+    }, {
+        "name": "HMG",
+        "burst": "4",
+        "ammo": "N",
+        "traits": "Suppressive"
+    }, {
+        "name": "Light Flamethrower",
+        "burst": "1",
+        "ammo": "Fire",
+        "traits": "Small Teardrop, Intuitive"
+    }, {
+        "name": "Light Grenade Launcher",
+        "burst": "1",
+        "ammo": "N",
+        "traits": "Circular, Speculative"
+    }, {
+        "name": "Light Smoke GL",
+        "burst": "1",
+        "ammo": "Smoke",
+        "traits": "Circular, Speculative, Non-Lethal, Special Dodge, Targetless"
+    }, {
+        "name": "Light Shotgun",
+        "burst": "2",
+        "ammo": "N",
+        "traits": "Small Teardrop"
+    }, {
+        "name": "2 Light Shotguns",
+        "burst": "3",
+        "ammo": "N",
+        "traits": "Small Teardrop"
+    }, {
+        "name": "MULTI Rifle",
+        "burst": "3 or 1",
+        "ammo": "AP/Shock or DA",
+        "traits": "Light MULTI, Suppressive"
+    }, {
+        "name": "MULTI Sniper Rifle",
+        "burst": "2",
+        "ammo": "AP or DA",
+        "traits": "Medium MULTI"
+    }, {
+        "name": "Rifle",
+        "burst": "3",
+        "ammo": "N",
+        "traits": "Suppressive"
+    }, {
+        "name": "Smoke Grenades",
+        "burst": "1",
+        "ammo": "Smoke",
+        "traits": "Circular, Non Lethal, Special Dodge, Speculative, Targetless, Throwing Weapon"
+    }, {
+        "name": "Spitfire",
+        "burst": "4",
+        "ammo": "N",
+        "traits": "Suppressive"
+    }
+]

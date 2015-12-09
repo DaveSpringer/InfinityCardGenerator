@@ -1,0 +1,75 @@
+[
+    {
+        "name": "AD: Combat Jump",
+        "type": "Entire",
+        "desc": "Place a Circular Template to be the Drop Zone. The template must be clear of all obstructions. Place yourself completely inside the Drop Zone. On PH Roll, remove template. On PH Fail, you scatter 16 inches from your final location. Share Open Information."
+    }, {
+        "name": "Assault",
+        "type": "Entire",
+        "desc": "Target an enemy in your LoF at least within the sum of your MOV. Move into base to base contact and perform a CC attack at a -3 mod."
+    }, {
+        "name": "CH: Mimetism",
+        "type": "Automatic",
+        "desc": "Opponents make BS Attacks against you at a -3 MOD to the relevant Attribute."
+    }, {
+        "name": "CH: Camo",
+        "type": "Automatic",
+        "desc": "During the Deployment Phase, you may deploy in the Camouflaged state. Opponents make BS attacks against you at a -3 MOD. Grants Surprise Attack, Surprise Shot L1, and Stealth."
+    }, {
+        "name": "CH: TO Camo",
+        "type": "Automatic",
+        "desc": "During deployment, you may deploy in the Hidden Deployment or TO Camo state, and may enter TO Camo state. BS attacks made against you are -6 to the opponent. Grants Surprise Attack, Surprise Shot L1, and Stealth."
+    }, {
+        "name": "Doctor",
+        "type": "Short",
+        "desc": "Target Unconscious friendly unit in base to base. On WIP Roll, heal 1 W and cancel Unconscious. If failed, targed dies. Can spend Command Token to reroll failure if target has cube."
+    }, {
+        "name": "Infiltration",
+        "type": "Deployment",
+        "desc": "You may deploy anywhere in your half, or may deploy in the opponents half excluding enemy Deployment Zone on Infiltration Roll (Normal PH-3)."
+    }, {
+        "name": "Kinematika L1",
+        "type": "Automatic",
+        "desc": "When declaring Dodge or Engage in the Reactive Turn, you may move one additional inch."
+    }, {
+        "name": "Kinematika L2",
+        "type": "Automatic",
+        "desc": "When declaring Dodge or Engage in the Reactive Turn, you may move two additional inches."
+    }, {
+        "name": "Martial Arts Level 1",
+        "type": "Automatic",
+        "desc": "Gives +1 to CC damage and -3 to Opponent CC. You also have Stealth and V: Courage."
+    }, {
+        "name": "Martial Arts Level 2",
+        "type": "Automatic",
+        "desc": "Gives +3 to CC Damage, or +1 to CC Damage and -3 to Opponent CC. You also have Stealth and V: Courage."
+    }, {
+        "name": "Martial Arts Level 3",
+        "type": "Automatic",
+        "desc": "Gives +3 to CC and -3 to Opponent CC, or +3 to CC Damage, or +1 to CC Damage and -3 to Opponent CC. You also have Stealth and V: Courage."
+    }, {
+        "name": "Multiterrain",
+        "type": "Automatic",
+        "desc": "Before deploying, choose one Type of Terrain to specialize in. You may move normally through that Type of Terrain."
+    }, {
+        "name": "Religious",
+        "type": "Automatic",
+        "desc": "Pass Guts Rolls automatically. May make a WP Roll to fail Guts Roll. Cannot Retreat."
+    }, {
+        "name": "Shock Immunity",
+        "type": "Automatic",
+        "desc": "You are immune to Shock Special Ammunition and treat it like Normal Ammunition."
+    }, {
+        "name": "Stealth",
+        "type": "Automatic",
+        "desc": "Active turn only. You may make Cautious Movements inside the ZoC of an enemy. A Short Movement Skill inside an enemy's ZoC but outside his LoF does not grant AROs."
+    }, {
+        "name": "V: Courage",
+        "type": "Automatic",
+        "desc": "Choose the outcome of any of this troopers Guts Rolls. Unaffected by Retreat."
+    }, {
+        "name": "V: Dogged",
+        "type": "Automatic",
+        "desc": "When you would go Unconscious, you may place a Dogged Marker instead. If you do, at the end of the turn, this unit dies. A Dogged unit may not be healed."
+    }
+]
