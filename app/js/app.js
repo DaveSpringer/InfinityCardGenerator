@@ -56,7 +56,7 @@ function InfinityCardController($scope, $http) {
     $scope.model.unitImage = "https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/565e0b51e4b02f39f712b791/565f28dee4b09f89c54287d0/1449076959301/Travis_Young.png";
     $scope.model.scaleHoriz = false;
     $scope.model.fury = "notImpetuous";
-    $scope.model.cube = false;
+    $scope.model.cube = "none";
     $scope.model.hackable = false;
     $scope.model.order = "regular";
     $scope.model.cost = "10";

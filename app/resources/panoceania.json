@@ -24,7 +24,7 @@
             "linkable": true,
             "ccWeapons": ["Pistol", "Knife"],
             "hackable" : false,
-            "cube" : true,
+            "cube" : "cube",
             "fury" : "notImpetuous",
             "order" : "regular",
             "loadouts": [
@@ -97,7 +97,7 @@
             "w": "2",
             "s": "2",
             "hackable": true,
-            "cube" : true,
+            "cube" : "cube",
             "order" : "regular",
             "fury" : "frenzy",
             "ava": {

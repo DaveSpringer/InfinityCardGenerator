@@ -165,19 +165,19 @@ body {
 }
 
 .weaponList {
-    font: 10px Orbitron;
+    font: 8px Orbitron;
     float: left;
     margin-right: 7px
 }
 
 .skillList {
-    font: 10px Orbitron;
+    font: 8px Orbitron;
     float: left;
     margin-right: 7px
 }
 
 #unitEquip {
-    font: 10px Orbitron;
+    font: 8px Orbitron;
     float: left;
     margin-right: 7px;
     color: #582700;
@@ -215,15 +215,10 @@ body {
     height: 20px;
 }
 
-.cube {
-    background: url(https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/56478641e4b04fa71c754a24/565ddac6e4b07dd0e779efb0/1448991431059/cube_hackable_20px.png) 0 0 no-repeat;
-    width: 20px;
+.cubeCont {
     height: 20px;
-}
-
-.cube-empty {
-    height: 20px;
-    width: 20px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .hackable {
@@ -390,16 +385,40 @@ body {
 /* Card back stuff. */
 
 #cardBackBackground {
+    position: relative;
     height: 424px;
     width: 302px;
     background-color: #dcdddf;
     float: left;
+    border: 1px white solid;
+}
+
+#cardBackBackground:after {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    content: '';
+    border-bottom: 20px solid white;
+    border-right: 20px solid transparent;
 }
 
 #backHeader {
+    position: relative;
     height: 20px;
     width: 302px;
-    background-color: transparent;
+    background-color: #dcdddf;
+    border-top: 2px;
+    border-right: 2px;
+    border-left: 2px;
+}
+
+#backHeader:after {
+    position: absolute;
+    right: -0px;
+    bottom: -0px;
+    content: '';
+    border-top: 20px solid white;
+    border-left: 20px solid transparent;
 }
 
 #hiddenInfo {
@@ -511,6 +530,70 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     content: '';
     border-bottom: 12px solid #dcdddf;
     border-left: 12px solid transparent;
+}
+
+.cutCornerBack {
+    position: relative;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    display: inline-block;
+    margin-left: 8px;
+    width: 260px;
+    padding: 0px 10px 0px 10px;
+    font: 10px Orbitron;
+    color: white;
+}
+
+.cutCornerBack:before {
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    content: '';
+    border-top: 12px solid white;
+    border-left: 12px solid transparent;
+}
+
+.cutCornerBack:after {
+    position: absolute;
+    right: -3px;
+    top: -3px;
+    content: '';
+    border-top: 12px solid #dcdddf;
+    border-left: 12px solid transparent;
+}
+
+.cutCornerBackBottom {
+    position: relative;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    top: -4px;
+    display: inline-block;
+    margin-left: 8px;
+    width: 260px;
+    background-color: grey;
+    padding: 0px 10px 5px 10px;
+    font: 8px Orbitron;
+    color: white;
+}
+
+.cutCornerBackBottom:before {
+    position: absolute;
+    left: -1px;
+    bottom: -1px;
+    content: '';
+    border-bottom: 12px solid white;
+    border-right: 12px solid transparent;
+}
+
+.cutCornerBackBottom:after {
+    position: absolute;
+    left: -3px;
+    bottom: -3px;
+    content: '';
+    border-bottom: 12px solid #dcdddf;
+    border-right: 12px solid transparent;
 }
 
 

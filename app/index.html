@@ -32,7 +32,12 @@
         <label>Unit</label>
         <input type="text" ng-model="model.unit">
         <hr>
-        <input type="checkbox" ng-model="model.cube">Cube</input>
+        <label>Cube:</label>
+        <select id="cube" ng-model="model.cube">
+            <option value="none">None</option>
+            <option value="cube">Cube</option>
+            <option value="cube 2.0">Cube 2.0</option>
+        </select>
         <hr>
         <label>Order Type</label>
         <select id="order" ng-model="model.order">
@@ -207,8 +212,11 @@
             <div id="cardHeader">
                 <div id="imageArea">
                     <div id="orders">
-                        <div class="cube" ng-show="model.cube"></div>
-                        <div class="cube-empty" ng-hide="model.cube"></div>
+                        <div class="cubeCont">
+                            <img class="cubeImg" ng-show="model.cube == 'cube'" height="20" width="20" src="images/cube.png"> 
+                            <img class="cubeImg" ng-show="model.cube == 'cube 2.0'" height="20" width="20" src="images/cube_20.png">
+                            <div class="cube-empty" ng-show="model.cube == 'none'" ></div>
+                        </div>
                         <div id="orderImg" class="{{model.order}}"></div>
                         <div id="furyImg" class="{{model.fury}}"></div>
                         <div class="hackable" ng-show="model.hackable"></div>
@@ -338,20 +346,20 @@
             </div>
             <div ng-repeat="skill in skills">
                 <div ng-repeat="selectedSkill in model.selectedSkillsBack" ng-if="skill.name == selectedSkill">
-                    <div class="cutCorner skillType{{skill.type}}">
+                    <div class="cutCornerBack skillType{{skill.type}}">
                         <div class="skillName">{{skill.name}}</div>
                         <div class="skillType">{{skill.type}}</div>
                     </div>
-                    <div class="cutCornerBottom">{{skill.desc}}</div>
+                    <div class="cutCornerBackBottom">{{skill.desc}}</div>
                 </div>
             </div>
             <div ng-repeat="equip in equipment">
                 <div ng-repeat="selectedEquip in model.selectedEquipmentBack" ng-if="equip.name == selectedEquip">
-                    <div class="cutCorner equipType{{equip.type}}">
+                    <div class="cutCornerBack equipType{{equip.type}}">
                         <div class="equipName">{{equip.name}}</div>
                         <div class="equipType">{{equip.type}}</div>
                     </div>
-                    <div class="cutCornerBottom">{{equip.desc}}</div>
+                    <div class="cutCornerBackBottom">{{equip.desc}}</div>
                 </div>
             </div>
         </div>

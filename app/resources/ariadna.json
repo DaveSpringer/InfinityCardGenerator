@@ -24,7 +24,7 @@
                 "Caledonia"
             ],
             "hackable" : false,
-            "cube" : false,
+            "cube" : "none",
             "fury" : "notImpetuous",
             "order" : "regular",
             "linkable": true,
@@ -101,7 +101,7 @@
                 "Caledonia"
             ],
             "hackable" : false,
-            "cube" : false,
+            "cube" : "none",
             "fury" : "frenzy",
             "order" : "regular",
             "linkable": true,
