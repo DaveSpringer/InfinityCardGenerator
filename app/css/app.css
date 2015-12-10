@@ -38,10 +38,21 @@ body {
 }
 
 #cardBackground {
+    position: relative;
     height: 424px;
     width: 302px;
-    background-image: url(https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/56478641e4b04fa71c754a24/565dd134e4b0ac2945f7dd4f/1448989001475/Infinity+Cards+Front_96.png);
+    background-color: #dcdddf;
     float: left;
+    border: 1px white solid;
+}
+
+#cardBackground:after {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    content: '';
+    border-bottom: 20px solid white;
+    border-left: 20px solid transparent;
 }
 
 #inputArea {
@@ -53,11 +64,35 @@ body {
     overflow: auto;
 }
 
+#cardTop {
+    position: relative;
+    height: 20px;
+    width: 302px;
+    background-color: #dcdddf;
+    border-top: 2px;
+    border-right: 2px;
+    border-left: 2px;
+}
+
+#cardTop:after {
+    position: absolute;
+    left: -0px;
+    bottom: -0px;
+    content: '';
+    border-top: 20px solid white;
+    border-right: 20px solid transparent;
+}
+
+#cardBody {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 #cardHeader {
     position: relative;
     margin-left: 2px;
-    width: 295px;
-    height: 120px;
+    width: 100%;
+    height: 100px;
 }
 
 #imageArea {
@@ -65,39 +100,45 @@ body {
     width: 90px;
     float: left;
     height: 100%;
-    margin-top: 20px;
     margin-left: 3px;
 }
 
 #unitSummary {
     position: relative;
     float: left;
-    height: 130px;
-    width: 180px;
-    margin-left: 10px;
-    margin-top: 13px;
+    height: 100px;
+    width: 190px;
+    padding: 0px;
 }
 
 #unitImage {
     position: relative;
-    z-index: -1;
-    top: -18px;
-    margin-left: 8px
+    z-index: 1;
+    border: 2px white solid;
+    height: 90px;
+    width: 80px;
 }
 
 #unitHeader {
     position: relative;
-    width: 230px;
+    width: 190px;
     height: 40px;
     font: 8px Orbitron;
     color: white;
     float: left;
-    margin-left: 5px;
-    padding-top: 12px;
+    padding-top: 2px;
 }
 
 #soldierName {
     font: 16px Orbitron;
+    width: 165px;
+    background-color: #0090a5;
+}
+
+#faction {
+    width: 165px;
+    background-color: #0090a5;
+    top: 0px;
 }
 
 #unitDetails {
@@ -105,7 +146,7 @@ body {
     position: relative;
     font: 14px Orbitron;
     color: black;
-    width: 190px;
+    width: 185px;
     height: 15px;
     margin-top: 0px;
     margin-right: 0px;
@@ -147,21 +188,21 @@ body {
     float: none;
     color: #0090A5;
     height: 15px;
-    width: 190px;
+    width: 180px;
 }
 
 #unitSecondaries {
     position: relative;
     color: #004D58;
     height: 15px;
-    width: 190px;
+    width: 180px;
 }
 
 #unitSkills {
     position: relative;
     color: #A54900;
     height: 15px;
-    width: 190px;
+    width: 180px;
 }
 
 .weaponList {
@@ -178,44 +219,60 @@ body {
 
 #unitEquip {
     font: 8px Orbitron;
-    float: left;
+    float: none;
     margin-right: 7px;
     color: #582700;
 }
 
+.equipList {
+    font: 8px Orbitron;
+    float: left;
+    margin-right: 8px;
+}
+
 #statsDiv {
-    margin-top: 0px;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    width: 280px;
+    margin-top: 3px;
+    background-color: #0090a5;
+    padding-top: 3px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    height: 30px;
+    z-index: 3;
+}
+
+#statsBottom {
+    background-color: #0090a5;
+    top: -7px;
+    margin-bottom: 0px;
+    padding-bottom: 11px;
 }
 
 #stats {
     background-color: 0090a5;
     position: relative;
     float: none;
-    height: 35px;
-    width: 270px;
+    width: 260px;
     color: white;
     font: 10px Orbitron;
     text-align: center;
-    top: -8px;
 }
 
 #unitStats {
     background-color: 0090a5;
     height: 15px;
-    width: 270px;
+    width: 260px;
     color: white;
     font: 10px Orbitron;
 }
 
 #orders {
     position: relative;
-    height: 20px;
+    height: 0px;
+    z-index: 2;
+    left: -8px;
 }
 
-.cubeCont {
+.orderContainer {
     height: 20px;
     margin-top: 2px;
     margin-bottom: 2px;
@@ -225,46 +282,6 @@ body {
     background: url(https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/56478641e4b04fa71c754a24/565ddac6e4b07dd0e779efb0/1448991431059/cube_hackable_20px.png) 0 -40px no-repeat;
     width: 20px;
     height: 20px;
-}
-
-#orderImg {
-    width: 20px;
-    height: 20px;
-    display: block;
-    background: url(https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/56478641e4b04fa71c754a24/565f3fd0e4b0db5309296445/1449082833127/orders.png) 0 0 no-repeat;
-}
-
-#orderImg.regular {
-    background-position: 0px 0px;
-}
-
-#orderImg.irregular {
-    background-position: 0px -20px;
-}
-
-#furyImg {
-    width: 20px;
-    height: 20px;
-    background: url(https://static1.squarespace.com/static/5079f36584ae362b5e77c2e9/56478641e4b04fa71c754a24/565f3fd0e4b0db5309296445/1449082833127/orders.png) 0 0 no-repeat;
-}
-
-#furyImg.notImpetuous {
-    background: transparent;
-}
-
-#furyImg.impetuous {
-    background-position: 0px -40px;
-    display: block;
-}
-
-#furyImg.exImpetuous {
-    background-position: 0px -80px;
-    display: block;
-}
-
-#furyImg.frenzy {
-    background-position: 0px -60px;
-    display: block;
 }
 
 #skillBox {
@@ -278,6 +295,7 @@ body {
     background-color: #0090a5;
     height: 10px;
     padding-bottom: 0px;
+    margin-top: 0px;
 }
 
 #scoresBottom {
@@ -470,8 +488,9 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-right: 2px solid white;
     border-left: 2px solid white;
     display: inline-block;
-    margin-left: 8px;
-    width: 260px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 262px;
     padding: 0px 10px 0px 10px;
     font: 10px Orbitron;
     color: white;
@@ -506,10 +525,10 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-left: 2px solid white;
     top: -4px;
     display: inline-block;
-    margin-left: 8px;
-    width: 260px;
+    margin-left: 0px;
+    width: 262px;
     background-color: grey;
-    padding: 0px 10px 5px 10px;
+    padding: 0px 10px 4px 10px;
     font: 8px Orbitron;
     color: white;
 }
