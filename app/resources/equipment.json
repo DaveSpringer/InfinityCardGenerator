@@ -8,6 +8,10 @@
         "type": "Equipment",
         "desc": "You may use the following Hacking Programs: SHIELD Level 3, Gatget Level 1. If targeted by a Hacking Attack, you have Firewall MODs. You may enlist REMs."
     }, {
+        "name": "Deployable Repeater",
+        "type": "Short-Aro",
+        "desc": "You may place a Repeater Marker in base contact at the conclusion of your Order or ARO. This is considered an Attack."
+    }, {
         "name": "Hacking Device",
         "type": "Equipment",
         "desc": "You may use the following Hacking Programs: CLAW Level 1, SWORD Level 1, SHIELD Level 1, and all GADGET. You may enlist REMs."

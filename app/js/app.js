@@ -48,6 +48,9 @@ function InfinityCardController($scope, $http) {
     $http.get('resources/panoceania.json').success(function(data) {
         $scope.units.push(data);
     });
+    $http.get('resources/nomads.json').success(function(data) {
+        $scope.units.push(data);
+    });
     /* Begin unit properties */
     $scope.model = {};
     $scope.model.name = "Travis Young";
@@ -126,7 +129,9 @@ function InfinityCardController($scope, $http) {
         var model = $scope.model;
         model.selectedWeapons = mergeArray(model.selectedWeapons, loadout.weapons);
         model.selectedEquipment = mergeArray(model.selectedEquipment, loadout.equipment);
+        model.selectedEquipmentBack = [];
         model.selectedSkills = mergeArray(model.selectedSkills, loadout.skills);
+        model.selectedSkillsBack = [];
         model.selectedSecondaries = mergeArray(model.selectedSecondaries, loadout.ccWeapons);
         model.specialist = loadout.specialist;
         model.cost = loadout.cost;

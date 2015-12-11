@@ -1,0 +1,159 @@
+{
+    "faction": "Nomads",
+    "sectorials": ["Nomads", "Jurisdictional Command of Corregidor", "Jurisdictional Command of Bakunin"],
+    "units": [
+        {
+            "unitName": "Alguacile",
+            "fullName": "Corregidor Alguaciles",
+            "mov": "4-4",
+            "cc": "13",
+            "bs": "11",
+            "ph": "10",
+            "wip": "13",
+            "arm": "1",
+            "bts": "0",
+            "w": "1",
+            "s": "2",
+            "avaVanilla": "TOTAL",
+            "sectorials" : [
+                "Vanilla",
+                "Corregidor"
+            ],
+            "hackable" : false,
+            "cube" : "cube",
+            "fury" : "notImpetuous",
+            "order" : "regular",
+            "linkable": true,
+            "ccWeapons": ["Pistol", "Knife"],
+            "loadouts": [
+                {
+                    "name": "ALGUACIL - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0",
+                    "cost": "10",
+                    "canBeLt": true
+                }, {
+                    "name": "ALGUACIL - HMG",
+                    "weapons": ["HMG"],
+                    "swc": "1",
+                    "cost": "18"
+                }, {
+                    "name": "ALGUACIL - LGL",
+                    "weapons": ["Light Grenade Launcher", "Combi Rifle"],
+                    "swc": "1",
+                    "cost": "14"
+                }, {
+                    "name": "ALGUACIL - MULTI Sniper Rifle",
+                    "weapons": ["MULTI Sniper Rifle"],
+                    "swc": "1.5",
+                    "cost": "18"
+                }, {
+                    "name": "ALGUACIL - Missile Launcher",
+                    "weapons": ["Missile Launcher"],
+                    "swc": "1.5",
+                    "cost": "15"
+                }, {
+                    "name": "ALGUACIL (Hacking Device) - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0.5",
+                    "cost": "18",
+                    "equipment": ["Hacking Device"],
+                    "specialist": "Hacker"
+                }, {
+                    "name": "ALGUACIL (Forward Observer, Deployable Repeater) - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0",
+                    "cost": "12",
+                    "equipment": [ "Deployable Repeater" ],
+                    "skills": ["Forward Observer"],
+                    "specialist": "Forward Obs"
+                }, {
+                    "name": "ALGUACIL Paramedic - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0",
+                    "cost": "12",
+                    "equipment": ["MediKit"],
+                    "specialist": "Paramedic"
+                }, {
+                    "name": "ALGUACIL Lieutenant - Combi Rifle",
+                    "weapons": ["Rifle"],
+                    "swc": "0",
+                    "cost": "10",
+                    "canBeLt": true
+                }
+            ]
+        }, {
+            "unitName": "Mobile Brigada",
+            "fullName": "Mobile Brigada",
+            "mov": "4-4",
+            "cc": "15",
+            "bs": "13",
+            "ph": "14",
+            "wip": "13",
+            "arm": "4",
+            "bts": "3",
+            "w": "2",
+            "s": "2",
+            "skills": [
+                "V: Courage"
+            ],
+            "sectorials" : [
+                "Vanilla",
+                "Corregidor"
+            ],
+            "hackable" : true,
+            "cube" : "cube",
+            "fury" : "notImpetuous",
+            "order" : "regular",
+            "linkable": true,
+            "ccWeapons": ["Pistol", "Knife"],
+            "loadouts": [
+                {
+                    "name": "MOBILE BRIGADA - MULTI Rifle + Light Flamethrower",
+                    "weapons": ["MULTI Rifle + Light FT"],
+                    "swc": "0",
+                    "cost": "39",
+                    "canBeLt" : true
+                }, {
+                    "name": "MOBILE BRIGADA - HMG",
+                    "weapons": ["HMG"],
+                    "swc": "2",
+                    "cost": "42"
+                }, {
+                    "name": "MOBILE BRIGADA - Boarding Shotgun",
+                    "weapons": ["Boarding Shotgun"],
+                    "swc": "0",
+                    "cost": "33"
+                }, {
+                    "name": "MOBILE BRIGADA - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0",
+                    "cost": "34"
+                }, {
+                    "name": "MOBILE BRIGADA - Combi Rifle + TinBot B (Deflector L2)",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0.5",
+                    "cost": "37"
+                }, {
+                    "name": "MOBILE BRIGADA Lieutenant - MULTI Rifle + Light Flamethrower",
+                    "weapons": ["MULTI Rifle + Light FT"],
+                    "swc": "0",
+                    "cost": "39",
+                    "canBeLt" : true
+                }, {
+                    "name": "MOBILE BRIGADA - Missile Launcher",
+                    "weapons": ["Missile Launcher"],
+                    "swc": "2",
+                    "cost": "40"
+                }, {
+                    "name": "MOBILE BRIGADA Hacker - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0.5",
+                    "cost": "43",
+                    "equipment": ["Hacking Device"],
+                    "specialist": "Hacker"
+                }
+            ]
+        }
+    ]
+}

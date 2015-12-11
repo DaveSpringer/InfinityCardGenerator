@@ -24,6 +24,10 @@
         "type": "Short",
         "desc": "Target Unconscious friendly unit in base to base. On WIP Roll, heal 1 W and cancel Unconscious. If failed, targed dies. Can spend Command Token to reroll failure if target has cube."
     }, {
+        "name": "Forward Observer",
+        "type": "Short",
+        "desc": "Target enemy in LoF, you may perform a Non-Lethal BS Attack using WIP. If successful, target enters Targeted State. You also have a Flash Pulse."
+    }, {
         "name": "Infiltration",
         "type": "Deployment",
         "desc": "You may deploy anywhere in your half, or may deploy in the opponents half excluding enemy Deployment Zone on Infiltration Roll (Normal PH-3)."
