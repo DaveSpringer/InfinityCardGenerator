@@ -7,72 +7,76 @@
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="css/app.css">
     <title>Infinty Card Generator</title>
-    <link href='https://fonts.googleapis.com/css?family=Orbitron:500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron:500,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body ng-controller="InfinityCardController">
     <div id="inputArea" ng-hide="hideInput">
-        <label>Unit Selection Area</label>
-        <p>Note: Selecting units here may override previously provided inputs.</p>
-        <select ng-model="temp.faction" ng-options="unit.faction for unit in units" ng-change="setFaction()">
-        </select>
-        <br>
-        <select ng-model="temp.unit" ng-options="unit.fullName for unit in temp.faction.units" ng-change="setUnit()">
-        </select>
-        <br>
-        <select ng-model="temp.loadout" ng-options="loadout.name for loadout in temp.unit.loadouts" ng-change="setLoadout()">
-        </select>
-        <hr>
-        <label>Name</label>
-        <input type="text" ng-model="model.name">
-        <hr>
-        <label>Faction</label>
-        <input type="text" ng-model="model.faction">
-        <hr>
-        <label>Unit</label>
-        <input type="text" ng-model="model.unit">
-        <hr>
-        <label>Cube:</label>
-        <select id="cube" ng-model="model.cube">
-            <option value="none">None</option>
-            <option value="cube">Cube</option>
-            <option value="cube 2.0">Cube 2.0</option>
-        </select>
-        <hr>
-        <label>Order Type</label>
-        <select id="order" ng-model="model.order">
-            <option value="regular">Regular</option>
-            <option value="irregular">Irregular</option>
-        </select>
-        <hr>
-        <label>Fury</label>
-        <select id="fury" ng-model="model.fury">
-            <option value="notImpetuous">Not Impetuous</option>
-            <option value="impetuous">Impetuous</option>
-            <option value="exImpetuous">Extremely Impetuous</option>
-            <option value="frenzy">Frenzy</option>
-        </select>
-        <hr>
-        <input type="checkbox" ng-model="model.hackable">Hackable</input>
-        <hr>
-        <label>Unit Image</label>
-        <input type="text" ng-model="model.unitImage">
-        <br>
-        <input type="checkbox" ng-model="model.scaleHoriz">Scale Horizontally</input>
-        <hr>
-        <label>Cost:</label>
-        <br>
-        <label>Points:</label>
-        <input type="text" ng-model="model.cost">
-        <label>SWC:</label>
-        <input type="text" ng-model="model.swc">
-        <br>
-        <label>Specialist Type:</label>
-        <select ng-model="model.specialist">
-            <option ng-repeat="special in specialistTypes" value="{{special.value}}">{{special.name}}</option>
-        </select>
-        <hr>
-        <div id="skillsSelector">
+        <div id="Unit Selection" class="inputBlock">
+            <h3>Unit Selection</h3>
+            <p class="note">Note: Selecting units here may override previously provided inputs.</p>
+            <select ng-model="temp.faction" ng-options="unit.faction for unit in units" ng-change="setFaction()">
+            </select>
+            <br>
+            <select ng-model="temp.unit" ng-options="unit.fullName for unit in temp.faction.units" ng-change="setUnit()">
+            </select>
+            <br>
+            <select ng-model="temp.loadout" ng-options="loadout.name for loadout in temp.unit.loadouts" ng-change="setLoadout()">
+            </select>
+        </div>
+        <div id="Unit Header" class="inputBlock">
+            <h3>Card Header</h3>
+            <label>Name</label>
+            <input type="text" ng-model="model.name">
+            <hr>
+            <label>Faction</label>
+            <input type="text" ng-model="model.faction">
+            <hr>
+            <label>Unit</label>
+            <input type="text" ng-model="model.unit">
+            <hr>
+            <label>Cube:</label>
+            <select id="cube" ng-model="model.cube">
+                <option value="none">None</option>
+                <option value="cube">Cube</option>
+                <option value="cube 2.0">Cube 2.0</option>
+            </select>
+            <hr>
+            <label>Order Type</label>
+            <select id="order" ng-model="model.order">
+                <option value="regular">Regular</option>
+                <option value="irregular">Irregular</option>
+            </select>
+            <hr>
+            <label>Fury</label>
+            <select id="fury" ng-model="model.fury">
+                <option value="notImpetuous">Not Impetuous</option>
+                <option value="impetuous">Impetuous</option>
+                <option value="exImpetuous">Extremely Impetuous</option>
+                <option value="frenzy">Frenzy</option>
+            </select>
+            <hr>
+            <input type="checkbox" ng-model="model.hackable">Hackable</input>
+            <hr>
+            <label>Unit Image</label>
+            <input type="text" ng-model="model.unitImage">
+            <br>
+            <input type="checkbox" ng-model="model.scaleHoriz">Scale Horizontally</input>
+            <hr>
+            <label>Cost:</label>
+            <br>
+            <label>Points:</label>
+            <input type="text" ng-model="model.cost">
+            <label>SWC:</label>
+            <input type="text" ng-model="model.swc">
+            <br>
+            <label>Specialist Type:</label>
+            <select ng-model="model.specialist">
+                <option ng-repeat="special in specialistTypes" value="{{special.value}}">{{special.name}}</option>
+            </select>
+        </div>
+        <div id="skillsSelector" class="inputBlock">
+            <h3>Skills, Weapons, and Equipment</h3>
             <table>
                 <tr>
                     <td>
@@ -124,82 +128,83 @@
                 </tr>
             </table>
         </div>
-        <div id="equipmentSelector">
-
-        </div>
-        <hr>
-        <div>
+        <div class="inputBlock">
+            <h3>Lifetime Stats</h3>
             <label>Kills:</label>
             <input type="text" ng-model="model.kills" />
             <br>
             <label>Deaths:</label>
             <input type="text" ng-model="model.deaths" />
-            <br>
-            <label>Matches:</label>
-            <input type="text" ng-model="model.matches" />
         </div>
-        <hr>
 
-        <table id="inputTable">
-            <th>
-                <th>MOV</th>
-                <th>CC</th>
-                <th>BS</th>
-                <th>PH</th>
-                <th>WIP</th>
-                <th>ARM</th>
-                <th>BTS</th>
-                <th>W</th>
-                <th>S</th>
-            </th>
-            <tr>
-                <td/>
-                <td>
-                    <input type="text" size=2 ng-model="model.MOV">
-                </td>
-                <td>
-                    <input type="text" size=2 ng-model="model.CC">
-                </td>
-                <td>
-                    <input type="text" size=2 ng-model="model.BS">
-                </td>
-                <td>
-                    <input type="text" size=2 ng-model="model.PH">
-                </td>
-                <td>
-                    <input type="text" size=2 ng-model="model.WIP">
-                </td>
-                <td>
-                    <input type="text" size=2 ng-model="model.ARM">
-                </td>
-                <td>
-                    <input type="text" size=2 ng-model="model.BTS">
-                </td>
-                <td>
-                    <input type="text" size=2 ng-model="model.W">
-                </td>
-                <td>
-                    <input type="text" size=2 ng-model="model.S">
-                </td>
-            </tr>
-        </table>
-        <hr>
-        <label>Character Background:</label>
-        <br>
-        <textarea id="textArea" ng-model="model.background" cols="65" rows="5">{{model.background}}</textarea>
-        <br>
-        <input type="checkbox" ng-model="model.backgroundOnFront">Background on Front</input>
-        <hr>
-        <label>Hidden Information</label>
-        <br>
-        <input type="checkbox" ng-model="model.hasCamo">Camoflaged Unit?</input>
-        <br>
-        <input type="checkbox" ng-model="model.canBeLt">Can be Lieutennant?</input>
-        <hr>
-        <input type="checkbox" ng-model="showJson">Show Json</input>
-        <br>
-        <textarea id="jsonInput" json-text ng-model="model" ng-show="showJson" rows="15" cols="65"></textarea>
-        <hr>
+        <div class="inputBlock">
+            <h3>Unit Stats</h3>
+            <table id="inputTable">
+                <th>
+                    <th>MOV</th>
+                    <th>CC</th>
+                    <th>BS</th>
+                    <th>PH</th>
+                    <th>WIP</th>
+                    <th>ARM</th>
+                    <th>BTS</th>
+                    <th>W</th>
+                    <th>S</th>
+                </th>
+                <tr>
+                    <td/>
+                    <td>
+                        <input type="text" size=2 ng-model="model.MOV">
+                    </td>
+                    <td>
+                        <input type="text" size=2 ng-model="model.CC">
+                    </td>
+                    <td>
+                        <input type="text" size=2 ng-model="model.BS">
+                    </td>
+                    <td>
+                        <input type="text" size=2 ng-model="model.PH">
+                    </td>
+                    <td>
+                        <input type="text" size=2 ng-model="model.WIP">
+                    </td>
+                    <td>
+                        <input type="text" size=2 ng-model="model.ARM">
+                    </td>
+                    <td>
+                        <input type="text" size=2 ng-model="model.BTS">
+                    </td>
+                    <td>
+                        <input type="text" size=2 ng-model="model.W">
+                    </td>
+                    <td>
+                        <input type="text" size=2 ng-model="model.S">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="inputBlock">
+            <h3>Character Background:</h3>
+            <textarea id="textArea" ng-model="model.background" cols="65" rows="5">{{model.background}}</textarea>
+            <br>
+            <input type="checkbox" ng-model="model.backgroundOnFront">Background on Front</input>
+            <hr>
+        </div>
+        <div class="inputBlock">
+            <h3>Hidden Information</h3>
+            <br>
+            <input type="checkbox" ng-model="model.hasCamo">Camoflaged Unit?</input>
+            <br>
+            <input type="checkbox" ng-model="model.canBeLt">Can be Lieutennant?</input>
+            <br>
+
+        </div>
+        <div class="inputBlock">
+            <h3>JSON Input/Output (Temporary Storage)</h3>
+            <input type="checkbox" ng-model="showJson">Show Json</input>
+            <br>
+            <textarea id="jsonInput" json-text ng-model="model" ng-show="showJson" rows="15" cols="65"></textarea>
+        </div>
     </div>
     <div id="hideInputBox">
         <input type="checkbox" ng-model="hideInput">Hide Input</input>
