@@ -626,6 +626,11 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-radius: 5px;
 }
 
+.fullSelect {
+    width: 98%;
+    margin: 2px 5px 2px 5px;
+}
+
 h3 {
     font: 16px Orbitron;
     font-weight: 800;

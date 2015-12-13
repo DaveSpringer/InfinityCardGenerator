@@ -15,13 +15,13 @@
         <div id="Unit Selection" class="inputBlock">
             <h3>Unit Selection</h3>
             <p class="note">Note: Selecting units here may override previously provided inputs.</p>
-            <select ng-model="temp.faction" ng-options="unit.faction for unit in units" ng-change="setFaction()">
+            <select class="fullSelect" ng-model="temp.faction" ng-options="unit.faction for unit in units" ng-change="setFaction()">
             </select>
             <br>
-            <select ng-model="temp.unit" ng-options="unit.fullName for unit in temp.faction.units" ng-change="setUnit()">
+            <select class="fullSelect" ng-model="temp.unit" ng-options="unit.fullName for unit in temp.faction.units" ng-change="setUnit()">
             </select>
             <br>
-            <select ng-model="temp.loadout" ng-options="loadout.name for loadout in temp.unit.loadouts" ng-change="setLoadout()">
+            <select class="fullSelect" ng-model="temp.loadout" ng-options="loadout.name for loadout in temp.unit.loadouts" ng-change="setLoadout()">
             </select>
         </div>
         <div id="Unit Header" class="inputBlock">
