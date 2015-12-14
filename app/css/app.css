@@ -421,6 +421,11 @@ body {
     border-right: 20px solid transparent;
 }
 
+#cardBackBody {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
 #backHeader {
     position: relative;
     height: 20px;
@@ -558,7 +563,6 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-right: 2px solid white;
     border-left: 2px solid white;
     display: inline-block;
-    margin-left: 8px;
     width: 260px;
     padding: 0px 10px 0px 10px;
     font: 10px Orbitron;
@@ -590,7 +594,6 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-left: 2px solid white;
     top: -4px;
     display: inline-block;
-    margin-left: 8px;
     width: 260px;
     background-color: grey;
     padding: 0px 10px 5px 10px;
