@@ -59,7 +59,7 @@
                     "weapons": ["Combi Rifle"],
                     "swc": "0.5",
                     "cost": "18",
-                    "equipment" : "Hacking Device",
+                    "equipment" : ["Hacking Device"],
                     "specialist" : "Hacker"
                 }, {
                     "name": "FUSILIER (Forward Observer, Deployable Repeater) - Combi Rifle",
