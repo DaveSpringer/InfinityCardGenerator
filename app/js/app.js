@@ -89,16 +89,14 @@ function InfinityCardController($scope, $http) {
     /* End unit properties */
     
     /* Event Handlers */
-    $scope.setFaction = function() {
-        var faction = $scope.temp.faction;
+    $scope.setFaction = function(faction) {
         if (typeof faction !== "undefined") {
             $scope.model.faction = faction.faction;
         }
     }
     
-    $scope.setUnit = function() {
-        var unit = $scope.temp.unit;
-        if (typeof faction === "undefined")
+    $scope.setUnit = function(unit) {
+        if (typeof unit === "undefined")
             return;
         var model = $scope.model;
         model.unit = unit.unitName;
@@ -121,9 +119,8 @@ function InfinityCardController($scope, $http) {
         model.order = unit.order;
     }
     
-    $scope.setLoadout = function() {
-        $scope.setUnit();
-        var loadout = $scope.temp.loadout;
+    $scope.setLoadout = function(loadout, unit) {
+        $scope.setUnit(unit);
         if (typeof loadout === "undefined")
             return;
         var model = $scope.model;
