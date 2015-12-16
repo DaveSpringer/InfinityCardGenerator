@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/inputPanel.js"></script>
     <link rel="stylesheet" href="css/app.css">
     <title>Infinty Card Generator</title>
     <link href='https://fonts.googleapis.com/css?family=Orbitron:500,800' rel='stylesheet' type='text/css'>
@@ -12,42 +14,40 @@
 
 <body ng-controller="InfinityCardController">
     <div id="inputArea" ng-hide="hideInput">
-        <div id="Unit Selection" class="inputBlock">
-            <h3>Unit Selection</h3>
+        <input-panel header="Unit Selection">
             <p class="note">Note: Selecting units here may override previously provided inputs.</p>
-            <select ng-model="temp.faction" ng-options="unit.faction for unit in units" ng-change="setFaction()">
+            <select ng-model="temp.faction" ng-options="unit.faction for unit in units" ng-change="setFaction(temp.faction)">
             </select>
             <br>
-            <select ng-model="temp.unit" ng-options="unit.fullName for unit in temp.faction.units" ng-change="setUnit()">
+            <select ng-model="temp.unit" ng-options="unit.fullName for unit in temp.faction.units" ng-change="setUnit(temp.unit)">
             </select>
             <br>
-            <select ng-model="temp.loadout" ng-options="loadout.name for loadout in temp.unit.loadouts" ng-change="setLoadout()">
+            <select ng-model="temp.loadout" ng-options="loadout.name for loadout in temp.unit.loadouts" ng-change="setLoadout(temp.loadout, temp.unit)">
             </select>
-        </div>
-        <div id="Unit Header" class="inputBlock">
-            <h3>Card Header</h3>
+        </input-panel>
+        <input-panel header="Card Header">
             <label>Name</label>
             <input type="text" ng-model="model.name">
-            <hr>
+            <br>
             <label>Faction</label>
             <input type="text" ng-model="model.faction">
-            <hr>
+            <br>
             <label>Unit</label>
             <input type="text" ng-model="model.unit">
-            <hr>
+            <br>
             <label>Cube:</label>
             <select id="cube" ng-model="model.cube">
                 <option value="none">None</option>
                 <option value="cube">Cube</option>
                 <option value="cube 2.0">Cube 2.0</option>
             </select>
-            <hr>
+            <br>
             <label>Order Type</label>
             <select id="order" ng-model="model.order">
                 <option value="regular">Regular</option>
                 <option value="irregular">Irregular</option>
             </select>
-            <hr>
+            <br>
             <label>Fury</label>
             <select id="fury" ng-model="model.fury">
                 <option value="notImpetuous">Not Impetuous</option>
@@ -55,14 +55,13 @@
                 <option value="exImpetuous">Extremely Impetuous</option>
                 <option value="frenzy">Frenzy</option>
             </select>
-            <hr>
-            <input type="checkbox" ng-model="model.hackable">Hackable</input>
-            <hr>
+            <br>
+            <input type="checkbox" ng-model="model.hackable" />
+            <label>Hackable</label>
+            <br>
             <label>Unit Image</label>
             <input type="text" ng-model="model.unitImage">
             <br>
-            <input type="checkbox" ng-model="model.scaleHoriz">Scale Horizontally</input>
-            <hr>
             <label>Cost:</label>
             <br>
             <label>Points:</label>
@@ -74,9 +73,8 @@
             <select ng-model="model.specialist">
                 <option ng-repeat="special in specialistTypes" value="{{special.value}}">{{special.name}}</option>
             </select>
-        </div>
-        <div id="skillsSelector" class="inputBlock">
-            <h3>Skills, Weapons, and Equipment</h3>
+        </input-panel>
+        <input-panel header="Skills, Weapons, and Equipment">
             <table>
                 <tr>
                     <td>
@@ -127,18 +125,16 @@
                     </td>
                 </tr>
             </table>
-        </div>
-        <div class="inputBlock">
-            <h3>Lifetime Stats</h3>
+        </input-panel>
+        <input-panel header="Lifetime Stats">
             <label>Kills:</label>
             <input type="text" ng-model="model.kills" />
             <br>
             <label>Deaths:</label>
             <input type="text" ng-model="model.deaths" />
-        </div>
+        </input-panel>
 
-        <div class="inputBlock">
-            <h3>Unit Stats</h3>
+        <input-panel header="Unit Stats">
             <table id="inputTable">
                 <th>
                     <th>MOV</th>
@@ -182,32 +178,33 @@
                     </td>
                 </tr>
             </table>
-        </div>
-        <div class="inputBlock">
-            <h3>Character Background:</h3>
-            <textarea id="textArea" ng-model="model.background" cols="65" rows="5">{{model.background}}</textarea>
+        </input-panel>
+        <input-panel header="Character Background">
+            <textarea id="textArea" ng-model="model.background" cols="55" rows="5">{{model.background}}</textarea>
             <br>
-            <input type="checkbox" ng-model="model.backgroundOnFront">Background on Front</input>
-            <hr>
-        </div>
-        <div class="inputBlock">
-            <h3>Hidden Information</h3>
+            <input type="checkbox" ng-model="model.backgroundOnFront" />
+            <label>Background on front</label>
             <br>
-            <input type="checkbox" ng-model="model.hasCamo">Camoflaged Unit?</input>
+        </input-panel>
+        <input-panel header="Hidden Information">
+            <input type="checkbox" ng-model="model.hasCamo" />
+            <label>Camoflaged Unit?</label>
             <br>
-            <input type="checkbox" ng-model="model.canBeLt">Can be Lieutennant?</input>
+            <input type="checkbox" ng-model="model.canBeLt" />
+            <label>Can be Lieutennant?</label>
             <br>
-
-        </div>
-        <div class="inputBlock">
+        </input-panel>
+        <div class="inputBlock"> 
             <h3>JSON Input/Output (Temporary Storage)</h3>
-            <input type="checkbox" ng-model="showJson">Show Json</input>
+            <input type="checkbox" ng-model="showJson" />
+            <label>Show JSON</label>
             <br>
-            <textarea id="jsonInput" json-text ng-model="model" ng-show="showJson" rows="15" cols="65"></textarea>
+            <textarea id="jsonInput" json-text ng-model="model" ng-show="showJson" rows="15" cols="55"></textarea>
         </div>
     </div>
     <div id="hideInputBox">
-        <input type="checkbox" ng-model="hideInput">Hide Input</input>
+        <input type="checkbox" ng-model="hideInput" />
+        <label>Hide Input</label>
         <hr>
     </div>
 
@@ -233,8 +230,7 @@
                             <div class="hackable" ng-show="model.hackable"></div>
                         </div>
                         <div id="unitImage">
-                            <img ng-show="model.scaleHoriz" src="{{model.unitImage}}" alt="Unit image not found." width="80" height="90">
-                            <img ng-hide="model.scaleHoriz" src="{{model.unitImage}}" alt="Unit image not found." width="80" height="90">
+                            <img src="{{model.unitImage}}" alt="Unit image not found." width="80" height="90">
                         </div>
                     </div>
                     <div id="unitSummary">
@@ -337,41 +333,43 @@
         </div>
         <div id="cardBackBackground">
             <div id="backHeader"></div>
-            <div ng-show="model.hasCamo || model.canBeLt" id="hiddenInfoContainter">
-                <div class="cutCornerBack" id="hiddenInfo">
-                    Hidden Information
-                </div>
-                <div class="cutCornerBackBottom" id="hiddenInfoBottom">
-                    <div id="camoSpace" ng-show="model.hasCamo">Camo Number:</div>
-                    <div id="ltSpace" ng-show="model.canBeLt">Is LT?
-                        <div id="ltBox"></div>
+            <div id="cardBackBody">
+                <div ng-show="model.hasCamo || model.canBeLt" id="hiddenInfoContainter">
+                    <div class="cutCornerBack" id="hiddenInfo">
+                        Hidden Information
+                    </div>
+                    <div class="cutCornerBackBottom" id="hiddenInfoBottom">
+                        <div id="camoSpace" ng-show="model.hasCamo">Camo Number:</div>
+                        <div id="ltSpace" ng-show="model.canBeLt">Is LT?
+                            <div id="ltBox"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="backgroundFront" ng-hide="model.backgroundOnFront">
-                <div id="backgroundHeader" class="cutCorner">
-                    Background
-                </div>
-                <div class="cutCornerBottom">
-                    {{model.background}}
-                </div>
-            </div>
-            <div ng-repeat="skill in skills">
-                <div ng-repeat="selectedSkill in model.selectedSkillsBack" ng-if="skill.name == selectedSkill">
-                    <div class="cutCornerBack skillType{{skill.type}}">
-                        <div class="skillName">{{skill.name}}</div>
-                        <div class="skillType">{{skill.type}}</div>
+                <div id="backgroundFront" ng-hide="model.backgroundOnFront">
+                    <div id="backgroundHeader" class="cutCorner">
+                        Background
                     </div>
-                    <div class="cutCornerBackBottom">{{skill.desc}}</div>
-                </div>
-            </div>
-            <div ng-repeat="equip in equipment">
-                <div ng-repeat="selectedEquip in model.selectedEquipmentBack" ng-if="equip.name == selectedEquip">
-                    <div class="cutCornerBack equipType{{equip.type}}">
-                        <div class="equipName">{{equip.name}}</div>
-                        <div class="equipType">{{equip.type}}</div>
+                    <div class="cutCornerBottom">
+                        {{model.background}}
                     </div>
-                    <div class="cutCornerBackBottom">{{equip.desc}}</div>
+                </div>
+                <div ng-repeat="skill in skills">
+                    <div ng-repeat="selectedSkill in model.selectedSkillsBack" ng-if="skill.name == selectedSkill">
+                        <div class="cutCornerBack skillType{{skill.type}}">
+                            <div class="skillName">{{skill.name}}</div>
+                            <div class="skillType">{{skill.type}}</div>
+                        </div>
+                        <div class="cutCornerBackBottom">{{skill.desc}}</div>
+                    </div>
+                </div>
+                <div ng-repeat="equip in equipment">
+                    <div ng-repeat="selectedEquip in model.selectedEquipmentBack" ng-if="equip.name == selectedEquip">
+                        <div class="cutCornerBack equipType{{equip.type}}">
+                            <div class="equipName">{{equip.name}}</div>
+                            <div class="equipType">{{equip.type}}</div>
+                        </div>
+                        <div class="cutCornerBackBottom">{{equip.desc}}</div>
+                    </div>
                 </div>
             </div>
         </div>
