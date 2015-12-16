@@ -194,12 +194,13 @@
             <label>Can be Lieutennant?</label>
             <br>
         </input-panel>
-        <input-panel header="JSON Input/Output (Temporary Storage)">
+        <div class="inputBlock"> 
+            <h3>JSON Input/Output (Temporary Storage)</h3>
             <input type="checkbox" ng-model="showJson" />
             <label>Show JSON</label>
             <br>
             <textarea id="jsonInput" json-text ng-model="model" ng-show="showJson" rows="15" cols="55"></textarea>
-        </input-panel>
+        </div>
     </div>
     <div id="hideInputBox">
         <input type="checkbox" ng-model="hideInput" />
