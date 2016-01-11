@@ -1,0 +1,295 @@
+{
+    "faction": "Aleph",
+    "sectorials": ["Vanilla", "Steel Phalanx"],
+    "units": [
+        {
+            "unitName": "Netrod",
+            "fullName": "Netrod",
+            "mov": "0-0",
+            "cc": "0",
+            "bs": "0",
+            "ph": "12",
+            "wip": "0",
+            "arm": "0",
+            "bts": "3",
+            "w": "1",
+            "s": "2",
+            "avaVanilla": "3",
+            "avaSect": "2",
+            "skills": [
+                "AD: Combat Jump"
+            ],
+            "equipment": [
+                "AI Beacon"
+            ],
+            "sectorials": [
+                "Vanilla",
+                "Steel Phalanx"
+            ],
+            "hackable": false,
+            "cube": "none",
+            "fury": "notImpetuous",
+            "order": "regular",
+            "linkable": false,
+            "ccWeapons": ["Electric Pulse"],
+            "background": "The humble Netrod is presumed to have no personality whatsoever. However, each Netrod has its own personality routines stored inside in order to allow them to blend in with the general populace of the Human Sphere more easily. These routines are frequently changed by the hackers of the Assault Sub-Section to make fun of Achilles.",
+            "backgroundOnFront": false,
+            "loadouts": [
+                {
+                    "name": "NETROD",
+                    "weapons": [],
+                    "swc": "0",
+                    "cost": "4",
+                    "canBeLt": false
+                }
+            ]
+        }, {
+            "unitName": "Thorakitai",
+            "fullName": "Thorakitai",
+            "mov": "4-2",
+            "cc": "14",
+            "bs": "12",
+            "ph": "11",
+            "wip": "13",
+            "arm": "3",
+            "bts": "0",
+            "w": "1",
+            "s": "2",
+            "equipment": [
+                "360 Visor"
+            ],
+            "skills": [
+            ],
+            "sectorials": [
+                "Vanilla",
+                "Aleph"
+            ],
+            "hackable": false,
+            "cube": "cube 2.0",
+            "fury": "frenzy",
+            "order": "regular",
+            "linkable": false,
+            "ccWeapons": ["Pistol", "Knife"],
+            "loadouts": [
+                {
+                    "name": "THORAKITES - Submachine Gun, Chain Rifle, Flash Grenades",
+                    "weapons": ["Submachine Gun", "Chain Rifle", "Flash Grenades"],
+                    "swc": "0",
+                    "cost": "12",
+                    "canBeLt": false
+                }, {
+                    "name": "THORAKITES - Combi Rifle, Nanopulser, Flash Grenades",
+                    "weapons": ["Combi Rifle", "Nanopulser", "Flash Grenades"],
+                    "swc": "0",
+                    "cost": "16",
+                    "canBeLt": false
+                }, {
+                    "name": "THORAKITES - Submachine Gun, Light Rocket Launcher",
+                    "weapons": ["Submachine Gun", "Light Rocket Launcher"],
+                    "swc": "1",
+                    "cost": "18",
+                    "canBeLt": false
+                }, {
+                    "name": "THORAKITES - Spitfire, Nanopulser",
+                    "weapons": ["Spitfire", "Nanopulser"],
+                    "swc": "1.5",
+                    "cost": "22",
+                    "canBeLt": false
+                }, {
+                    "name": "THORAKITES Engineer - Combi Rifle, Nanopulser, Flash Grenades, D-Charges",
+                    "weapons": ["Combi Rifle", "Nanopulser", "Flash Grenades", "D-Charges"],
+                    "skills": ["Engineer"],
+                    "specialist": "Engineer",
+                    "swc": "0",
+                    "cost": "20",
+                    "canBeLt": false
+                }, {
+                    "name": "THORAKITES (Forward Observer)  - Submachine Gun, Chain Rifle, Flash Grenades",
+                    "weapons": ["Submachine Gun", "Chain Rifle", "Flash Grenades"],
+                    "skills": ["Forward Observer"],
+                    "specialist": "Forward Obs",
+                    "swc": "0",
+                    "cost": "12",
+                    "canBeLt": false
+                }, {
+                    "name": "THORAKITES (Paramedic)  - Submachine Gun, Chain Rifle, Flash Grenades",
+                    "weapons": ["Submachine Gun", "Chain Rifle", "Flash Grenades"],
+                    "equipment": ["MediKit"],
+                    "specialist": "Paramedic",
+                    "swc": "0",
+                    "cost": "12",
+                    "canBeLt": false
+                }
+            ]
+        }, {
+            "unitName": "Nesaie Alke",
+            "fullName": "Nesaie Alke, Thorakitai Warrant Officer",
+            "name": "Nesaie Alke",
+            "mov": "4-2",
+            "cc": "15",
+            "bs": "13",
+            "ph": "11",
+            "wip": "14",
+            "arm": "3",
+            "bts": "3",
+            "w": "1",
+            "s": "2",
+            "equipment": [
+                "360 Visor"
+            ],
+            "skills": [
+                "V: Courage",
+                "Fireteam: Enomotarchos"
+            ],
+            "sectorials": [
+                "Vanilla",
+                "Aleph"
+            ],
+            "hackable": false,
+            "cube": "cube 2.0",
+            "fury": "frenzy",
+            "order": "regular",
+            "linkable": "Enomotarchos",
+            "ccWeapons": ["Pistol", "CCW"],
+            "backgroundOnFront": false,
+            "loadouts": [
+                {
+                    "name": "ALKE - Spitfire, Nanopulser",
+                    "weapons": ["Spitfire", "Nanopulser"],
+                    "swc": "1.5",
+                    "cost": "26",
+                    "canBeLt": true
+                }, {
+                    "name": "ALKE Lieutenant - Spitfire, Nanopulser",
+                    "weapons": ["Spitfire", "Nanopulser"],
+                    "swc": "1.5",
+                    "cost": "26",
+                    "canBeLt": true
+                }
+            ]
+        }, {
+            "unitName": "Eudoros",
+            "fullName": "Eudoros, MYRMIDON Officer",
+            "name": "Eudoros",
+            "mov": "4-4",
+            "cc": "21",
+            "bs": "13",
+            "ph": "13",
+            "wip": "14",
+            "arm": "3",
+            "bts": "6",
+            "w": "1",
+            "s": "2",
+            "equipmentBack": [
+                "ODD: Optical Disruptor"
+            ],
+            "skills": [
+                "Martial Arts L4",
+                "Kinematika L1",
+                "Fireteam: Enomotarchos"
+            ],
+            "skillsBack": [
+                "Number 2",
+                "V: No Wound Incapacitation"
+            ],
+            "backgroundOnFront": false,
+            "sectorials": [
+                "Vanilla",
+                "Aleph"
+            ],
+            "hackable": false,
+            "cube": "cube 2.0",
+            "fury": "impetuous",
+            "order": "regular",
+            "linkable": "Enomotarchos",
+            "ccWeapons": ["Pistol", "DA CCW"],
+            "loadouts": [
+                {
+                    "name": "EUDOROS - Mk12, Nanopulser, Zero-V Smoke Grenades",
+                    "weapons": ["Mk12", "Nanopulser", "Zero-V Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "40",
+                    "canBeLt": true
+                }, {
+                    "name": "EUDOROS Lieutenant - Mk12, Nanopulser, Zero-V Smoke Grenades",
+                    "weapons": ["Mk12", "Nanopulser", "Zero-V Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "40",
+                    "canBeLt": true
+                }
+            ]
+        }, {
+            "unitName": "Myrmidons",
+            "fullName": "Myrmidons",
+            "mov": "4-4",
+            "cc": "21",
+            "bs": "12",
+            "ph": "13",
+            "wip": "13",
+            "arm": "2",
+            "bts": "0",
+            "w": "1",
+            "s": "2",
+            "equipment": [
+                "ODD: Optical Disruptor"
+            ],
+            "skills": [
+                "Martial Arts L3",
+                "Kinematika L1"
+            ],
+            "sectorials": [
+                "Vanilla",
+                "Aleph"
+            ],
+            "hackable": false,
+            "cube": "cube 2.0",
+            "fury": "frenzy",
+            "order": "regular",
+            "ccWeapons": ["Pistol", "AP CCW"],
+            "backgroundOnFront": false,
+            "specialist": "",
+            "loadouts": [
+                {
+                    "name": "MYRMIDON - Combi Rifle, Nanopulser, Smoke Grenades",
+                    "weapons": ["Combi Rifle", "Nanopulser", "Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "25",
+                    "canBeLt": false
+                }, {
+                    "name": "MYRMIDON - Combi Rifle, Nanopulser, Smoke Grenades, DA CCW",
+                    "weapons": ["Combi Rifle", "Nanopulser", "Smoke Grenades"],
+                    "ccWeapons": ["Pistol", "DA CCW"],
+                    "swc": "0",
+                    "cost": "26",
+                    "canBeLt": false
+                }, {
+                    "name": "MYRMIDON - Chain Rifle, Nanopulser, Smoke Grenades",
+                    "weapons": ["Chain Rifle", "Nanopulser", "Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "16",
+                    "canBeLt": false
+                }, {
+                    "name": "MYRMIDON - Boarding Shotgun, Nanopulser, Smoke Grenades",
+                    "weapons": ["Boarding Shotgun", "Nanopulser", "Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "24",
+                    "canBeLt": false
+                }, {
+                    "name": "MYRMIDON - Spitfire, Nanopulser, Smoke Grenades",
+                    "weapons": ["Spitfire", "Nanopulser", "Smoke Grenades"],
+                    "swc": "1",
+                    "cost": "31",
+                    "canBeLt": false
+                }, {
+                    "name": "MYRMIDON Hacker (Assault Hacking Device) - Combi Rifle, Nanopulser, Smoke Grenades",
+                    "weapons": ["Combi Rifle", "Nanopulser", "Smoke Grenades"],
+                    "equipment": ["Assault Hacking Device"],
+                    "swc": "0.5",
+                    "cost": "31",
+                    "canBeLt": false,
+                    "specialist": "Hacker"
+                }
+            ]
+        }
+    ]
+}

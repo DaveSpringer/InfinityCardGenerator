@@ -42,13 +42,19 @@ function InfinityCardController($scope, $http) {
     }];
     /* Unit Designations */
     $scope.units = [];
+    $http.get('resources/aleph.json').success(function (data) {
+        $scope.units.push(data);
+    });
     $http.get('resources/ariadna.json').success(function (data) {
         $scope.units.push(data);
     });
-    $http.get('resources/panoceania.json').success(function (data) {
+    $http.get('resources/ca.json').success(function (data) {
         $scope.units.push(data);
     });
     $http.get('resources/nomads.json').success(function (data) {
+        $scope.units.push(data);
+    });
+    $http.get('resources/panoceania.json').success(function (data) {
         $scope.units.push(data);
     });
     /* Begin unit properties */
@@ -129,13 +135,24 @@ function InfinityCardController($scope, $http) {
         model.W = unit.w;
         model.S = unit.s;
         model.selectedSkills = unit.skills;
+        model.selectedSkillsBack = unit.skillsBack;
         model.selectedEquipment = unit.equipment;
+        model.selectedEquipmentBack = unit.equipmentBack;
         model.selectedWeapons = unit.weapons;
         model.selectedSecondaries = unit.ccWeapons;
         model.hackable = unit.hackable;
         model.cube = unit.cube;
         model.fury = unit.fury;
         model.order = unit.order;
+        if (typeof unit.name !== "undefined")
+            model.name = unit.name;
+        if (typeof unit.backgroundOnFront !== "undefined")
+            model.backgroundOnFront = unit.backgroundOnFront;
+        else
+            model.backgroundOnFront = true;
+        if (typeof unit.background !== "undefined")
+            model.background = unit.background;
+        model.specialist = unit.specialist;
     }
 
     $scope.setLoadout = function (loadout, unit) {
@@ -145,9 +162,9 @@ function InfinityCardController($scope, $http) {
         var model = $scope.model;
         model.selectedWeapons = mergeArray(model.selectedWeapons, loadout.weapons);
         model.selectedEquipment = mergeArray(model.selectedEquipment, loadout.equipment);
-        model.selectedEquipmentBack = [];
+        model.selectedEquipmentBack = mergeArray(model.selectedEquipmentBack, loadout.equipmentBack);
         model.selectedSkills = mergeArray(model.selectedSkills, loadout.skills);
-        model.selectedSkillsBack = [];
+        model.selectedSkillsBack = mergeArray(model.selectedSkillsBack, loadout.skillsBack);
         model.selectedSecondaries = mergeArray(model.selectedSecondaries, loadout.ccWeapons);
         model.specialist = loadout.specialist;
         model.cost = loadout.cost;

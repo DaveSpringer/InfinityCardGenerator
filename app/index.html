@@ -185,6 +185,9 @@
             <input type="checkbox" ng-model="model.backgroundOnFront" />
             <label>Background on front</label>
             <br>
+            <input type="checkbox" ng-model="model.hideBackground" />
+            <label>Hide background</label>
+            <br>
         </input-panel>
         <input-panel header="Hidden Information">
             <input type="checkbox" ng-model="model.hasCamo" />
@@ -304,7 +307,7 @@
                         </table>
                     </div>
                 </div>
-                <div id="backgroundFront" ng-show="model.backgroundOnFront">
+                <div id="backgroundFront" ng-show="model.backgroundOnFront && !model.hideBackground">
                     <div id="backgroundHeader" class="cutCorner">
                         Background
                     </div>
@@ -346,7 +349,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="backgroundFront" ng-hide="model.backgroundOnFront">
+                <div id="backgroundFront" ng-hide="model.backgroundOnFront || model.hideBackground">
                     <div id="backgroundHeader" class="cutCorner">
                         Background
                     </div>
