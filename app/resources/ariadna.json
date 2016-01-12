@@ -267,6 +267,7 @@
             "linkable": "linkable",
             "ccWeapons": ["Pistol, EXP CCW"],
             "backgroundOnFront": false,
+            "background": "William Wallace was originally part of a Human Sphere Superpower plan to cause instability on Planet Dawn and allow Yu Jing and PanOceania to move into the planet. When his covert planetary insertion resulted in a massive crash, he lost his memory and link to ALEPH. Perhaps worse, he landed in the middle of Antipode territory. After fighting his way out, he was found exhausted by a Caledonian hunting party and taken back to their village where he quickly recovered from his wounds. It was during the Antipode counter-attack that his ferocious warrior spirit surfaced. He quickly organized the defense, inspiring the Caledonians to fight through the overwhelming odds. Though the battle was won, he still had to answer to the House of Clans. The leaders were skeptical of Wallace's immense power, and consulted the Nomads.  With Nomad assistance, all links to ALEPH were destroyed. Wallace has since integrated into Caledonian society. Now, he leads the furious hordes of the Caledonian Highlander Army with wit and inspirational leadership.",
             "loadouts": [
                 {
                     "name": "WALLACE",
@@ -277,8 +278,8 @@
                 }, {
                     "name": "WALLACE Lieutenant",
                     "weapons": ["Combi Rifle + Light Flamethrower", "Smoke Grenades"],
-                    "swc": "0.5",
-                    "cost": "20",
+                    "swc": "0",
+                    "cost": "35",
                     "canBeLt": true
                 }
             ]

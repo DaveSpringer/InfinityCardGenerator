@@ -24,6 +24,10 @@ body {
     margin-bottom: 70px;
 }
 
+button {
+    font: 12px Orbitron;
+}
+
 #footer {
     position: fixed;
     color: #CACACA;
@@ -124,7 +128,7 @@ body {
     position: relative;
     width: 190px;
     height: 40px;
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     color: white;
     float: left;
     padding-top: 2px;
@@ -190,6 +194,7 @@ body {
     color: #0090A5;
     height: 15px;
     width: 180px;
+    font: 6px Orbitron;
 }
 
 #unitSecondaries {
