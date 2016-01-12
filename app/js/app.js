@@ -1,18 +1,18 @@
 function InfinityCardController($scope, $http) {
     $scope.skills = [];
-    $http.get('resources/skills.json').success(function(data) {
+    $http.get('resources/skills.json').success(function (data) {
         $scope.skills = data;
     });
     $scope.weapons = [];
-    $http.get('resources/weapons.json').success(function(data) {
+    $http.get('resources/weapons.json').success(function (data) {
         $scope.weapons = data;
     });
     $scope.secondaryWeapons = [];
-    $http.get('resources/ccweapons.json').success(function(data) {
+    $http.get('resources/ccweapons.json').success(function (data) {
         $scope.secondaryWeapons = data;
     });
     $scope.equipment = [];
-    $http.get('resources/equipment.json').success(function(data) {
+    $http.get('resources/equipment.json').success(function (data) {
         $scope.equipment = data;
     });
     $scope.specialistTypes = [{
@@ -42,13 +42,19 @@ function InfinityCardController($scope, $http) {
     }];
     /* Unit Designations */
     $scope.units = [];
-    $http.get('resources/ariadna.json').success(function(data) {
+    $http.get('resources/aleph.json').success(function (data) {
         $scope.units.push(data);
     });
-    $http.get('resources/panoceania.json').success(function(data) {
+    $http.get('resources/ariadna.json').success(function (data) {
         $scope.units.push(data);
     });
-    $http.get('resources/nomads.json').success(function(data) {
+    $http.get('resources/ca.json').success(function (data) {
+        $scope.units.push(data);
+    });
+    $http.get('resources/nomads.json').success(function (data) {
+        $scope.units.push(data);
+    });
+    $http.get('resources/panoceania.json').success(function (data) {
         $scope.units.push(data);
     });
     /* Begin unit properties */
@@ -87,15 +93,34 @@ function InfinityCardController($scope, $http) {
     $scope.model.hasCamo = false;
     $scope.model.canBeLt = false;
     /* End unit properties */
-    
+
     /* Event Handlers */
-    $scope.setFaction = function(faction) {
+    $scope.setFaction = function (faction) {
         if (typeof faction !== "undefined") {
             $scope.model.faction = faction.faction;
         }
     }
-    
-    $scope.setUnit = function(unit) {
+
+    $scope.saveToPc = function (data) {
+        var filename = $scope.model.name + '.json';
+        console.log('Saving to PC using file name:' + filename);
+        var data = JSON.stringify($scope.model, undefined, 2);
+
+        var blob = new Blob([data], {
+                type: 'text/json'
+            }),
+            e = document.createEvent('MouseEvents'),
+            a = document.createElement('a');
+
+        a.download = filename;
+        a.href = window.URL.createObjectURL(blob);
+        a.dataset.downloadurl = ['text/json', a.download, a.href].join(':');
+        e.initMouseEvent('click', true, false, window,
+            0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        a.dispatchEvent(e);
+    };
+
+    $scope.setUnit = function (unit) {
         if (typeof unit === "undefined")
             return;
         var model = $scope.model;
@@ -110,25 +135,36 @@ function InfinityCardController($scope, $http) {
         model.W = unit.w;
         model.S = unit.s;
         model.selectedSkills = unit.skills;
+        model.selectedSkillsBack = unit.skillsBack;
         model.selectedEquipment = unit.equipment;
+        model.selectedEquipmentBack = unit.equipmentBack;
         model.selectedWeapons = unit.weapons;
         model.selectedSecondaries = unit.ccWeapons;
         model.hackable = unit.hackable;
         model.cube = unit.cube;
         model.fury = unit.fury;
         model.order = unit.order;
+        if (typeof unit.name !== "undefined")
+            model.name = unit.name;
+        if (typeof unit.backgroundOnFront !== "undefined")
+            model.backgroundOnFront = unit.backgroundOnFront;
+        else
+            model.backgroundOnFront = true;
+        if (typeof unit.background !== "undefined")
+            model.background = unit.background;
+        model.specialist = unit.specialist;
     }
-    
-    $scope.setLoadout = function(loadout, unit) {
+
+    $scope.setLoadout = function (loadout, unit) {
         $scope.setUnit(unit);
         if (typeof loadout === "undefined")
             return;
         var model = $scope.model;
         model.selectedWeapons = mergeArray(model.selectedWeapons, loadout.weapons);
         model.selectedEquipment = mergeArray(model.selectedEquipment, loadout.equipment);
-        model.selectedEquipmentBack = [];
+        model.selectedEquipmentBack = mergeArray(model.selectedEquipmentBack, loadout.equipmentBack);
         model.selectedSkills = mergeArray(model.selectedSkills, loadout.skills);
-        model.selectedSkillsBack = [];
+        model.selectedSkillsBack = mergeArray(model.selectedSkillsBack, loadout.skillsBack);
         model.selectedSecondaries = mergeArray(model.selectedSecondaries, loadout.ccWeapons);
         model.specialist = loadout.specialist;
         model.cost = loadout.cost;

@@ -7,23 +7,50 @@
     }, {
         "name": "Chain Rifle",
         "burst": "1",
+        "dam": "13",
         "ammo": "N",
         "traits": "Large Teardrop, Intuitive"
     }, {
         "name": "Combi Rifle",
         "burst": "3",
+        "dam": "13",
         "ammo": "N",
         "traits": "Suppressive"
+    }, {
+        "name": "D-Charges",
+        "burst": "1",
+        "dam": "14",
+        "ammo": "AP+Exp",
+        "traits": "Anti-Materiel, CC, Disposable (3), Deployable"
     }, {
         "name": "E/Mitter",
         "burst": "1",
         "ammo": "E/M",
         "traits": "None"
     }, {
+        "name": "Flash Pulse",
+        "burst": "1",
+        "dam": "13",
+        "ammo": "Flash",
+        "traits": "Technical Weapon, Non-Lootable"
+    }, {
+        "name": "Flash Grenade",
+        "burst": "1",
+        "dam": "13",
+        "ammo": "Flash",
+        "traits": "Throwing Weapon, Speculative Fire, Circular"
+    }, {
         "name": "HMG",
         "burst": "4",
+        "dam": "15",
         "ammo": "N",
         "traits": "Suppressive"
+    }, {
+        "name": "Knife",
+        "burst": "1",
+        "dam": "PH-1",
+        "ammo": "Shock",
+        "traits": "CC, Silent"
     }, {
         "name": "Light Flamethrower",
         "burst": "1",
@@ -39,6 +66,12 @@
         "burst": "1",
         "ammo": "Smoke",
         "traits": "Circular, Speculative, Non-Lethal, Special Dodge, Targetless"
+    }, {
+        "name": "Light Rocket Launcher",
+        "burst": "2",
+        "dam": "13",
+        "ammo": "Fire", 
+        "traits": "Circular"
     }, {
         "name": "Light Shotgun",
         "burst": "2",
@@ -60,6 +93,18 @@
         "ammo": "AP or DA",
         "traits": "Medium MULTI"
     }, {
+        "name": "Nanopulser",
+        "burst": "1",
+        "dam": "13",
+        "ammo": "Nanotec",
+        "traits": "Intuitive, Non-Lootable, Small Teardrop"
+    }, {
+        "name": "Pistol",
+        "burst": "2 (1 in CC)",
+        "dam": "11",
+        "ammo": "N",
+        "traits": "CC"
+    }, {
         "name": "Rifle",
         "burst": "3",
         "ammo": "N",
@@ -72,7 +117,14 @@
     }, {
         "name": "Spitfire",
         "burst": "4",
+        "dam": "14",
         "ammo": "N",
+        "traits": "Suppressive"
+    }, {
+        "name": "Submachine Gun",
+        "burst": "3",
+        "dam": "13",
+        "ammo": "AP",
         "traits": "Suppressive"
     }
 ]
