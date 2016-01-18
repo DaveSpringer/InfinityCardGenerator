@@ -8,6 +8,14 @@
         "type": "Entire",
         "desc": "Target an enemy in your LoF at least within the sum of your MOV. Move into base to base contact and perform a CC attack at a -3 mod."
     }, {
+        "name": "Berserk",
+        "type": "Automatic",
+        "desc": "Your CC Attacks may be either Berserk or Assault attacks. Berserk gives a +6 Attack MOD and turns the Face to Face Roll into a Normal Roll for both units in CC. Assault gives a -3 CC MOD, and allows you to move the combined values of your MOV into base to base and make a CC attack as an Entire Order."
+    }, {
+        "name": "CH: Limited Camo",
+        "type": "Automatic",
+        "desc": "During the Deployment Phase, you may deploy in the Camouflaged state. You may not re-enter the Camouflaged state."
+    }, {
         "name": "CH: Mimetism",
         "type": "Automatic",
         "desc": "Opponents make BS Attacks against you at a -3 MOD to the relevant Attribute."
@@ -20,9 +28,21 @@
         "type": "Automatic",
         "desc": "During deployment, you may deploy in the Hidden Deployment or TO Camo state, and may enter TO Camo state. BS attacks made against you are -6 to the opponent. Grants Surprise Attack, Surprise Shot L1, and Stealth."
     }, {
+        "name": "Climbing Plus",
+        "type": "Automatic",
+        "desc": "You may treat the Climb Skill as a Short Movement Skill. You may declare other Short Movement Skills, Short Skills, or AROs while along or holding onto a vertical surface."
+    }, {
         "name": "Doctor",
         "type": "Short",
         "desc": "Target Unconscious friendly unit in base to base. On WIP Roll, heal 1 W and cancel Unconscious. If failed, targed dies. Can spend Command Token to reroll failure if target has cube."
+    }, {
+        "name": "Engineer",
+        "type": "Short",
+        "desc": "Target friendly model in base to base contact. On a Normal WIP Roll, target regains 1 Structure. On a failure, target loses 1 Structure. May also cancel negative states, but if that state is Unconscious, failure kills target."
+    }, {
+        "name": "Fireteam: Enomotarchos",
+        "type": "Automatic",
+        "desc": "You may create a Fireteam with 2 or 3 other figures of the same unit type. You may have more than 1 Enomotarchos team active."
     }, {
         "name": "Forward Observer",
         "type": "Short",
@@ -31,6 +51,10 @@
         "name": "Infiltration",
         "type": "Deployment",
         "desc": "You may deploy anywhere in your half, or may deploy in the opponents half excluding enemy Deployment Zone on Infiltration Roll (Normal PH-3)."
+    }, {
+        "name": "Inspiring Leadership",
+        "type": "Automatic",
+        "desc": "You must be your army's Lientenant in order to use this skill. As long as you are in a non-Null state: all troopers have your training, all troopers have V: Courage, and all troopers cannot be affected by Retreat!. You may declare a Coordinated Order that must include you by spending only the Special Lieutenant Order."
     }, {
         "name": "Kinematika L1",
         "type": "Automatic",
@@ -52,9 +76,21 @@
         "type": "Automatic",
         "desc": "Gives +3 to CC and -3 to Opponent CC, or +3 to CC Damage, or +1 to CC Damage and -3 to Opponent CC. You also have Stealth and V: Courage."
     }, {
+        "name": "Martial Arts L4",
+        "type": "Automatic",
+        "desc": "Gives +1 to burst, or +3 to CC and -3 to Opponent CC, or +3 to CC Damage, or +1 to CC Damage and -3 to Opponent CC. You also have Stealth and V: Courage."
+    }, {
+        "name": "Morat",
+        "type": "Automatic",
+        "desc": "You ignore Loss of Lieutenant, Retreat!, and Isolated. You automatically pass Guts Rolls. You may make a WP Roll to fail Guts Rolls."
+    }, {
         "name": "Multiterrain",
         "type": "Automatic",
         "desc": "Before deploying, choose one Type of Terrain to specialize in. You may move normally through that Type of Terrain."
+    }, {
+        "name": "Number 2",
+        "type": "Automatic",
+        "desc": "If you are a part of a Fireteam and the Linked Team Leader enters a Null State, the Fireteam must stay active and you must become the Linked Team Leader unless the Fireteam would have less than 3 members."
     }, {
         "name": "Religious",
         "type": "Automatic",
@@ -75,5 +111,9 @@
         "name": "V: Dogged",
         "type": "Automatic",
         "desc": "When you would go Unconscious, you may place a Dogged Marker instead. If you do, at the end of the turn, this unit dies. A Dogged unit may not be healed."
+    }, {
+        "name": "V: No Wound Incapacitation",
+        "type": "Automatic",
+        "desc": "When you would go Unconscious, you may place a No Wound Imcapacitation marker instead. If you do, you do not enter Unconscious, and may proceed as normal until you take another Wound."
     }
 ]

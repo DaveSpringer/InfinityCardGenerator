@@ -19,16 +19,16 @@
             "skills": [
                 "MT: Mountain or Jungle"
             ],
-            "sectorials" : [
+            "sectorials": [
                 "Vanilla",
                 "Caledonia"
             ],
-            "hackable" : false,
-            "cube" : "none",
-            "fury" : "notImpetuous",
-            "order" : "regular",
+            "hackable": false,
+            "cube": "none",
+            "fury": "notImpetuous",
+            "order": "regular",
             "linkable": true,
-             "ccWeapons": ["Pistol", "Knife"],
+            "ccWeapons": ["Pistol", "Knife"],
             "loadouts": [
                 {
                     "name": "VOLUNTEER - Rifle",
@@ -96,14 +96,14 @@
                 "Shock Immunity",
                 "V: Dogged"
             ],
-            "sectorials" : [
+            "sectorials": [
                 "Vanilla",
                 "Caledonia"
             ],
-            "hackable" : false,
-            "cube" : "none",
-            "fury" : "frenzy",
-            "order" : "regular",
+            "hackable": false,
+            "cube": "none",
+            "fury": "frenzy",
+            "order": "regular",
             "linkable": true,
             "ccWeapons": ["Pistol", "Knife"],
             "loadouts": [
@@ -112,7 +112,7 @@
                     "weapons": ["Rifle", "2 Light Shotguns", "Grenades", "Smoke Grenades"],
                     "swc": "0",
                     "cost": "29",
-                    "canBeLt" : true
+                    "canBeLt": true
                 }, {
                     "name": "HIGHLANDER GREY - T2 Rifle, 2 Light Shotguns",
                     "weapons": ["T2 Rifle", "2 Light Shotguns", "Grenades", "Smoke Grenades"],
@@ -133,7 +133,154 @@
                     "weapons": ["Rifle", "2 Light Shotguns", "Grenades", "Smoke Grenades"],
                     "swc": "0",
                     "cost": "29",
-                    "canBeLt" : true
+                    "canBeLt": true
+                }
+            ]
+        }, {
+            "unitName": "Highlander Caterans",
+            "fullName": "Highlander Caterans",
+            "mov": "4-4",
+            "cc": "19",
+            "bs": "12",
+            "ph": "13",
+            "wip": "12",
+            "arm": "0",
+            "bts": "0",
+            "w": "1",
+            "s": "2",
+            "hackable": false,
+            "cube": "none",
+            "order": "irregular",
+            "fury": "notImpetuous",
+            "ava": {
+                "Vanilla": "2",
+                "Caledonia": "6"
+            },
+            "skills": ["CH: Limited Camo", "CH: Mimetism", "Climbing Plus"],
+            "linkable": "notLinkable",
+            "ccWeapons": ["Pistol, AP CCW"],
+            "backgroundOnFront": false,
+            "loadouts": [
+                {
+                    "name": "CATERAN - T2 Sniper Rifle",
+                    "weapons": ["T2 Sniper Rifle"],
+                    "swc": "1",
+                    "cost": "21"
+                }, {
+                    "name": "CATERAN - Sniper Rifle",
+                    "weapons": ["Sniper Rifle"],
+                    "swc": "0.5",
+                    "cost": "20"
+                }
+            ]
+        }, {
+            "unitName": "1st Highlanders S.A.S.",
+            "fullName": "1st Highlanders S.A.S.",
+            "mov": "4-4",
+            "cc": "19",
+            "bs": "11",
+            "ph": "13",
+            "wip": "13",
+            "arm": "0",
+            "bts": "0",
+            "w": "1",
+            "s": "2",
+            "hackable": false,
+            "cube": "none",
+            "order": "regular",
+            "fury": "notImpetuous",
+            "ava": {
+                "Vanilla": "2",
+                "Caledonia": "4"
+            },
+            "skills": ["Martial Arts L2", "CH: Camo", "Infiltration"],
+            "skillsBack": ["Kinematika L1"],
+            "linkable": "notLinkable",
+            "ccWeapons": ["Pistol, AP CCW, Knife"],
+            "backgroundOnFront": false,
+            "loadouts": [
+                {
+                    "name": "S.A.S. - Rifle",
+                    "weapons": ["Rifle"],
+                    "swc": "0",
+                    "cost": "23",
+                    "canBeLt": true
+                }, {
+                    "name": "S.A.S. - Boarding Shotgun",
+                    "weapons": ["Boarding Shotgun"],
+                    "swc": "0",
+                    "cost": "25"
+                }, {
+                    "name": "S.A.S. - Sniper Rifle",
+                    "weapons": ["Sniper Rifle"],
+                    "swc": "0.5",
+                    "cost": "30"
+                }, {
+                    "name": "S.A.S. (Forward Observer) - Rifle",
+                    "weapons": ["Rifle"],
+                    "swc": "0",
+                    "cost": "24",
+                    "specialist": "Forward Obs",
+                    "skills": ["Forward Observer"]
+                }, {
+                    "name": "S.A.S. Lieutenant - Rifle",
+                    "weapons": ["Rifle"],
+                    "swc": "2",
+                    "cost": "23",
+                    "canBeLt": true
+                }, {
+                    "name": "S.A.S. - Chain Rifle",
+                    "weapons": ["Chain Rifle", "Light Shotgun"],
+                    "swc": "0",
+                    "cost": "21"
+                }, {
+                    "name": "S.A.S. - Chain Rifle, Grenades",
+                    "weapons": ["Chain Rifle", "Grenades"],
+                    "ccWeapons": ["Assault Pistol"],
+                    "swc": "0",
+                    "cost": "22"
+                }
+            ]
+        }, {
+            "unitName": "William Wallace",
+            "fullName": "William Wallace",
+            "name": "William Wallace",
+            "mov": "6-4",
+            "cc": "22",
+            "bs": "13",
+            "ph": "14",
+            "wip": "15",
+            "arm": "3",
+            "bts": "0",
+            "w": "1",
+            "s": "2",
+            "hackable": false,
+            "cube": "cube",
+            "order": "regular",
+            "fury": "frenzy",
+            "ava": {
+                "Vanilla": "1",
+                "Caledonia": "1"
+            },
+            "skills": ["Berserk", "Inspiring Leadership"],
+            "skillsBack": ["V: No Wound Incapacitation", "Kinematika L1"],
+            "linkable": "linkable",
+            "ccWeapons": ["Pistol, EXP CCW"],
+            "backgroundOnFront": false,
+            "background": "William Wallace was originally part of a Human Sphere Superpower plan to cause instability on Planet Dawn and allow Yu Jing and PanOceania to move into the planet. When his covert planetary insertion resulted in a massive crash, he lost his memory and link to ALEPH. Perhaps worse, he landed in the middle of Antipode territory. After fighting his way out, he was found exhausted by a Caledonian hunting party and taken back to their village where he quickly recovered from his wounds. It was during the Antipode counter-attack that his ferocious warrior spirit surfaced. He quickly organized the defense, inspiring the Caledonians to fight through the overwhelming odds. Though the battle was won, he still had to answer to the House of Clans. The leaders were skeptical of Wallace's immense power, and consulted the Nomads.  With Nomad assistance, all links to ALEPH were destroyed. Wallace has since integrated into Caledonian society. Now, he leads the furious hordes of the Caledonian Highlander Army with wit and inspirational leadership.",
+            "loadouts": [
+                {
+                    "name": "WALLACE",
+                    "weapons": ["Combi Rifle + Light Flamethrower", "Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "35",
+                    "canBeLt": true
+                }, {
+                    "name": "WALLACE Lieutenant",
+                    "weapons": ["Combi Rifle + Light Flamethrower", "Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "35",
+                    "canBeLt": true
                 }
             ]
         }

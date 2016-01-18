@@ -1,8 +1,20 @@
 [
     {
+        "name": "360 Visor",
+        "type": "Automatic",
+        "desc": "This Visor gives you a 360 degree Line of Fire arc instead of 180 degree."
+    }, {
+        "name": "AI Beacon",
+        "type": "Automatic",
+        "desc": "You must be deployed with AD: Combat Jump during the Deployment Phase. If you disperse off the table, you are considered lost and cannot join the battle."
+    }, {
         "name": "Assault Hacking Device",
         "type": "Equipment",
         "desc": "You may use the following Hacking Programs: CLAW Level 3. You may enlists REMs."
+    }, {
+        "name": "AutoMediKit",
+        "type": "Entire",
+        "desc": "When you are in the Unconscious state, make a PH Roll. If the PH roll is successful, you may cancel the Unconscious state. If it fails, you die."
     }, {
         "name": "Defensive Hacking Device",
         "type": "Equipment",
@@ -11,6 +23,10 @@
         "name": "Deployable Repeater",
         "type": "Short-Aro",
         "desc": "You may place a Repeater Marker in base contact at the conclusion of your Order or ARO. This is considered an Attack."
+    }, {
+        "name": "EI Hacking Device",
+        "type": "Equipment",
+        "desc": "You may use the following Hacking Programs: Sucker Punch, CLAW Level 1, SWORD Level 1, SHIELD Level 1, and all GADGET. You may enlist REMs."
     }, {
         "name": "Hacking Device",
         "type": "Equipment",
@@ -31,5 +47,9 @@
         "name": "Multispectral Visor L2",
         "type": "Automatic",
         "desc": "You are not effected by Camo, ODD, Low Visibility, and Poor Visibility. You may draw LoF through Zero Visibility Zones and ignore MODs. You ignore the Dodge effect of Smoke Special Ammunition."
+    }, {
+        "name": "ODD: Optical Disruptor",
+        "type": "Automatic",
+        "desc": "Enemies suffer a -6 MOD to all BS Attacks against you. If hit by Fire Ammunition, the equipment is Burnt and must be repaired."
     }
 ]

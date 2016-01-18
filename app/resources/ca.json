@@ -1,0 +1,183 @@
+{
+    "faction": "Combined Army",
+    "sectorials": ["Morat Aggression Force", "Shasvastii Expeditionary Force"],
+    "units": [
+        {
+            "unitName": "Morat Vanguard",
+            "fullName": "Morat Vanguard Infantry",
+            "mov": "4-4",
+            "cc": "14",
+            "bs": "11",
+            "ph": "12",
+            "wip": "13",
+            "arm": "1",
+            "bts": "0",
+            "w": "1",
+            "s": "2",
+            "avaVanilla": "TOTAL",
+            "avaSect": "TOTAL",
+            "skills": [
+                "Morat"
+            ],
+            "sectorials": [
+                "Vanilla",
+                "Morat Aggression Force"
+            ],
+            "hackable": false,
+            "cube": "cube",
+            "fury": "notImpetuous",
+            "order": "regular",
+            "linkable": "linkable",
+            "ccWeapons": ["Pistol", "Knife"],
+            "loadouts": [
+                {
+                    "name": "MORAT - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0",
+                    "cost": "14",
+                    "canBeLt": true
+                }, {
+                    "name": "MORAT - HMG",
+                    "weapons": ["HMG"],
+                    "swc": "1",
+                    "cost": "22"
+                }, {
+                    "name": "MORAT - Combi Rifle + Light Grenade Launcher",
+                    "weapons": ["Combi Rifle + Light Grenade Launcher"],
+                    "swc": "1",
+                    "cost": "18"
+                }, {
+                    "name": "MORAT - K1 Sniper Rifle",
+                    "weapons": ["K1 Sniper Rifle"],
+                    "swc": "1",
+                    "cost": "21"
+                }, {
+                    "name": "MORAT - Missile Launcher",
+                    "weapons": ["Missile Launcher"],
+                    "swc": "1.5",
+                    "cost": "19"
+                }, {
+                    "name": "MORAT Hacker (EI Hacking Device) - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "equipment": ["EI Hacking Device"],
+                    "specialist": "hacker",
+                    "swc": "0.5",
+                    "cost": "22"
+                }, {
+                    "name": "MORAT (Forward Observer) - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0",
+                    "cost": "15",
+                    "skills": ["Forward Observer"],
+                    "specialist": "Forward Obs"
+                }, {
+                    "name": "MORAT Paramedic - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "0",
+                    "cost": "16",
+                    "equipment": ["MediKit"],
+                    "specialist": "Paramedic"
+                }, {
+                    "name": "MORAT Lieutenant - Combi Rifle",
+                    "weapons": ["Combi Rifle"],
+                    "swc": "1",
+                    "cost": "14",
+                    "canBeLt": true
+                }
+            ]
+        }, {
+            "unitName": "Raktorak",
+            "fullName": "Raktorak, Morat Sergeant Major",
+            "mov": "4-4",
+            "cc": "14",
+            "bs": "12",
+            "ph": "12",
+            "wip": "13",
+            "arm": "2",
+            "bts": "6",
+            "w": "1",
+            "s": "2",
+            "skills": [
+                "Morat"
+            ],
+            "sectorials": [
+                "Vanilla",
+                "Morat Aggression Force"
+            ],
+            "hackable": false,
+            "cube": "cube",
+            "fury": "notImpetuous",
+            "order": "regular",
+            "linkable": true,
+            "ccWeapons": ["Pistol", "Knife"],
+            "loadouts": [
+                {
+                    "name": "RAKTORAK - Combi Rifle + Heavy Flamethrower",
+                    "weapons": ["Combi Rifle + Heavy Flamethrower"],
+                    "swc": "0",
+                    "cost": "22"
+                }, {
+                    "name": "RAKTORAK - Vulkan Shotgun",
+                    "weapons": ["Vulkan Shotgun"],
+                    "swc": "0",
+                    "cost": "22"
+                }
+            ]
+        }, {
+            "unitName": "Sogarat",
+            "fullName": "Sogarat Tempest Regiment",
+            "mov": "4-4",
+            "cc": "19",
+            "bs": "13",
+            "ph": "15",
+            "wip": "13",
+            "arm": "6",
+            "bts": "3",
+            "w": "2",
+            "s": "5",
+            "hackable": true,
+            "cube": "cube",
+            "order": "regular",
+            "fury": "notImpetuous",
+            "ava": {
+                "Vanilla": "1",
+                "Morat Aggression Force": "3"
+            },
+            "skills": ["Morat"],
+            "equipment": ["AutoMediKit"],
+            "linkable": "notLinkable",
+            "ccWeapons": ["AP CCW"],
+            "loadouts": [
+                {
+                    "name": "SOGARAT - HMG",
+                    "weapons": ["HMG"],
+                    "ccWeapons": ["Pistol"],
+                    "swc": "2",
+                    "cost": "56",
+                    "canBeLt": true
+                }, {
+                    "name": "SOGARAT - Feuerbach",
+                    "weapons": ["Feuerbach"],
+                    "ccWeapons": ["Assault Pistol"],
+                    "swc": "1.5",
+                    "cost": "57",
+                    "canBeLt": true
+                }, {
+                    "name": "SOGARAT Lieutenant - HMG",
+                    "weapons": ["HMG"],
+                    "ccWeapons": ["Pistol"],
+                    "swc": "2.5",
+                    "cost": "56",
+                    "canBeLt": true
+                }, {
+                    "name": "SOGARAT Lieutenant - Feuerbach",
+                    "weapons": ["Feuerbach"],
+                    "ccWeapons": ["Assault Pistol"],
+                    "swc": "2",
+                    "cost": "57",
+                    "canBeLt": true
+                }
+            ]
+        }
+    ]
+}
