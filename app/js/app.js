@@ -96,9 +96,10 @@ function InfinityCardController($scope, $http) {
 
     /* Event Handlers */
     $scope.setFaction = function (faction) {
-        if (typeof faction !== "undefined") {
-            $scope.model.faction = faction.faction;
+        if (typeof faction === "undefined") {
+            faction = this.temp.faction;
         }
+        $scope.model.faction = faction.faction;
     }
 
     $scope.saveToPc = function (data) {
@@ -122,7 +123,7 @@ function InfinityCardController($scope, $http) {
 
     $scope.setUnit = function (unit) {
         if (typeof unit === "undefined")
-            return;
+            unit = this.temp.unit;
         var model = $scope.model;
         model.unit = unit.unitName;
         model.MOV = unit.mov;
@@ -156,9 +157,11 @@ function InfinityCardController($scope, $http) {
     }
 
     $scope.setLoadout = function (loadout, unit) {
-        $scope.setUnit(unit);
         if (typeof loadout === "undefined")
-            return;
+            loadout = this.temp.loadout;
+        if (typeof unit === "undefined")
+            unit = this.temp.unit;
+        $scope.setUnit(unit);
         var model = $scope.model;
         model.selectedWeapons = mergeArray(model.selectedWeapons, loadout.weapons);
         model.selectedEquipment = mergeArray(model.selectedEquipment, loadout.equipment);
