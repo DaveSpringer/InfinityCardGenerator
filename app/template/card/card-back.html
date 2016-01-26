@@ -1,0 +1,42 @@
+<div id="cardBackBackground">
+    <div id="backHeader"></div>
+    <div id="cardBackBody">
+        <div ng-show="model.hasCamo || model.canBeLt" id="hiddenInfoContainter">
+            <div class="cutCornerBack" id="hiddenInfo">
+                Hidden Information
+            </div>
+            <div class="cutCornerBackBottom" id="hiddenInfoBottom">
+                <div id="camoSpace" ng-show="model.hasCamo">Camo Number:</div>
+                <div id="ltSpace" ng-show="model.canBeLt">Is LT?
+                    <div id="ltBox"></div>
+                </div>
+            </div>
+        </div>
+        <div id="backgroundFront" ng-hide="model.backgroundOnFront || model.hideBackground">
+            <div id="backgroundHeader" class="cutCornerBack">
+                Background
+            </div>
+            <div class="cutCornerBackBottom">
+                {{model.background}}
+            </div>
+        </div>
+        <div ng-repeat="skill in skills">
+            <div ng-repeat="selectedSkill in model.selectedSkillsBack" ng-if="skill.name == selectedSkill">
+                <div class="cutCornerBack skillType{{skill.type}}">
+                    <div class="skillName">{{skill.name}}</div>
+                    <div class="skillType">{{skill.type}}</div>
+                </div>
+                <div class="cutCornerBackBottom">{{skill.desc}}</div>
+            </div>
+        </div>
+        <div ng-repeat="equip in equipment">
+            <div ng-repeat="selectedEquip in model.selectedEquipmentBack" ng-if="equip.name == selectedEquip">
+                <div class="cutCornerBack equipType{{equip.type}}">
+                    <div class="equipName">{{equip.name}}</div>
+                    <div class="equipType">{{equip.type}}</div>
+                </div>
+                <div class="cutCornerBackBottom">{{equip.desc}}</div>
+            </div>
+        </div>
+    </div>
+</div>
