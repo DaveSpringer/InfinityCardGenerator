@@ -1,9 +1,4 @@
 @media print {
-    /*@page {
-        size: 80mm 120mm;
-        margin: 25mm;
-        margin-right: 45mm;
-    }*/
     #inputArea {
         display: none;
     }
@@ -11,8 +6,14 @@
         display: none;
     }
     #cardHolder {
-        size: 146mm 113mm;
-        margin: 5mm;
+        size: 152mm 112mm
+    }
+    #cardBackground {
+        size: 76mm 112mm;
+        float: left;
+    }
+    #cardBackBackground {
+        size: 76mm 112mm;
         float: left;
     }
     #footer {
@@ -43,8 +44,8 @@ button {
 
 #cardBackground {
     position: relative;
-    height: 424px;
-    width: 302px;
+    height: 414px;
+    width: 274px;
     background-color: #dcdddf;
     float: left;
     border: 1px white solid;
@@ -72,7 +73,7 @@ button {
 #cardTop {
     position: relative;
     height: 20px;
-    width: 302px;
+    width: 274px;
     background-color: #dcdddf;
     border-top: 2px;
     border-right: 2px;
@@ -106,13 +107,14 @@ button {
     float: left;
     height: 100%;
     margin-left: 3px;
+    margin-right: -2px;
 }
 
 #unitSummary {
     position: relative;
     float: left;
     height: 100px;
-    width: 190px;
+    width: 165px;
     padding: 0px;
 }
 
@@ -126,9 +128,9 @@ button {
 
 #unitHeader {
     position: relative;
-    width: 190px;
+    width: 168px;
     height: 40px;
-    font: 7px Orbitron;
+    font: 6.5px Orbitron;
     color: white;
     float: left;
     padding-top: 2px;
@@ -136,12 +138,12 @@ button {
 
 #soldierName {
     font: 16px Orbitron;
-    width: 165px;
+    width: 145px;
     background-color: #0090a5;
 }
 
 #faction {
-    width: 165px;
+    width: 145px;
     background-color: #0090a5;
     top: 0px;
 }
@@ -149,9 +151,9 @@ button {
 #unitDetails {
     float: left;
     position: relative;
-    font: 14px Orbitron;
+    font: 13px Orbitron;
     color: black;
-    width: 185px;
+    width: 165px;
     height: 15px;
     margin-top: 0px;
     margin-right: 0px;
@@ -163,7 +165,7 @@ button {
 }
 
 .upLabel {
-    font: 6px Orbitron;
+    font: 5.5px Orbitron;
     float: left;
     margin-right: 5px;
 }
@@ -171,14 +173,14 @@ button {
 .itemList {
     position: relative;
     float: left;
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     height: 15px;
-    width: 180px;
+    width: 160px;
 }
 
 #specType {
     color: #333333;
-    font: 10px Orbitron;
+    font: 9px Orbitron;
     width: 90px;
     padding: 0px 0px 0px 0px;
     margin: 2px 0px 0px 0px;
@@ -193,7 +195,7 @@ button {
     float: none;
     color: #0090A5;
     height: 15px;
-    width: 180px;
+    width: 160px;
     font: 6px Orbitron;
 }
 
@@ -201,37 +203,37 @@ button {
     position: relative;
     color: #004D58;
     height: 15px;
-    width: 180px;
+    width: 160px;
 }
 
 #unitSkills {
     position: relative;
     color: #A54900;
     height: 15px;
-    width: 180px;
+    width: 160px;
 }
 
 .weaponList {
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     float: left;
     margin-right: 7px
 }
 
 .skillList {
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     float: left;
     margin-right: 7px
 }
 
 #unitEquip {
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     float: none;
     margin-right: 7px;
     color: #582700;
 }
 
 .equipList {
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     float: left;
     margin-right: 8px;
 }
@@ -257,7 +259,7 @@ button {
     background-color: 0090a5;
     position: relative;
     float: none;
-    width: 260px;
+    width: 235px;
     color: white;
     font: 10px Orbitron;
     text-align: center;
@@ -266,7 +268,7 @@ button {
 #unitStats {
     background-color: 0090a5;
     height: 15px;
-    width: 260px;
+    width: 230px;
     color: white;
     font: 10px Orbitron;
 }
@@ -410,8 +412,8 @@ button {
 
 #cardBackBackground {
     position: relative;
-    height: 424px;
-    width: 302px;
+    height: 414px;
+    width: 274px;
     background-color: #dcdddf;
     float: left;
     border: 1px white solid;
@@ -434,7 +436,7 @@ button {
 #backHeader {
     position: relative;
     height: 20px;
-    width: 302px;
+    width: 274px;
     background-color: #dcdddf;
     border-top: 2px;
     border-right: 2px;
@@ -501,7 +503,7 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     display: inline-block;
     margin-left: 0px;
     margin-right: 0px;
-    width: 262px;
+    width: 235px;
     padding: 0px 10px 0px 10px;
     font: 10px Orbitron;
     color: white;
@@ -537,7 +539,7 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     top: -4px;
     display: inline-block;
     margin-left: 0px;
-    width: 262px;
+    width: 235px;
     background-color: grey;
     padding: 0px 10px 4px 10px;
     font: 8px Orbitron;
@@ -568,7 +570,7 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-right: 2px solid white;
     border-left: 2px solid white;
     display: inline-block;
-    width: 260px;
+    width: 235px;
     padding: 0px 10px 0px 10px;
     font: 10px Orbitron;
     color: white;
@@ -599,7 +601,7 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-left: 2px solid white;
     top: -4px;
     display: inline-block;
-    width: 260px;
+    width: 235px;
     background-color: grey;
     padding: 0px 10px 5px 10px;
     font: 8px Orbitron;
