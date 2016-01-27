@@ -3,7 +3,7 @@ function cardFront() {
         restrict: 'E',
         transclude: true,
         scope: {
-            model: '=',
+            model: '=model',
             skills: '=',
             equipment: '='
         },

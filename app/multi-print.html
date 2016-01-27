@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="infinityCardApp">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/inputPanel.js"></script>
+    <script src="js/cardFront.js"></script>
+    <script src="js/cardBack.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/multi-print.css">
+    <title>Infinty Card Generator</title>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron:500,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-controller="InfinityCardController">
+    <div id="inputArea" ng-hide="hideInput">
+        <input-panel header="Top-Left Card">
+            <textarea id="jsonInput" json-text ng-model="model.topLeft" rows="15" cols="55"></textarea>
+        </input-panel>
+        <input-panel header="Top-Right Card">
+            <textarea id="jsonInput" json-text ng-model="model.topRight" rows="15" cols="55"></textarea>
+        </input-panel>
+        <input-panel header="Bottom-Left Card">
+            <textarea id="jsonInput" json-text ng-model="model.bottomLeft" rows="15" cols="55"></textarea>
+        </input-panel>
+        <input-panel header="Bottom-Right Card">
+            <textarea id="jsonInput" json-text ng-model="model.bottomRight" rows="15" cols="55"></textarea>
+        </input-panel>
+    </div>
+
+    <div id="hideInputBox">
+        <input type="checkbox" ng-model="hideInput" />
+        <label>Hide Input</label>
+        <a class="directLink" href="index.html">Go To Generator<img src="images/arrow-right.png"/></a>
+        <a class="directLink" href="https://github.com/DaveSpringer/InfinityCardGenerator/blob/gh-pages/README.md">Help<img src="images/question-mark.png" height="16" width="16"/></a>
+        <hr>
+    </div>
+    <div id="cards">
+        <div id="frontCardHolder">
+            <card-front model="model.topLeft" skills="skills" equipment="equipment"></card-front>
+            <card-front model="model.topRight" skills="skills" equipment="equipment"></card-front>
+            <card-front model="model.bottomLeft" skills="skills" equipment="equipment"></card-front>
+            <card-front model="model.bottomRight" skills="skills" equipment="equipment"></card-front>
+        </div>
+
+        <div id="backCardHolder">
+            <card-back model="model.topRight" skills="skills" equipment="equipment"></card-back>
+            <card-back model="model.topLeft" skills="skills" equipment="equipment"></card-back>
+            <card-back model="model.bottomRight" skills="skills" equipment="equipment"></card-back>
+            <card-back model="model.bottomLeft" skills="skills" equipment="equipment"></card-back>
+        </div>
+    </div>
+    <div id="footer" ng-hide="hideInput">
+        <a href="http://www.infinitythegame.com">The Infinity Miniatures Game</a> is &copy;2016 Corvus Belli S.L.L. Images and logos belong to Corvus Belli.
+        <br>Their content is currently used permission and may be taken down at their request.
+        <br>
+        <a href="http://www.infinitythegame.com">Visit the Infinity Miniatures Game site</a>
+    </div>
+
+</body>
+
+</html>

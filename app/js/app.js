@@ -145,6 +145,10 @@ function InfinityCardController($scope, $http) {
         model.cube = unit.cube;
         model.fury = unit.fury;
         model.order = unit.order;
+        model.topLeft = {};
+        model.topRight = {};
+        model.bottomLeft = {};
+        model.bottomRight = {};
         if (typeof unit.name !== "undefined")
             model.name = unit.name;
         if (typeof unit.backgroundOnFront !== "undefined")

@@ -82,14 +82,14 @@
                     <td>
                         <label>Skills on Front:</label>
                         <br>
-                        <select multiple ng-model="model.selectedSkills">
+                        <select multiple size="10" ng-model="model.selectedSkills">
                             <option ng-repeat="skill in skills" type="checkbox" class="skillCheck" value="{{skill.name}}">{{skill.name}}</option>
                         </select>
                     </td>
                     <td>
                         <label>Skills on Back:</label>
                         <br>
-                        <select multiple ng-model="model.selectedSkillsBack">
+                        <select multiple size="10" ng-model="model.selectedSkillsBack">
                             <option ng-repeat="skill in skills" type="checkbox" class="skillCheck" value="{{skill.name}}">{{skill.name}}</option>
                         </select>
                     </td>
@@ -98,14 +98,14 @@
                     <td>
                         <label>Weapons:</label>
                         <br>
-                        <select multiple ng-model="model.selectedWeapons">
+                        <select multiple size="10" ng-model="model.selectedWeapons">
                             <option ng-repeat="weapon in weapons" value="{{weapon.name}}">{{weapon.name}}</option>
                         </select>
                     </td>
                     <td>
                         <label>CC Weapons:</label>
                         <br>
-                        <select multiple ng-model="model.selectedSecondaries">
+                        <select multiple size="10" ng-model="model.selectedSecondaries">
                             <option ng-repeat="secondary in secondaryWeapons" value="{{secondary.name}}">{{secondary.name}}</option>
                         </select>
                     </td>
@@ -114,14 +114,14 @@
                     <td>
                         <label>Equipment on Front:</label>
                         <br>
-                        <select multiple ng-model="model.selectedEquipment">
+                        <select multiple size="10" ng-model="model.selectedEquipment">
                             <option ng-repeat="equip in equipment" value="{{equip.name}}">{{equip.name}}</option>
                         </select>
                     </td>
                     <td>
                         <label>Equipment on Back:</label>
                         <br>
-                        <select multiple ng-model="model.selectedEquipmentBack">
+                        <select multiple size="10" ng-model="model.selectedEquipmentBack">
                             <option ng-repeat="equip in equipment" value="{{equip.name}}">{{equip.name}}</option>
                         </select>
                     </td>
@@ -211,6 +211,8 @@
         <button ng-click="saveToPc()">Save To PC</button>
         <input type="checkbox" ng-model="hideInput" />
         <label>Hide Input</label>
+        <a class="directLink" href="multi-print.html">Go To Multi-Printer<img src="images/arrow-right.png"/></a>
+        <a class="directLink" href="https://github.com/DaveSpringer/InfinityCardGenerator/blob/gh-pages/README.md">Help<img src="images/question-mark.png" height="16" width="16"/></a>
         <hr>
     </div>
 
@@ -221,10 +223,11 @@
 
     </div>
     <div id="footer" ng-hide="hideInput">
-        Infinity is &copy;2015 Corvus Belli S.L.L.
-        <br> Currently used without permission. Permission is being requested.
+        <a href="http://www.infinitythegame.com">Infinity</a> is &copy;2016 Corvus Belli S.L.L. Images, logos, ideas belong to Corvus Belli. 
         <br>
-        <a href="http://www.infinitythegame.com">Visit their site</a>
+        Their content is currently used permission and may be taken down at their request.
+        <br>
+        <a href="http://www.infinitythegame.com">Visit the Infinity Miniatures Game site</a>
     </div>
 </body>
 
