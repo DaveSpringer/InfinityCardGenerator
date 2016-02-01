@@ -1,0 +1,27 @@
+.inputBlock {
+    width: 98%;
+    position: relative;
+    border: 2px solid #B29584;
+    margin-top: 5px;
+    background-color: azure;
+    border-radius: 5px;
+}
+
+.inputHeader {
+    padding: 0px;
+    margin-left: 2px;
+    width: 100%;
+}
+
+.inputBodyCollapse {
+    padding: 0px;
+    width: 100%;
+    position: relative;
+    background-color: #F9F9F9;
+}
+
+.inputBody {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}

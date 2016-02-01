@@ -74,7 +74,6 @@ button {
     position: relative;
     height: 20px;
     width: 274px;
-    background-color: #dcdddf;
     border-top: 2px;
     border-right: 2px;
     border-left: 2px;
@@ -139,12 +138,10 @@ button {
 #soldierName {
     font: 16px Orbitron;
     width: 145px;
-    background-color: #0090a5;
 }
 
 #faction {
     width: 145px;
-    background-color: #0090a5;
     top: 0px;
 }
 
@@ -240,7 +237,6 @@ button {
 
 #statsDiv {
     margin-top: 3px;
-    background-color: #0090a5;
     padding-top: 3px;
     margin-bottom: 0px;
     padding-bottom: 0px;
@@ -249,7 +245,6 @@ button {
 }
 
 #statsBottom {
-    background-color: #0090a5;
     top: -7px;
     margin-bottom: 0px;
     padding-bottom: 11px;
@@ -260,7 +255,6 @@ button {
     position: relative;
     float: none;
     width: 235px;
-    color: white;
     font: 10px Orbitron;
     text-align: center;
 }
@@ -269,7 +263,6 @@ button {
     background-color: 0090a5;
     height: 15px;
     width: 230px;
-    color: white;
     font: 10px Orbitron;
 }
 
@@ -414,7 +407,6 @@ button {
     position: relative;
     height: 414px;
     width: 274px;
-    background-color: #dcdddf;
     float: left;
     border: 1px white solid;
 }
@@ -437,7 +429,6 @@ button {
     position: relative;
     height: 20px;
     width: 274px;
-    background-color: #dcdddf;
     border-top: 2px;
     border-right: 2px;
     border-left: 2px;
@@ -454,13 +445,11 @@ button {
 
 #hiddenInfo {
     height: 15px;
-    background-color: black;
 }
 
 #hiddenInfoBottom {
     margin-top: 0px;
     height: 15px;
-    background-color: #0090a5;
 }
 
 #camoSpace {
@@ -626,14 +615,22 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-right: 12px solid transparent;
 }
 
-.inputBlock {
-    width: 98%;
+div.colorHolder {
+    margin-left: 2px;
+    width: 200px;
+    min-width: 200px;
+    height: 60px;
+    min-height: 60px;
     position: relative;
-    padding: 2px 5px 2px 5px;
-    border: 2px solid #B29584;
-    margin-top: 5px;
-    background-color: azure;
-    border-radius: 5px;
+    flex: 1;
+}
+
+div.colorButtonHolder {
+    flex: 2;
+    padding: 5px;
+    min-width: 200px;
+    align-items: center;
+    background-color: bisque;
 }
 
 .fullSelect {
@@ -667,4 +664,17 @@ a.directLink {
     float: right;
     font: 12px Orbitron;
     margin-right: 6px
+}
+
+/* Color Picker CSS Reqs */
+.color-picker-input {
+    height: 30px;
+}
+
+#colorFlex {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    
 }

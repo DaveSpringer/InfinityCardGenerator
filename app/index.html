@@ -9,7 +9,12 @@
     <script src="js/inputPanel.js"></script>
     <script src="js/cardFront.js"></script>
     <script src="js/cardBack.js"></script>
+    <script src="https://ruhley.github.io/angular-color-picker/bower_components/tinycolor/dist/tinycolor-min.js"></script>
+    <script src="https://ruhley.github.io/angular-color-picker/bower_components/angular-color-picker/angularjs-color-picker.min.js"></script>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/input-panel.css">
+    <link rel="stylesheet" href="https://ruhley.github.io/angular-color-picker/bower_components/angular-color-picker/angularjs-color-picker.min.css" />
+
     <title>Infinty Card Generator</title>
     <link href='https://fonts.googleapis.com/css?family=Orbitron:500,800' rel='stylesheet' type='text/css'>
 </head>
@@ -27,6 +32,7 @@
             <select class="fullSelect" ng-model="temp.loadout" ng-options="loadout.name for loadout in temp.unit.loadouts" ng-change="setLoadout()">
             </select>
         </input-panel>
+
         <input-panel header="Card Header">
             <label>Name</label>
             <input type="text" ng-model="model.name">
@@ -128,7 +134,7 @@
                 </tr>
             </table>
         </input-panel>
-        <input-panel header="Lifetime Stats">
+        <input-panel header="Lifetime Scores">
             <label>Kills:</label>
             <input type="text" ng-model="model.kills" />
             <br>
@@ -199,7 +205,98 @@
             <label>Can be Lieutennant?</label>
             <br>
         </input-panel>
-        <div class="inputBlock"> 
+
+        <input-panel header="Card Colors" id="cardColors">
+            <!-- Unfortuantely, I have not been able to figure out how to allow the background color to change.
+            <label>Card Background</label>
+            <color-picker ng-model="model.cardBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker> -->
+            <div id="colorFlex">
+                <div class="colorHolder">
+                    <label>Header Background</label>
+                    <color-picker ng-model="model.headerBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Header Text</label>
+                    <color-picker ng-model="model.headerTextColor" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Unit Stats Background</label>
+                    <color-picker ng-model="model.unitStatsBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Unit Stats Text</label>
+                    <color-picker ng-model="model.unitStatsText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Lifetime Scores Background</label>
+                    <color-picker ng-model="model.scoresBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Lifetime Scores Text</label>
+                    <color-picker ng-model="model.scoresText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Background... Background</label>
+                    <color-picker ng-model="model.backgroundBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Background Text</label>
+                    <color-picker ng-model="model.backgroundText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Skills Background</label>
+                    <color-picker ng-model="model.skillsBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Skills Text</label>
+                    <color-picker ng-model="model.skillsText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Equipment Background</label>
+                    <color-picker ng-model="model.equipmentBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Equipment Text</label>
+                    <color-picker ng-model="model.equipmentText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Hidden Info Header Background</label>
+                    <color-picker ng-model="model.hiddenInfoHeaderBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Hidden Info Header Text</label>
+                    <color-picker ng-model="model.hiddenInfoHeaderColor" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Hidden Info Background</label>
+                    <color-picker ng-model="model.hiddenInfoBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Hidden Info Text</label>
+                    <color-picker ng-model="model.hiddenInfoColor" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Weapon Text</label>
+                    <color-picker ng-model="model.weaponText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>CC Weapon Text</label>
+                    <color-picker ng-model="model.ccWeaponText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Skills List Text</label>
+                    <color-picker ng-model="model.skillsListText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Equipment Lists Text</label>
+                    <color-picker ng-model="model.equipmentListText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorButtonHolder">
+                    <button ng-click="resetColors()">Reset to Default Colors</button>
+                </div>
+            </div>
+        </input-panel>
+        <div class="inputBlock">
             <h3>JSON Input/Output (Temporary Storage)</h3>
             <input type="checkbox" ng-model="showJson" />
             <label>Show JSON</label>
@@ -223,9 +320,8 @@
 
     </div>
     <div id="footer" ng-hide="hideInput">
-        <a href="http://www.infinitythegame.com">Infinity</a> is &copy;2016 Corvus Belli S.L.L. Images, logos, ideas belong to Corvus Belli. 
-        <br>
-        Their content is currently used permission and may be taken down at their request.
+        <a href="http://www.infinitythegame.com">Infinity</a> is &copy;2016 Corvus Belli S.L.L. Images, logos, ideas belong to Corvus Belli.
+        <br> Their content is currently used with permission but may be taken down at their request.
         <br>
         <a href="http://www.infinitythegame.com">Visit the Infinity Miniatures Game site</a>
     </div>
