@@ -92,6 +92,28 @@ function InfinityCardController($scope, $http) {
     $scope.model.background = "Travis is the oldest of the three Young boys, and began training to become a doctor prior to his family's debt catching up to him. After his sister was abducted by a Kazak crime syndicate, Travis left the University to help rescue her. During the failed attempt, Travis and his brothers killed over a dozen lackeys. For their own safety, Travis convinced his brothers to volunteer for the Caledonian army where they have thrived.";
     $scope.model.hasCamo = false;
     $scope.model.canBeLt = false;
+    $scope.model.cardBackground = "#DCDDDF";
+    $scope.model.headerBackground = "#0090A5";
+    $scope.model.headerTextColor = "#FFFFFF";
+    $scope.model.unitStatsBackground = "#0090A5";
+    $scope.model.unitStatsText = "#FFFFFF";
+    $scope.model.scoresBackground = "#0090A5";
+    $scope.model.scoresText = "#FFFFFF";
+    $scope.model.healthType = "W";
+    $scope.model.skillsBackground = "#888888";
+    $scope.model.skillsText = "#FFFFFF";
+    $scope.model.equipmentBackground = "#888888";
+    $scope.model.equipmentText = "#FFFFFF";
+    $scope.model.backgroundBackground = "#888888";
+    $scope.model.backgroundText = "#FFFFFF";
+    $scope.model.hiddenInfoHeaderBackground = "#000000";
+    $scope.model.hiddenInfoHeaderColor = "#FFFFFF";
+    $scope.model.hiddenInfoBackground = "#0090A5";
+    $scope.model.hiddenInfoColor = "#FFFFFF";
+    $scope.model.weaponText = "#0090A5";
+    $scope.model.ccWeaponText = "#004D58";
+    $scope.model.skillsListText = "#A54900";
+    $scope.model.equipmentListText = "#582700";
     /* End unit properties */
 
     /* Event Handlers */
@@ -149,6 +171,7 @@ function InfinityCardController($scope, $http) {
         model.topRight = {};
         model.bottomLeft = {};
         model.bottomRight = {};
+
         if (typeof unit.name !== "undefined")
             model.name = unit.name;
         if (typeof unit.backgroundOnFront !== "undefined")
@@ -158,6 +181,9 @@ function InfinityCardController($scope, $http) {
         if (typeof unit.background !== "undefined")
             model.background = unit.background;
         model.specialist = unit.specialist;
+        // Defaulting health type to Wounds.
+        if (typeof unit.healthType === "undefined")
+            model.healthType = "W";
     }
 
     $scope.setLoadout = function (loadout, unit) {
@@ -178,6 +204,31 @@ function InfinityCardController($scope, $http) {
         model.swc = loadout.swc;
         model.hasCamo = loadout.hasCamo;
         model.canBeLt = loadout.canBeLt;
+    }
+
+    $scope.resetColors = function () {
+        $scope.model.cardBackground = "#DCDDDF";
+        $scope.model.headerBackground = "#0090A5";
+        $scope.model.headerTextColor = "#FFFFFF";
+        $scope.model.unitStatsBackground = "#0090A5";
+        $scope.model.unitStatsText = "#FFFFFF";
+        $scope.model.scoresBackground = "#0090A5";
+        $scope.model.scoresText = "#FFFFFF";
+        $scope.model.healthType = "W";
+        $scope.model.skillsBackground = "#888888";
+        $scope.model.skillsText = "#FFFFFF";
+        $scope.model.equipmentBackground = "#888888";
+        $scope.model.equipmentText = "#FFFFFF";
+        $scope.model.backgroundBackground = "#888888";
+        $scope.model.backgroundText = "#FFFFFF";
+        $scope.model.hiddenInfoHeaderBackground = "#000000";
+        $scope.model.hiddenInfoHeaderColor = "#FFFFFF";
+        $scope.model.hiddenInfoBackground = "#0090A5";
+        $scope.model.hiddenInfoColor = "#FFFFFF";
+        $scope.model.weaponText = "#0090A5";
+        $scope.model.ccWeaponText = "#004D58";
+        $scope.model.skillsListText = "#A54900";
+        $scope.model.equipmentListText = "#582700";
     }
 }
 
@@ -245,6 +296,6 @@ function jsonText() {
     };
 }
 
-angular.module('infinityCardApp', [])
+angular.module('infinityCardApp', ['color.picker'])
     .controller('InfinityCardController', InfinityCardController)
     .directive('jsonText', jsonText);
