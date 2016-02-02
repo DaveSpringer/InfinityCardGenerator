@@ -614,6 +614,7 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-bottom: 12px solid #dcdddf;
     border-right: 12px solid transparent;
 }
+/* End cutCorner */
 
 div.colorHolder {
     margin-left: 2px;
@@ -650,6 +651,11 @@ label {
     padding: 2px;
 }
 
+p.note {
+    font: 12px Orbitron;
+    padding: 0px 5px;
+}
+
 select {
     padding: 2px;
     font: 10px Orbitron;
@@ -658,7 +664,6 @@ select {
 input {
     font: 12px Orbitron;
 }
-/* End cutCorner */
 
 a.directLink {
     float: right;

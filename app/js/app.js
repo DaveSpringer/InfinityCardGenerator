@@ -110,7 +110,7 @@ function InfinityCardController($scope, $http) {
     $scope.model.hiddenInfoHeaderColor = "#FFFFFF";
     $scope.model.hiddenInfoBackground = "#0090A5";
     $scope.model.hiddenInfoColor = "#FFFFFF";
-    $scope.model.weaponText = "#A54900";
+    $scope.model.weaponText = "#0090A5";
     $scope.model.ccWeaponText = "#004D58";
     $scope.model.skillsListText = "#A54900";
     $scope.model.equipmentListText = "#582700";
@@ -225,7 +225,7 @@ function InfinityCardController($scope, $http) {
         $scope.model.hiddenInfoHeaderColor = "#FFFFFF";
         $scope.model.hiddenInfoBackground = "#0090A5";
         $scope.model.hiddenInfoColor = "#FFFFFF";
-        $scope.model.weaponText = "#A54900";
+        $scope.model.weaponText = "#0090A5";
         $scope.model.ccWeaponText = "#004D58";
         $scope.model.skillsListText = "#A54900";
         $scope.model.equipmentListText = "#582700";
