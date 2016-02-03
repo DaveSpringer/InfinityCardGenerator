@@ -11,9 +11,12 @@
     <script src="js/cardBack.js"></script>
     <script src="https://ruhley.github.io/angular-color-picker/bower_components/tinycolor/dist/tinycolor-min.js"></script>
     <script src="https://ruhley.github.io/angular-color-picker/bower_components/angular-color-picker/angularjs-color-picker.min.js"></script>
+    <script src="https://likeastore.github.io/ngDialog/js/ngDialog.min.js"></script>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/input-panel.css">
     <link rel="stylesheet" href="https://ruhley.github.io/angular-color-picker/bower_components/angular-color-picker/angularjs-color-picker.min.css" />
+    <link rel="stylesheet" href="https://likeastore.github.io/ngDialog/css/ngDialog.css" />
+    <link rel="stylesheet" href="https://likeastore.github.io/ngDialog/css/ngDialog-theme-default.css" />
 
     <title>Infinty Card Generator</title>
     <link href='https://fonts.googleapis.com/css?family=Orbitron:500,800' rel='stylesheet' type='text/css'>
@@ -99,6 +102,9 @@
                             <option ng-repeat="skill in skills" type="checkbox" class="skillCheck" value="{{skill.name}}">{{skill.name}}</option>
                         </select>
                     </td>
+                </tr>
+                    <td colspan="2"><button ng-click="showAddSkill()">Add a Skill</button></td>
+                <tr>
                 </tr>
                 <tr>
                     <td>

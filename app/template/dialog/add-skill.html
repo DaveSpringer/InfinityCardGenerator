@@ -1,0 +1,21 @@
+<div id="skillWrapper">
+    <div id="skillInputDialog">
+        <p>This is only a test...</p>
+        <label>Name</label>
+        <input type="text" ng-model="tempSkill.name" />
+        <br>
+        <label>Type</label>
+        <select ng-model="tempSkill.type">
+            <option ng-repeat="orderType in orderTypes" value="{{orderType}}">{{orderType}}</option>
+        </select>
+        <br>
+        <label>Description</label>
+        <textarea ng-model="tempSkill.desc"></textarea>
+        <br>
+    </div>
+    <div id="skillInputButtons">
+        <button ng-click="addSkill() && closeThisDialog()">Add Skill</button>
+        <button ng-click="exportSkill()">Export Skill</button>
+        <button ng-click="closeThisDialog()">Cancel</button>
+    </div>
+</div>

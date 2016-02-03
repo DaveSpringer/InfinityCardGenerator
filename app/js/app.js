@@ -1,4 +1,4 @@
-function InfinityCardController($scope, $http) {
+function InfinityCardController($scope, $http, ngDialog) {
     $scope.skills = [];
     $http.get('resources/skills.json').success(function (data) {
         $scope.skills = data;
@@ -40,6 +40,7 @@ function InfinityCardController($scope, $http) {
         "name": "Special Troop",
         "value": "Specialist"
     }];
+    $scope.orderTypes = ["Automatic", "Short", "Short-Aro", "Entire", "Deployment"];
     /* Unit Designations */
     $scope.units = [];
     $http.get('resources/aleph.json').success(function (data) {
@@ -115,6 +116,13 @@ function InfinityCardController($scope, $http) {
     $scope.model.skillsListText = "#A54900";
     $scope.model.equipmentListText = "#582700";
     /* End unit properties */
+
+    /* Temp Skill */
+    $scope.tempSkill = {};
+    $scope.tempSkill.name = "Your Skill Name Here";
+    $scope.tempSkill.type = "Short";
+    $scope.tempSkill.desc = "Skill description."
+        /* End Temp Skill */
 
     /* Event Handlers */
     $scope.setFaction = function (faction) {
@@ -230,6 +238,24 @@ function InfinityCardController($scope, $http) {
         $scope.model.skillsListText = "#A54900";
         $scope.model.equipmentListText = "#582700";
     }
+
+    $scope.showAddSkill = function () {
+        var dialog = ngDialog.open({
+            template: 'template/dialog/add-skill.html',
+            controller: 'InfinityCardController'
+        });
+    }
+
+    $scope.addSkill = function (var1, var2, var3) {
+        debugger;
+        var newSkill = {};
+        newSkill.name = $scope.tempSkill.name;
+        newSkill.type = $scope.tempSkill.type;
+        newSkill.desc = $scope.tempSkill.desc;
+        $scope.skills.push(newSkill);
+
+        return true;
+    }
 }
 
 function mergeArray(array1, array2) {
@@ -296,6 +322,6 @@ function jsonText() {
     };
 }
 
-angular.module('infinityCardApp', ['color.picker'])
+angular.module('infinityCardApp', ['color.picker', 'ngDialog'])
     .controller('InfinityCardController', InfinityCardController)
     .directive('jsonText', jsonText);
