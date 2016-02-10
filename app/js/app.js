@@ -244,15 +244,17 @@ function InfinityCardController($scope, $http, ngDialog) {
     }
 
     $scope.showAddSkill = function () {
-//        var dialog = ngDialog.open({
-//            template: 'template/dialog/add-skill.html',
-//            controller: 'InfinityCardController'
-//        });
         $scope.showSkillInput = !$scope.showSkillInput;
+    }
+    
+    $scope.exportSkill = function() {
+        var dialog = ngDialog.open({
+            template: 'template/dialog/export-dialog.html',
+            controller: 'InfinityCardController'
+        })
     }
 
     $scope.addSkill = function (var1, var2, var3) {
-        debugger;
         var newSkill = {};
         newSkill.name = $scope.tempSkill.name;
         newSkill.type = $scope.tempSkill.type;
