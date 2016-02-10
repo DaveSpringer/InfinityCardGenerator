@@ -29,6 +29,10 @@ button {
     font: 12px Orbitron;
 }
 
+button.on {
+    background-color: darkslategray;
+}
+
 #footer {
     position: fixed;
     color: #CACACA;
@@ -178,7 +182,7 @@ button {
 #specType {
     color: #333333;
     font: 9px Orbitron;
-    width: 90px;
+    width: 75px;
     padding: 0px 0px 0px 0px;
     margin: 2px 0px 0px 0px;
     border-left: 2px solid;
@@ -301,10 +305,11 @@ button {
 
 #scoresBottom {
     background-color: #0090a5;
-    font: 12px Orbitron;
-    height: 15px;
+    font: 10px Orbitron;
+    height: 12px;
     padding-top: 0px;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
+    margin-bottom: 0px;
 }
 
 #scoresTable {

@@ -122,7 +122,11 @@ function InfinityCardController($scope, $http, ngDialog) {
     $scope.tempSkill.name = "Your Skill Name Here";
     $scope.tempSkill.type = "Short";
     $scope.tempSkill.desc = "Skill description."
-        /* End Temp Skill */
+    /* End Temp Skill */
+    
+    /* Additional Controls */
+    $scope.showSkillInput = false;
+    /* End Additional Controls */
 
     /* Event Handlers */
     $scope.setFaction = function (faction) {
@@ -240,10 +244,11 @@ function InfinityCardController($scope, $http, ngDialog) {
     }
 
     $scope.showAddSkill = function () {
-        var dialog = ngDialog.open({
-            template: 'template/dialog/add-skill.html',
-            controller: 'InfinityCardController'
-        });
+//        var dialog = ngDialog.open({
+//            template: 'template/dialog/add-skill.html',
+//            controller: 'InfinityCardController'
+//        });
+        $scope.showSkillInput = !$scope.showSkillInput;
     }
 
     $scope.addSkill = function (var1, var2, var3) {

@@ -9,6 +9,7 @@
     <script src="js/inputPanel.js"></script>
     <script src="js/cardFront.js"></script>
     <script src="js/cardBack.js"></script>
+    <script src="js/skillInputPanel.js"></script>
     <script src="https://ruhley.github.io/angular-color-picker/bower_components/tinycolor/dist/tinycolor-min.js"></script>
     <script src="https://ruhley.github.io/angular-color-picker/bower_components/angular-color-picker/angularjs-color-picker.min.js"></script>
     <script src="https://likeastore.github.io/ngDialog/js/ngDialog.min.js"></script>
@@ -103,8 +104,15 @@
                         </select>
                     </td>
                 </tr>
-                    <td colspan="2"><button ng-click="showAddSkill()">Add a Skill</button></td>
                 <tr>
+                    <td colspan="2">
+                        <button ng-click="showAddSkill()" ng-class="{on:showSkillInput}">Add a Skill</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <skill-input-panel temp-skill="tempSkill" order-types="orderTypes" add-skill="addSkill()" show-skill-input="showSkillInput" export-skill="exportSkill()"></skill-input-panel>
+                    </td>
                 </tr>
                 <tr>
                     <td>
