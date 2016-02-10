@@ -9,26 +9,46 @@
     <script src="js/inputPanel.js"></script>
     <script src="js/cardFront.js"></script>
     <script src="js/cardBack.js"></script>
+
+    <!-- Unfortunate carry overs from sharing app.js between the two pages. -->
+    <script src="https://likeastore.github.io/ngDialog/js/ngDialog.min.js"></script>
+    <script src="https://ruhley.github.io/angular-color-picker/bower_components/tinycolor/dist/tinycolor-min.js"></script>
+    <script src="https://ruhley.github.io/angular-color-picker/bower_components/angular-color-picker/angularjs-color-picker.min.js"></script>
+    <!-- End carry overs. -->
+
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/multi-print.css">
+    <link rel="stylesheet" href="css/input-panel.css">
     <title>Infinty Card Generator</title>
     <link href='https://fonts.googleapis.com/css?family=Orbitron:500,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body ng-controller="InfinityCardController">
     <div id="inputArea" ng-hide="hideInput">
-        <input-panel header="Top-Left Card">
-            <textarea id="jsonInput" json-text ng-model="model.topLeft" rows="15" cols="55"></textarea>
-        </input-panel>
-        <input-panel header="Top-Right Card">
-            <textarea id="jsonInput" json-text ng-model="model.topRight" rows="15" cols="55"></textarea>
-        </input-panel>
-        <input-panel header="Bottom-Left Card">
-            <textarea id="jsonInput" json-text ng-model="model.bottomLeft" rows="15" cols="55"></textarea>
-        </input-panel>
-        <input-panel header="Bottom-Right Card">
-            <textarea id="jsonInput" json-text ng-model="model.bottomRight" rows="15" cols="55"></textarea>
-        </input-panel>
+        <label>Four Card Layout</label>
+        <input type="checkbox" ng-model="fourCardLayout" />
+        <div id="fourCardLayout" ng-show="fourCardLayout">
+            <input-panel header="Top-Left Card">
+                <textarea id="jsonInput" json-text ng-model="model.topLeft" rows="15" cols="55"></textarea>
+            </input-panel>
+            <input-panel header="Top-Right Card">
+                <textarea id="jsonInput" json-text ng-model="model.topRight" rows="15" cols="55"></textarea>
+            </input-panel>
+            <input-panel header="Bottom-Left Card">
+                <textarea id="jsonInput" json-text ng-model="model.bottomLeft" rows="15" cols="55"></textarea>
+            </input-panel>
+            <input-panel header="Bottom-Right Card">
+                <textarea id="jsonInput" json-text ng-model="model.bottomRight" rows="15" cols="55"></textarea>
+            </input-panel>
+        </div>
+        <div id="twoCardLayout" ng-hide="fourCardLayout">
+            <input-panel header="Top Card">
+                <textarea id="jsonInput" json-text ng-model="model.topLeft" rows="15" cols="55"></textarea>
+            </input-panel>
+            <input-panel header="Bottom Card">
+                <textarea id="jsonInput" json-text ng-model="model.bottomLeft" rows="15" cols="55"></textarea>
+            </input-panel>
+        </div>
     </div>
 
     <div id="hideInputBox">
@@ -39,18 +59,40 @@
         <hr>
     </div>
     <div id="cards">
-        <div id="frontCardHolder">
-            <card-front model="model.topLeft" skills="skills" equipment="equipment"></card-front>
-            <card-front model="model.topRight" skills="skills" equipment="equipment"></card-front>
-            <card-front model="model.bottomLeft" skills="skills" equipment="equipment"></card-front>
-            <card-front model="model.bottomRight" skills="skills" equipment="equipment"></card-front>
-        </div>
+        <div ng-show="fourCardLayout">
+            <div id="frontCardHolder">
+                <card-front model="model.topLeft" skills="skills" equipment="equipment"></card-front>
+                <card-front model="model.topRight" skills="skills" equipment="equipment"></card-front>
+                <card-front model="model.bottomLeft" skills="skills" equipment="equipment"></card-front>
+                <card-front model="model.bottomRight" skills="skills" equipment="equipment"></card-front>
+            </div>
 
-        <div id="backCardHolder">
-            <card-back model="model.topRight" skills="skills" equipment="equipment"></card-back>
-            <card-back model="model.topLeft" skills="skills" equipment="equipment"></card-back>
-            <card-back model="model.bottomRight" skills="skills" equipment="equipment"></card-back>
-            <card-back model="model.bottomLeft" skills="skills" equipment="equipment"></card-back>
+            <div id="backCardHolder">
+                <card-back model="model.topRight" skills="skills" equipment="equipment"></card-back>
+                <card-back model="model.topLeft" skills="skills" equipment="equipment"></card-back>
+                <card-back model="model.bottomRight" skills="skills" equipment="equipment"></card-back>
+                <card-back model="model.bottomLeft" skills="skills" equipment="equipment"></card-back>
+            </div>
+        </div>
+        <div ng-hide="fourCardLayout">
+            <table>
+                <tr>
+                    <td>
+                        <card-front model="model.topLeft" skills="skills" equipment="equipment"></card-front>
+                    </td>
+                    <td>
+                        <card-back model="model.topLeft" skills="skills" equipment="equipment"></card-back>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <card-front model="model.bottomLeft" skills="skills" equipment="equipment"></card-front>
+                    </td>
+                    <td>
+                        <card-back model="model.bottomLeft" skills="skills" equipment="equipment"></card-back>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
     <div id="footer" ng-hide="hideInput">
