@@ -152,6 +152,7 @@
             "linkable": "Enomotarchos",
             "ccWeapons": ["Pistol", "CCW"],
             "backgroundOnFront": false,
+            "background": "Notes of Thamyris the Aoidos: There are two quite distinct women living inside Nesaie Alke's body. When she was first introduced to me, I couldn't understand how was it that such a pleasant and shy young lady called Nesaie could be warrant officer of a unit such as the Thorakitai. I met her again during the Morat attack on camp Lykastos. I didn't recognize her at first, covered in alien blood, barking orders and spitting insults like a barracks sergeant. She was not Nesaie anymore, she was Alke, the battle spirit, and she saved my life. Two nights later I met her once more at the canteen, she was back to being sweet Nesaie, all smiles and charm. Until I wanted to show my gratitude for being saving my life. Then she shot me a touch-me-and-you-are-dead glance and I understood that, suddenly, I was back in front of Alke. In that moment I pretended I recognized someone in the distance and slipped into the crowd.",
             "loadouts": [
                 {
                     "name": "ALKE - Spitfire, Nanopulser",
@@ -216,6 +217,62 @@
                     "swc": "0",
                     "cost": "40",
                     "canBeLt": true
+                }
+            ]
+                    }, {
+            "unitName": "Machaon",
+            "fullName": "Machaon, MYRMIDON Doctor-Officer",
+            "name": "Machaon",
+            "mov": "4-4",
+            "cc": "21",
+            "bs": "12",
+            "ph": "13",
+            "wip": "15",
+            "arm": "2",
+            "bts": "3",
+            "w": "1",
+            "s": "2",
+            "equipmentBack": [
+                "ODD: Optical Disruptor",
+                "MediKit"
+            ],
+            "skills": [
+                "Martial Arts L3",
+                "Doctor",
+                "Fireteam: Enomotarchos"
+            ],
+            "skillsBack": [
+                "Kinematika L1",
+                "V: No Wound Incapacitation"
+            ],
+            "backgroundOnFront": false,
+            "sectorials": [
+                "Vanilla",
+                "Aleph"
+            ],
+            "hackable": false,
+            "cube": "cube 2.0",
+            "fury": "frenzy",
+            "order": "regular",
+            "linkable": "Enomotarchos",
+            "ccWeapons": ["Pistol", "DA CCW"],
+            "specialist": "Doctor",
+            "background": "Notes of Thamyris the Aoidos: Warrior-Doctor of the Myrmidons, Machaon is a mad genius. He can heal almost any wound and fight as well as the bravest of heroes, but he is eccentric and extravagant to the bone; antisocial and distrustful. Famously, when he was mocked by a PanOceanian Officer, he threw a box of bandages, hitting the Officer squarely in the head. The Officer would have lost his eye, but Machaon used local herbs to save it.",
+            "loadouts": [
+                {
+                    "name": "MACHAON - Combi Rifle, Nanopulser, Zero-V Smoke Grenades",
+                    "weapons": ["Combi Rifle", "Nanopulser", "Zero-V Smoke Grenades"],
+                    "swc": "0.5",
+                    "cost": "38",
+                    "canBeLt": true,
+                    "specialist": "Doctor"
+                }, {
+                    "name": "MACHAON Lieutenant - Combi Rifle, Nanopulser, Zero-V Smoke Grenades",
+                    "weapons": ["Combi Rifle", "Nanopulser", "Zero-V Smoke Grenades"],
+                    "swc": "0.5",
+                    "cost": "38",
+                    "canBeLt": true,
+                    "specialist": "Doctor"
                 }
             ]
         }, {
@@ -290,6 +347,7 @@
                     "specialist": "Hacker"
                 }
             ]
+
         }
     ]
 }
