@@ -1,0 +1,20 @@
+<div id="equipmentWrapper" class="inputWrapper">
+    <h3>Add Unavailable Equipment</h3>
+    <div id="equipmentInputDialog">
+        <label>Name</label>
+        <input type="text" ng-model="tempEquipment.name" />
+        <br>
+        <label>Type</label>
+        <select ng-model="tempEquipment.type">
+            <option ng-repeat="orderType in orderTypes" value="{{orderType}}">{{orderType}}</option>
+        </select>
+        <br>
+        <label>Description</label>
+        <textarea ng-model="tempEquipment.desc"></textarea>
+        <br>
+    </div>
+    <div id="equipmentInputButtons">
+        <button ng-click="addEquipment()">Add Equipment</button>
+        <button ng-click="exportEquipment()">Export Equipment</button>
+    </div>
+</div>

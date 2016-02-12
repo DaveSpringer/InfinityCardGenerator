@@ -123,7 +123,16 @@ function InfinityCardController($scope, $http, ngDialog) {
     $scope.tempSkill.type = "Short";
     $scope.tempSkill.desc = "Skill description."
     /* End Temp Skill */
-    
+
+    /* Dialog Objects */
+    $scope.tempWeapon = {};
+    $scope.tempCcWeapon = {};
+    $scope.tempEquipment = {};
+    $scope.tempEquipment.name = "Your Equipment Name Here";
+    $scope.tempEquipment.type = "Short";
+    $scope.tempEquipment.desc = "Your description here.";
+    /* End Dialog Objects */
+
     /* Additional Controls */
     $scope.showSkillInput = false;
     /* End Additional Controls */
@@ -246,15 +255,32 @@ function InfinityCardController($scope, $http, ngDialog) {
     $scope.showAddSkill = function () {
         $scope.showSkillInput = !$scope.showSkillInput;
     }
-    
-    $scope.exportSkill = function() {
+
+    $scope.showAddWeapon = function () {
+        $scope.showWeaponInput = !$scope.showWeaponInput;
+    }
+
+    $scope.showAddCcWeapon = function () {
+        $scope.showCcWeaponInput = !$scope.showCcWeaponInput;
+    }
+
+    $scope.showAddEquipment = function () {
+        $scope.showEquipmentInput = !$scope.showEquipmentInput;
+    }
+
+    $scope.exportSkill = function () {
+        debugger;
+        var exportObject = { exportObject: $scope.tempSkill};
+        $scope.exportObject = exportObject;
         var dialog = ngDialog.open({
-            template: 'template/dialog/export-dialog.html',
-            controller: 'InfinityCardController'
+            template: 'template/dialog/export-skill-dialog.html',
+            controller: 'InfinityCardController',
+            data: $scope.exportObject
         })
     }
 
-    $scope.addSkill = function (var1, var2, var3) {
+    $scope.addSkill = function (tempSkill) {
+        debugger;
         var newSkill = {};
         newSkill.name = $scope.tempSkill.name;
         newSkill.type = $scope.tempSkill.type;
@@ -262,6 +288,61 @@ function InfinityCardController($scope, $http, ngDialog) {
         $scope.skills.push(newSkill);
 
         return true;
+    }
+
+    $scope.exportEquipment = function () {
+        var dialog = ngDialog.open({
+            template: 'template/dialog/export-equipment-dialog.html',
+            controller: 'InfinityCardController'
+        })
+    }
+
+    $scope.addEquipment = function () {
+        var newEquipment = {};
+        newEquipment.name = $scope.tempEquipment.name;
+        newEquipment.type = $scope.tempEquipment.type;
+        newEquipment.desc = $scope.tempEquipment.desc;
+        $scope.equipment.push(newEquipment);
+
+        return true;
+    }
+
+    $scope.addWeapon = function () {
+        var newWeapon = {};
+        newWeapon.name = $scope.tempWeapon.name;
+        newWeapon.burst = $scope.tempWeapon.burst;
+        newWeapon.dam = $scope.tempWeapon.dam;
+        newWeapon.ammo = $scope.tempWeapon.ammo;
+        newWeapon.traits = $scope.tempWeapon.traits;
+        $scope.weapons.push(newWeapon);
+        return true;
+    }
+
+    $scope.exportWeapon = function () {
+        var dialog = ngDialog.open({
+            template: 'template/dialog/export-weapon-dialog.html',
+            controller: 'InfinityCardController'
+        })
+    }
+
+    $scope.addCcWeapon = function () {
+        debugger;
+        var tempCcWeapon = $scope.tempCcWeapon;
+        var newCcWeapon = {};
+        newCcWeapon.name = tempCcWeapon.name;
+        newCcWeapon.burst = tempCcWeapon.burst;
+        newCcWeapon.dam = tempCcWeapon.dam;
+        newCcWeapon.ammo = tempCcWeapon.ammo;
+        newCcWeapon.traits = tempCcWeapon.traits;
+        $scope.secondaryWeapons.push(newCcWeapon);
+        return true;
+    }
+
+    $scope.exportCcWeapon = function () {
+        var dialog = ngDialog.open({
+            template: 'template/dialog/export-cc-weapon-dialog.html',
+            controller: 'InfinityCardController'
+        })
     }
 }
 

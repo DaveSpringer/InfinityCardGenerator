@@ -6,8 +6,7 @@ function skillInputPanel() {
             tempSkill: '=',
             orderTypes: '=',
             addSkill: '&',
-            exportSkill: '&',
-            showSkillInput: '='
+            exportSkill: '&'
         },
         templateUrl: 'template/dialog/add-skill.html'
     };
