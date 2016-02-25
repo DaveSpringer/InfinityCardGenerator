@@ -269,13 +269,11 @@ function InfinityCardController($scope, $http, ngDialog) {
     }
 
     $scope.exportSkill = function () {
-        debugger;
-        var exportObject = { exportObject: $scope.tempSkill};
-        $scope.exportObject = exportObject;
+        $scope.exportObject = $scope.tempSkill;
         var dialog = ngDialog.open({
-            template: 'template/dialog/export-skill-dialog.html',
+            template: 'template/dialog/export-object-dialog.html',
             controller: 'InfinityCardController',
-            data: $scope.exportObject
+            scope: $scope
         })
     }
 
@@ -291,9 +289,11 @@ function InfinityCardController($scope, $http, ngDialog) {
     }
 
     $scope.exportEquipment = function () {
+        $scope.exportObject = $scope.tempEquipment;
         var dialog = ngDialog.open({
-            template: 'template/dialog/export-equipment-dialog.html',
-            controller: 'InfinityCardController'
+            template: 'template/dialog/export-object-dialog.html',
+            controller: 'InfinityCardController',
+            scope: $scope
         })
     }
 
@@ -319,9 +319,11 @@ function InfinityCardController($scope, $http, ngDialog) {
     }
 
     $scope.exportWeapon = function () {
+        $scope.exportObject = $scope.tempWeapon;
         var dialog = ngDialog.open({
-            template: 'template/dialog/export-weapon-dialog.html',
-            controller: 'InfinityCardController'
+            template: 'template/dialog/export-object-dialog.html',
+            controller: 'InfinityCardController',
+            scope: $scope
         })
     }
 
@@ -339,9 +341,11 @@ function InfinityCardController($scope, $http, ngDialog) {
     }
 
     $scope.exportCcWeapon = function () {
+        $scope.exportObject = $scope.tempCcWeapon;
         var dialog = ngDialog.open({
-            template: 'template/dialog/export-cc-weapon-dialog.html',
-            controller: 'InfinityCardController'
+            template: 'template/dialog/export-object-dialog.html',
+            controller: 'InfinityCardController',
+            scope: $scope
         })
     }
 }
