@@ -348,6 +348,69 @@
                 }
             ]
 
+        }, {
+            "unitName": "Myrmidon Officer",
+            "fullName": "Myrmidon Officer",
+            "mov": "4-4",
+            "cc": "22",
+            "bs": "12",
+            "ph": "13",
+            "wip": "14",
+            "arm": "2",
+            "bts": "3",
+            "w": "1",
+            "s": "2",
+            "equipment": [
+                "ODD: Optical Disruptor"
+            ],
+            "skills": [],
+            "skillsBack": ["Kinematika L1", "Fireteam: Enomotarchos"],
+            "sectorials": [
+                "Vanilla",
+                "Aleph"
+            ],
+            "hackable": false,
+            "cube": "cube 2.0",
+            "fury": "frenzy",
+            "order": "regular",
+            "ccWeapons": ["Pistol", "AP CCW"],
+            "backgroundOnFront": false,
+            "specialist": "",
+            "loadouts": [
+                {
+                    "name": "MYRMIDON (Chain of Command) - Boarding Shotgun, Nanopulser, Zero-V Smoke Grenades",
+                    "weapons": ["Boarding Shotgun", "Nanopulser", "Zero-V Smoke Grenades"],
+                    "swc": "1",
+                    "cost": "37",
+                    "canBeLt": false,
+                    "skills": ["Chain of Command", "V: No Wound Incapacitation"],
+                    "skillsBack": ["Martial Arts L3"],
+                    "specalist": "Chain of Com"
+                }, {
+                    "name": "MYRMIDON (Chain of Command) - Combi Rifle, Nanopulser, Smoke Grenades",
+                    "weapons": ["Combi Rifle", "Nanopulser", "Smoke Grenades"],
+                    "swc": "1",
+                    "cost": "38",
+                    "canBeLt": false,
+                    "skills": ["Chain of Command", "V: No Wound Incapacitation"],
+                    "skillsBack": ["Martial Arts L3"],
+                    "specalist": "Chain of Com"
+                }, {
+                    "name": "MYRMIDON Lieutenant - Boarding Shotgun, Nanopulser, Zero-V Smoke Grenades",
+                    "weapons": ["Boarding Shotgun", "Nanopulser", "Zero-V Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "30",
+                    "skills": ["V: No Wound Incapacitation", "Martial Arts L3"],
+                    "canBeLt": true
+                }, {
+                    "name": "MYRMIDON Lieutenant - Combi Rifle, Nanopulser, Smoke Grenades",
+                    "weapons": ["Combi Rifle", "Nanopulser", "Smoke Grenades"],
+                    "swc": "0",
+                    "cost": "31",
+                    "skills": ["V: No Wound Incapacitation", "Martial Arts L3"],
+                    "canBeLt": true
+                }
+            ]
         }
     ]
 }

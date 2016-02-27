@@ -28,6 +28,10 @@
         "type": "Automatic",
         "desc": "During deployment, you may deploy in the Hidden Deployment or TO Camo state, and may enter TO Camo state. BS attacks made against you are -6 to the opponent. Grants Surprise Attack, Surprise Shot L1, and Stealth."
     }, {
+        "name": "Chain of Command",
+        "type": "Automatic",
+        "desc": "If you are in a not-Null state and your army's Lieutenant enters a Null state, you must become the Lieutenant."
+    }, {
         "name": "Climbing Plus",
         "type": "Automatic",
         "desc": "You may treat the Climb Skill as a Short Movement Skill. You may declare other Short Movement Skills, Short Skills, or AROs while along or holding onto a vertical surface."
