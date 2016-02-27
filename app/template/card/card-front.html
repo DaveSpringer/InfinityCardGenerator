@@ -1,0 +1,121 @@
+<div class="cardBackground" ng-style="{ backgroundColor: model.cardBackground }">
+    <div class="cardTop"></div>
+    <div class="cardBody">
+        <div id="cardHeader">
+            <div id="imageArea">
+                <div id="orders">
+                    <div class="orderContainer">
+                        <img ng-show="model.cube == 'cube'" height="20" width="20" src="images/cube.png">
+                        <img ng-show="model.cube == 'cube 2.0'" height="20" width="20" src="images/cube_20.png">
+                        <div ng-show="model.cube == 'none'"></div>
+                    </div>
+                    <div class="orderContainer">
+                        <img height="20" width="20" src="images/{{model.order}}.png">
+                    </div>
+                    <div class="orderContainer">
+                        <img height="20" width="20" src="images/{{model.fury}}.png">
+                    </div>
+                    <div class="hackable" ng-show="model.hackable"></div>
+                </div>
+                <div id="unitImage">
+                    <img src="{{model.unitImage}}" alt="Unit image not found." width="80" height="90">
+                </div>
+            </div>
+            <div id="unitSummary">
+                <div id="unitHeader">
+                    <div id="soldierName" class="cutCorner" ng-style="{ backgroundColor: model.headerBackground, color: model.headerTextColor}">{{model.name}}</div>
+                    <div id="faction" class="cutCornerBottom" ng-style="{ backgroundColor: model.headerBackground, color: model.headerTextColor}">{{model.faction}} - {{model.unit}}</div>
+                </div>
+                <div id="unitDetails">
+                    <div id="cost" class="costNumber">{{model.cost}} </div>
+                    <div class="upLabel">PTS</div>
+                    <div id="swc" class="costNumber">{{model.swc}}</div>
+                    <div class="upLabel">SWC</div>
+                    <div id="specType">{{model.specialist}}</div>
+                </div>
+                <div id="unitWeapons">
+                    <div class="weaponList" ng-style="{ color: model.weaponText }" ng-repeat="weapon in model.selectedWeapons">{{weapon}}</div>
+                </div>
+                <div id="unitSecondaries">
+                    <div class="weaponList" ng-style="{ color: model.ccWeaponText }" ng-repeat="secondary in model.selectedSecondaries">{{secondary}}</div>
+                </div>
+                <div id="unitSkills">
+                    <div class="skillList" ng-style="{ color: model.skillsListText }" ng-repeat="skill in model.selectedSkills">{{skill}}</div>
+                    <div class="skillList" ng-style="{ color: model.skillsListText }" ng-repeat="skill in model.selectedSkillsBack">{{skill}}</div>
+                </div>
+                <div id="unitEquip">
+                    <div class="equipList" ng-style="{ color: model.equipmentListText }" ng-repeat="equip in model.selectedEquipment">{{equip}}</div>
+                    <div class="equipList" ng-style="{ color: model.equipmentListText }" ng-repeat="equip in model.selectedEquipmentBack">{{equip}}</div>
+                </div>
+            </div>
+        </div>
+        <div id="statsDiv" class="cutCorner" ng-style="{ backgroundColor: model.unitStatsBackground, color: model.unitStatsText}">
+            <table id="stats">
+                <tr id="statsHeader">
+                    <td class="stath">MOV</td>
+                    <td class="stath">CC</td>
+                    <td class="stath">BS</td>
+                    <td class="stath">PH</td>
+                    <td class="stath">WIP</td>
+                    <td class="stath">ARM</td>
+                    <td class="stath">BTS</td>
+                    <td class="stath">{{model.healthType}}</td>
+                    <td class="stath">S</td>
+                </tr>
+                <tr id="unitStats">
+                    <td class="stat" id="mov">{{model.MOV}}</td>
+                    <td class="stat" id="cc">{{model.CC}}</td>
+                    <td class="stat" id="bs">{{model.BS}}</td>
+                    <td class="stat" id="ph">{{model.PH}}</td>
+                    <td class="stat" id="wip">{{model.WIP}}</td>
+                    <td class="stat" id="arm">{{model.ARM}}</td>
+                    <td class="stat" id="bts">{{model.BTS}}</td>
+                    <td class="stat" id="w">{{model.W}}</td>
+                    <td class="stat" id="s">{{model.S}}</td>
+                </tr>
+            </table>
+        </div>
+        <div id="statsBottom" class="cutCornerBottom" ng-style="{ backgroundColor: model.unitStatsBackground }"></div>
+        <div id="unitScores">
+            <div id="scoresTop" class="cutCorner" ng-style="{ backgroundColor: model.scoresBackground, color: model.scoresText}">
+                Lifetime Scores
+            </div>
+            <div id="scoresBottom" class="cutCornerBottom" ng-style="{ backgroundColor: model.scoresBackground, color: model.scoresText}">
+                <table id="scoresTable">
+                    <tr>
+                        <td class="scores">Kills:</td>
+                        <td class="scoresInput">{{model.kills}}</td>
+                        <td class="scores">Deaths:</td>
+                        <td class="scoresInput">{{model.deaths}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="backgroundFront" ng-show="model.backgroundOnFront && !model.hideBackground">
+            <div id="backgroundHeader" class="cutCorner" ng-style="{ backgroundColor: model.headerBackground, color: model.headerTextColor }">
+                Background
+            </div>
+            <div class="cutCornerBottom" ng-style="{backgroundColor: model.backgroundBackground, color: model.backgroundText }">
+                {{model.background}}
+            </div>
+        </div>
+        <div ng-repeat="skill in skills">
+            <div ng-repeat="selectedSkill in model.selectedSkills" ng-if="skill.name == selectedSkill">
+                <div class="cutCorner skillType{{skill.type}}">
+                    <div class="skillName">{{skill.name}}</div>
+                    <div class="skillType">{{skill.type}}</div>
+                </div>
+                <div class="cutCornerBottom" ng-style="{ backgroundColor: model.skillsBackground, color: model.skillsText }">{{skill.desc}}</div>
+            </div>
+        </div>
+        <div ng-repeat="equip in equipment">
+            <div ng-repeat="selectedEquip in model.selectedEquipment" ng-if="equip.name == selectedEquip">
+                <div class="cutCorner equipType{{equip.type}}">
+                    <div class="equipName">{{equip.name}}</div>
+                    <div class="equipType">{{equip.type}}</div>
+                </div>
+                <div class="cutCornerBottom" ng-style="{ backgroundColor: model.equipmentBackground, color: model.equipmentText }">{{equip.desc}}</div>
+            </div>
+        </div>
+    </div>
+</div>

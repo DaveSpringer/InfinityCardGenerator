@@ -1,9 +1,4 @@
 @media print {
-    /*@page {
-        size: 80mm 120mm;
-        margin: 25mm;
-        margin-right: 45mm;
-    }*/
     #inputArea {
         display: none;
     }
@@ -11,8 +6,14 @@
         display: none;
     }
     #cardHolder {
-        size: 156mm 118mm;
-        margin: 5mm;
+        size: 152mm 112mm
+    }
+    .cardBackground {
+        size: 76mm 112mm;
+        float: left;
+    }
+    .cardBackBackground {
+        size: 76mm 112mm;
         float: left;
     }
     #footer {
@@ -28,6 +29,10 @@ button {
     font: 12px Orbitron;
 }
 
+button.on {
+    background-color: darkslategray;
+}
+
 #footer {
     position: fixed;
     color: #CACACA;
@@ -41,16 +46,16 @@ button {
     width: 100%;
 }
 
-#cardBackground {
+.cardBackground {
     position: relative;
-    height: 424px;
-    width: 302px;
+    height: 414px;
+    width: 274px;
     background-color: #dcdddf;
     float: left;
     border: 1px white solid;
 }
 
-#cardBackground:after {
+.cardBackground:after {
     position: absolute;
     right: 0px;
     bottom: 0px;
@@ -69,17 +74,16 @@ button {
     padding: 0px 10px 0px 10px;
 }
 
-#cardTop {
+.cardTop {
     position: relative;
     height: 20px;
-    width: 302px;
-    background-color: #dcdddf;
+    width: 274px;
     border-top: 2px;
     border-right: 2px;
     border-left: 2px;
 }
 
-#cardTop:after {
+.cardTop:after {
     position: absolute;
     left: -0px;
     bottom: -0px;
@@ -88,7 +92,7 @@ button {
     border-right: 20px solid transparent;
 }
 
-#cardBody {
+.cardBody {
     padding-left: 8px;
     padding-right: 8px;
 }
@@ -106,13 +110,14 @@ button {
     float: left;
     height: 100%;
     margin-left: 3px;
+    margin-right: -2px;
 }
 
 #unitSummary {
     position: relative;
     float: left;
     height: 100px;
-    width: 190px;
+    width: 165px;
     padding: 0px;
 }
 
@@ -126,9 +131,9 @@ button {
 
 #unitHeader {
     position: relative;
-    width: 190px;
+    width: 168px;
     height: 40px;
-    font: 7px Orbitron;
+    font: 6.5px Orbitron;
     color: white;
     float: left;
     padding-top: 2px;
@@ -136,22 +141,20 @@ button {
 
 #soldierName {
     font: 16px Orbitron;
-    width: 165px;
-    background-color: #0090a5;
+    width: 145px;
 }
 
 #faction {
-    width: 165px;
-    background-color: #0090a5;
+    width: 145px;
     top: 0px;
 }
 
 #unitDetails {
     float: left;
     position: relative;
-    font: 14px Orbitron;
+    font: 13px Orbitron;
     color: black;
-    width: 185px;
+    width: 165px;
     height: 15px;
     margin-top: 0px;
     margin-right: 0px;
@@ -163,7 +166,7 @@ button {
 }
 
 .upLabel {
-    font: 6px Orbitron;
+    font: 5.5px Orbitron;
     float: left;
     margin-right: 5px;
 }
@@ -171,15 +174,15 @@ button {
 .itemList {
     position: relative;
     float: left;
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     height: 15px;
-    width: 180px;
+    width: 160px;
 }
 
 #specType {
     color: #333333;
-    font: 10px Orbitron;
-    width: 90px;
+    font: 9px Orbitron;
+    width: 75px;
     padding: 0px 0px 0px 0px;
     margin: 2px 0px 0px 0px;
     border-left: 2px solid;
@@ -193,7 +196,7 @@ button {
     float: none;
     color: #0090A5;
     height: 15px;
-    width: 180px;
+    width: 160px;
     font: 6px Orbitron;
 }
 
@@ -201,44 +204,43 @@ button {
     position: relative;
     color: #004D58;
     height: 15px;
-    width: 180px;
+    width: 160px;
 }
 
 #unitSkills {
     position: relative;
     color: #A54900;
     height: 15px;
-    width: 180px;
+    width: 160px;
 }
 
 .weaponList {
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     float: left;
     margin-right: 7px
 }
 
 .skillList {
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     float: left;
     margin-right: 7px
 }
 
 #unitEquip {
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     float: none;
     margin-right: 7px;
     color: #582700;
 }
 
 .equipList {
-    font: 8px Orbitron;
+    font: 7px Orbitron;
     float: left;
     margin-right: 8px;
 }
 
 #statsDiv {
     margin-top: 3px;
-    background-color: #0090a5;
     padding-top: 3px;
     margin-bottom: 0px;
     padding-bottom: 0px;
@@ -247,7 +249,6 @@ button {
 }
 
 #statsBottom {
-    background-color: #0090a5;
     top: -7px;
     margin-bottom: 0px;
     padding-bottom: 11px;
@@ -257,8 +258,7 @@ button {
     background-color: 0090a5;
     position: relative;
     float: none;
-    width: 260px;
-    color: white;
+    width: 235px;
     font: 10px Orbitron;
     text-align: center;
 }
@@ -266,8 +266,7 @@ button {
 #unitStats {
     background-color: 0090a5;
     height: 15px;
-    width: 260px;
-    color: white;
+    width: 230px;
     font: 10px Orbitron;
 }
 
@@ -306,10 +305,11 @@ button {
 
 #scoresBottom {
     background-color: #0090a5;
-    font: 12px Orbitron;
-    height: 15px;
+    font: 10px Orbitron;
+    height: 12px;
     padding-top: 0px;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
+    margin-bottom: 0px;
 }
 
 #scoresTable {
@@ -408,16 +408,15 @@ button {
 
 /* Card back stuff. */
 
-#cardBackBackground {
+.cardBackBackground {
     position: relative;
-    height: 424px;
-    width: 302px;
-    background-color: #dcdddf;
+    height: 414px;
+    width: 274px;
     float: left;
     border: 1px white solid;
 }
 
-#cardBackBackground:after {
+.cardBackBackground:after {
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -426,22 +425,21 @@ button {
     border-right: 20px solid transparent;
 }
 
-#cardBackBody {
+.cardBackBody {
     margin-left: 8px;
     margin-right: 8px;
 }
 
-#backHeader {
+.backHeader {
     position: relative;
     height: 20px;
-    width: 302px;
-    background-color: #dcdddf;
+    width: 274px;
     border-top: 2px;
     border-right: 2px;
     border-left: 2px;
 }
 
-#backHeader:after {
+.backHeader:after {
     position: absolute;
     right: -0px;
     bottom: -0px;
@@ -452,13 +450,11 @@ button {
 
 #hiddenInfo {
     height: 15px;
-    background-color: black;
 }
 
 #hiddenInfoBottom {
     margin-top: 0px;
     height: 15px;
-    background-color: #0090a5;
 }
 
 #camoSpace {
@@ -501,7 +497,7 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     display: inline-block;
     margin-left: 0px;
     margin-right: 0px;
-    width: 262px;
+    width: 235px;
     padding: 0px 10px 0px 10px;
     font: 10px Orbitron;
     color: white;
@@ -537,7 +533,7 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     top: -4px;
     display: inline-block;
     margin-left: 0px;
-    width: 262px;
+    width: 235px;
     background-color: grey;
     padding: 0px 10px 4px 10px;
     font: 8px Orbitron;
@@ -568,7 +564,7 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-right: 2px solid white;
     border-left: 2px solid white;
     display: inline-block;
-    width: 260px;
+    width: 235px;
     padding: 0px 10px 0px 10px;
     font: 10px Orbitron;
     color: white;
@@ -599,7 +595,7 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-left: 2px solid white;
     top: -4px;
     display: inline-block;
-    width: 260px;
+    width: 235px;
     background-color: grey;
     padding: 0px 10px 5px 10px;
     font: 8px Orbitron;
@@ -623,15 +619,29 @@ http://stackoverflow.com/questions/19248443/is-it-possible-to-create-an-angled-c
     border-bottom: 12px solid #dcdddf;
     border-right: 12px solid transparent;
 }
+/* End cutCorner */
 
-.inputBlock {
-    width: 98%;
+div.colorHolder {
+    margin-left: 2px;
+    width: 200px;
+    min-width: 200px;
+    height: 60px;
+    min-height: 60px;
     position: relative;
-    padding: 2px 5px 2px 5px;
-    border: 2px solid #B29584;
-    margin-top: 5px;
-    background-color: azure;
-    border-radius: 5px;
+    flex: 1;
+}
+
+div.colorButtonHolder {
+    flex: 2;
+    padding: 5px;
+    min-width: 200px;
+    align-items: center;
+    background-color: bisque;
+}
+
+.fullSelect {
+    width: 98%;
+    margin: 2px 5px 2px 5px;
 }
 
 h3 {
@@ -646,6 +656,11 @@ label {
     padding: 2px;
 }
 
+p.note {
+    font: 12px Orbitron;
+    padding: 0px 5px;
+}
+
 select {
     padding: 2px;
     font: 10px Orbitron;
@@ -654,4 +669,22 @@ select {
 input {
     font: 12px Orbitron;
 }
-/* End cutCorner */
+
+a.directLink {
+    float: right;
+    font: 12px Orbitron;
+    margin-right: 6px
+}
+
+/* Color Picker CSS Reqs */
+.color-picker-input {
+    height: 30px;
+}
+
+#colorFlex {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    
+}

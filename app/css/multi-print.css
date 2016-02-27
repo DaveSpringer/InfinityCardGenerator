@@ -1,0 +1,21 @@
+@media print {
+    #frontCardHolder {
+        page-break-after: always;
+        margin-left: 63px;
+    }
+    
+    #backCardHolder {
+        margin-left: 63px;
+    }
+    
+    #cards {
+        width: auto;
+        align-content: center;
+        vertical-align: middle;
+    }
+}
+
+table {
+    padding: 0px;
+    margin: 0px;
+}

@@ -1,0 +1,24 @@
+<div id="ccWeaponWrapper" class="inputWrapper">
+    <div id="ccWeaponInputDialog">
+        <h3>Add an Unavailable CC Weapon</h3>
+        <label>Name</label>
+        <input type="text" ng-model="tempCcWeapon.name" />
+        <br>
+        <label>Burst</label>
+        <input type="text" ng-model="tempCcWeapon.burst" />
+        <br>
+        <label>Damage</label>
+        <input type="text" ng-model="tempCcWeapon.dam" />
+        <br>
+        <label>Ammo</label>
+        <input type="text" ng-model="tempCcWeapon.ammo" />
+        <br>
+        <label>Traits</label>
+        <br>
+        <textarea ng-model="tempCcWeapon.traits"></textarea>
+    </div>
+    <div id="ccWeaponInputButtons">
+        <button ng-click="addCcWeapon()">Add Cc Weapon</button>
+        <button ng-click="exportCcWeapon()">Export Cc Weapon</button>
+    </div>
+</div>

@@ -3,11 +3,25 @@
 
 <head>
     <meta charset="utf-8">
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
     <script src="js/app.js"></script>
     <script src="js/inputPanel.js"></script>
+    <script src="js/cardFront.js"></script>
+    <script src="js/cardBack.js"></script>
+    <script src="js/skillInputPanel.js"></script>
+    <script src="js/weaponInputPanel.js"></script>
+    <script src="js/ccWeaponInputPanel.js"></script>
+    <script src="js/equipmentInputPanel.js"></script>
+    <script src="https://ruhley.github.io/angular-color-picker/bower_components/tinycolor/dist/tinycolor-min.js"></script>
+    <script src="https://ruhley.github.io/angular-color-picker/bower_components/angular-color-picker/angularjs-color-picker.min.js"></script>
+    <script src="https://likeastore.github.io/ngDialog/js/ngDialog.min.js"></script>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/input-panel.css">
+    <link rel="stylesheet" href="https://ruhley.github.io/angular-color-picker/bower_components/angular-color-picker/angularjs-color-picker.min.css" />
+    <link rel="stylesheet" href="https://likeastore.github.io/ngDialog/css/ngDialog.css" />
+    <link rel="stylesheet" href="https://likeastore.github.io/ngDialog/css/ngDialog-theme-default.css" />
+
     <title>Infinty Card Generator</title>
     <link href='https://fonts.googleapis.com/css?family=Orbitron:500,800' rel='stylesheet' type='text/css'>
 </head>
@@ -16,15 +30,16 @@
     <div id="inputArea" ng-hide="hideInput">
         <input-panel header="Unit Selection">
             <p class="note">Note: Selecting units here may override previously provided inputs.</p>
-            <select ng-model="temp.faction" ng-options="unit.faction for unit in units" ng-change="setFaction(temp.faction)">
+            <select class="fullSelect" ng-model="temp.faction" ng-options="unit.faction for unit in units" ng-change="setFaction()">
             </select>
             <br>
-            <select ng-model="temp.unit" ng-options="unit.fullName for unit in temp.faction.units" ng-change="setUnit(temp.unit)">
+            <select class="fullSelect" ng-model="temp.unit" ng-options="unit.fullName for unit in temp.faction.units" ng-change="setUnit()">
             </select>
             <br>
-            <select ng-model="temp.loadout" ng-options="loadout.name for loadout in temp.unit.loadouts" ng-change="setLoadout(temp.loadout, temp.unit)">
+            <select class="fullSelect" ng-model="temp.loadout" ng-options="loadout.name for loadout in temp.unit.loadouts" ng-change="setLoadout()">
             </select>
         </input-panel>
+
         <input-panel header="Card Header">
             <label>Name</label>
             <input type="text" ng-model="model.name">
@@ -80,53 +95,91 @@
                     <td>
                         <label>Skills on Front:</label>
                         <br>
-                        <select multiple ng-model="model.selectedSkills">
+                        <select multiple size="10" ng-model="model.selectedSkills">
                             <option ng-repeat="skill in skills" type="checkbox" class="skillCheck" value="{{skill.name}}">{{skill.name}}</option>
                         </select>
                     </td>
                     <td>
                         <label>Skills on Back:</label>
                         <br>
-                        <select multiple ng-model="model.selectedSkillsBack">
+                        <select multiple size="10" ng-model="model.selectedSkillsBack">
                             <option ng-repeat="skill in skills" type="checkbox" class="skillCheck" value="{{skill.name}}">{{skill.name}}</option>
                         </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button ng-click="showAddSkill()" ng-class="{on:showSkillInput}">Add a Skill</button>
+                    </td>
+                </tr>
+                <tr ng-show="showSkillInput">
+                    <td colspan="2">
+                        <skill-input-panel temp-skill="tempSkill" order-types="orderTypes" add-skill="addSkill()" show-skill-input="showSkillInput" export-skill="exportSkill()"></skill-input-panel>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>Weapons:</label>
                         <br>
-                        <select multiple ng-model="model.selectedWeapons">
+                        <select multiple size="10" ng-model="model.selectedWeapons">
                             <option ng-repeat="weapon in weapons" value="{{weapon.name}}">{{weapon.name}}</option>
                         </select>
                     </td>
                     <td>
                         <label>CC Weapons:</label>
                         <br>
-                        <select multiple ng-model="model.selectedSecondaries">
+                        <select multiple size="10" ng-model="model.selectedSecondaries">
                             <option ng-repeat="secondary in secondaryWeapons" value="{{secondary.name}}">{{secondary.name}}</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>
+                        <button ng-click="showAddWeapon()" ng-class="{on:showWeaponInput}">Add a Weapon</button>
+                    </td>
+                    <td>
+                        <button ng-click="showAddCcWeapon()" ng-class="{on:showCcWeaponInput}">Add a CC Weapon</button>
+                    </td>
+                </tr>
+                <tr ng-show="showWeaponInput">
+                    <td colspan="2">
+                        <weapon-input-panel temp-weapon="tempWeapon" add-weapon="addWeapon()" export-weapon="exportWeapon()"></weapon-input-panel>
+                    </td>
+                </tr>
+                <tr ng-show="showCcWeaponInput">
+                    <td colspan="2">
+                        <cc-weapon-input-panel temp-cc-weapon="tempCcWeapon" add-cc-weapon="addCcWeapon()" , export-cc-weapon="exportCcWeapon()"></cc-weapon-input-panel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <label>Equipment on Front:</label>
                         <br>
-                        <select multiple ng-model="model.selectedEquipment">
+                        <select multiple size="10" ng-model="model.selectedEquipment">
                             <option ng-repeat="equip in equipment" value="{{equip.name}}">{{equip.name}}</option>
                         </select>
                     </td>
                     <td>
                         <label>Equipment on Back:</label>
                         <br>
-                        <select multiple ng-model="model.selectedEquipmentBack">
+                        <select multiple size="10" ng-model="model.selectedEquipmentBack">
                             <option ng-repeat="equip in equipment" value="{{equip.name}}">{{equip.name}}</option>
                         </select>
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="2">
+                        <button ng-click="showAddEquipment()" ng-class="{on:showEquipmentInput}">Add Equipment</button>
+                    </td>
+                </tr>
+                <tr ng-show="showEquipmentInput">
+                    <td colspan="2">
+                        <equipment-input-panel temp-equipment="tempEquipment" order-types="orderTypes" add-equipment="addEquipment()" export-equipment="exportEquipment()"></equipment-input-panel> 
+                    </td>
+                </tr>
             </table>
         </input-panel>
-        <input-panel header="Lifetime Stats">
+        <input-panel header="Lifetime Scores">
             <label>Kills:</label>
             <input type="text" ng-model="model.kills" />
             <br>
@@ -136,7 +189,7 @@
 
         <input-panel header="Unit Stats">
             <table id="inputTable">
-                <th>
+                <tr>
                     <th>MOV</th>
                     <th>CC</th>
                     <th>BS</th>
@@ -146,7 +199,7 @@
                     <th>BTS</th>
                     <th>W</th>
                     <th>S</th>
-                </th>
+                </tr>
                 <tr>
                     <td/>
                     <td>
@@ -197,7 +250,98 @@
             <label>Can be Lieutennant?</label>
             <br>
         </input-panel>
-        <div class="inputBlock"> 
+
+        <input-panel header="Card Colors" id="cardColors">
+            <!-- Unfortuantely, I have not been able to figure out how to allow the background color to change.
+            <label>Card Background</label>
+            <color-picker ng-model="model.cardBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker> -->
+            <div id="colorFlex">
+                <div class="colorHolder">
+                    <label>Header Background</label>
+                    <color-picker ng-model="model.headerBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Header Text</label>
+                    <color-picker ng-model="model.headerTextColor" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Unit Stats Background</label>
+                    <color-picker ng-model="model.unitStatsBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Unit Stats Text</label>
+                    <color-picker ng-model="model.unitStatsText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Lifetime Scores Background</label>
+                    <color-picker ng-model="model.scoresBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Lifetime Scores Text</label>
+                    <color-picker ng-model="model.scoresText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Background... Background</label>
+                    <color-picker ng-model="model.backgroundBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Background Text</label>
+                    <color-picker ng-model="model.backgroundText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Skills Background</label>
+                    <color-picker ng-model="model.skillsBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Skills Text</label>
+                    <color-picker ng-model="model.skillsText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Equipment Background</label>
+                    <color-picker ng-model="model.equipmentBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Equipment Text</label>
+                    <color-picker ng-model="model.equipmentText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Hidden Info Header Background</label>
+                    <color-picker ng-model="model.hiddenInfoHeaderBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Hidden Info Header Text</label>
+                    <color-picker ng-model="model.hiddenInfoHeaderColor" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Hidden Info Background</label>
+                    <color-picker ng-model="model.hiddenInfoBackground" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Hidden Info Text</label>
+                    <color-picker ng-model="model.hiddenInfoColor" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Weapon Text</label>
+                    <color-picker ng-model="model.weaponText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>CC Weapon Text</label>
+                    <color-picker ng-model="model.ccWeaponText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Skills List Text</label>
+                    <color-picker ng-model="model.skillsListText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorHolder">
+                    <label>Equipment Lists Text</label>
+                    <color-picker ng-model="model.equipmentListText" color-picker-format="'hex'" color-picker-alpha="false" color-picker-swatch-bootstrap="false"></color-picker>
+                </div>
+                <div class="colorButtonHolder">
+                    <button ng-click="resetColors()">Reset to Default Colors</button>
+                </div>
+            </div>
+        </input-panel>
+        <div class="inputBlock">
             <h3>JSON Input/Output (Temporary Storage)</h3>
             <input type="checkbox" ng-model="showJson" />
             <label>Show JSON</label>
@@ -209,181 +353,22 @@
         <button ng-click="saveToPc()">Save To PC</button>
         <input type="checkbox" ng-model="hideInput" />
         <label>Hide Input</label>
+        <a class="directLink" href="multi-print.html">Go To Multi-Printer<img src="images/arrow-right.png"/></a>
+        <a class="directLink" href="https://github.com/DaveSpringer/InfinityCardGenerator/blob/gh-pages/README.md" target="_blank">Help<img src="images/question-mark.png" height="16" width="16"/></a>
         <hr>
     </div>
 
     <div id="cardHolder">
 
-        <div id="cardBackground">
-            <div id="cardTop"></div>
-            <div id="cardBody">
-                <div id="cardHeader">
-                    <div id="imageArea">
-                        <div id="orders">
-                            <div class="orderContainer">
-                                <img ng-show="model.cube == 'cube'" height="20" width="20" src="images/cube.png">
-                                <img ng-show="model.cube == 'cube 2.0'" height="20" width="20" src="images/cube_20.png">
-                                <div ng-show="model.cube == 'none'"></div>
-                            </div>
-                            <div class="orderContainer">
-                                <img height="20" width="20" src="images/{{model.order}}.png">
-                            </div>
-                            <div class="orderContainer">
-                                <img height="20" width="20" src="images/{{model.fury}}.png">
-                            </div>
-                            <div class="hackable" ng-show="model.hackable"></div>
-                        </div>
-                        <div id="unitImage">
-                            <img src="{{model.unitImage}}" alt="Unit image not found." width="80" height="90">
-                        </div>
-                    </div>
-                    <div id="unitSummary">
-                        <div id="unitHeader">
-                            <div id="soldierName" class="cutCorner">{{model.name}}</div>
-                            <div id="faction" class="cutCornerBottom">{{model.faction}} - {{model.unit}}</div>
-                        </div>
-                        <div id="unitDetails">
-                            <div id="cost" class="costNumber">{{model.cost}} </div>
-                            <div class="upLabel">PTS</div>
-                            <div id="swc" class="costNumber">{{model.swc}}</div>
-                            <div class="upLabel">SWC</div>
-                            <div id="specType">{{model.specialist}}</div>
-                        </div>
-                        <div id="unitWeapons">
-                            <div class="weaponList" ng-repeat="weapon in model.selectedWeapons">{{weapon}}</div>
-                        </div>
-                        <div id="unitSecondaries">
-                            <div class="weaponList" ng-repeat="secondary in model.selectedSecondaries">{{secondary}}</div>
-                        </div>
-                        <div id="unitSkills">
-                            <div class="skillList" ng-repeat="skill in model.selectedSkills">{{skill}}</div>
-                            <div class="skillList" ng-repeat="skill in model.selectedSkillsBack">{{skill}}</div>
-                        </div>
-                        <div id="unitEquip">
-                            <div class="equipList" ng-repeat="equip in model.selectedEquipment">{{equip}}</div>
-                            <div class="equipList" ng-repeat="equip in model.selectedEquipmentBack">{{equip}}</div>
-                        </div>
-                    </div>
-                </div>
-                <div id="statsDiv" class="cutCorner">
-                    <table id="stats">
-                        <tr id="statsHeader">
-                            <td class="stath">MOV</td>
-                            <td class="stath">CC</td>
-                            <td class="stath">BS</td>
-                            <td class="stath">PH</td>
-                            <td class="stath">WIP</td>
-                            <td class="stath">ARM</td>
-                            <td class="stath">BTS</td>
-                            <td class="stath">W</td>
-                            <td class="stath">S</td>
-                        </tr>
-                        <tr id="unitStats">
-                            <td class="stat" id="mov">{{model.MOV}}</td>
-                            <td class="stat" id="cc">{{model.CC}}</td>
-                            <td class="stat" id="bs">{{model.BS}}</td>
-                            <td class="stat" id="ph">{{model.PH}}</td>
-                            <td class="stat" id="wip">{{model.WIP}}</td>
-                            <td class="stat" id="arm">{{model.ARM}}</td>
-                            <td class="stat" id="bts">{{model.BTS}}</td>
-                            <td class="stat" id="w">{{model.W}}</td>
-                            <td class="stat" id="s">{{model.S}}</td>
-                        </tr>
-                    </table>
-                </div>
-                <div id="statsBottom" class="cutCornerBottom"></div>
-                <div id="unitScores">
-                    <div id="scoresTop" class="cutCorner">
-                        Lifetime Stats
-                    </div>
-                    <div id="scoresBottom" class="cutCornerBottom">
-                        <table id="scoresTable">
-                            <tr>
-                                <td class="scores">Kills:</td>
-                                <td class="scoresInput">{{model.kills}}</td>
-                                <td class="scores">Deaths:</td>
-                                <td class="scoresInput">{{model.deaths}}</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div id="backgroundFront" ng-show="model.backgroundOnFront && !model.hideBackground">
-                    <div id="backgroundHeader" class="cutCorner">
-                        Background
-                    </div>
-                    <div class="cutCornerBottom">
-                        {{model.background}}
-                    </div>
-                </div>
-                <div ng-repeat="skill in skills">
-                    <div ng-repeat="selectedSkill in model.selectedSkills" ng-if="skill.name == selectedSkill">
-                        <div class="cutCorner skillType{{skill.type}}">
-                            <div class="skillName">{{skill.name}}</div>
-                            <div class="skillType">{{skill.type}}</div>
-                        </div>
-                        <div class="cutCornerBottom">{{skill.desc}}</div>
-                    </div>
-                </div>
-                <div ng-repeat="equip in equipment">
-                    <div ng-repeat="selectedEquip in model.selectedEquipment" ng-if="equip.name == selectedEquip">
-                        <div class="cutCorner equipType{{equip.type}}">
-                            <div class="equipName">{{equip.name}}</div>
-                            <div class="equipType">{{equip.type}}</div>
-                        </div>
-                        <div class="cutCornerBottom">{{equip.desc}}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="cardBackBackground">
-            <div id="backHeader"></div>
-            <div id="cardBackBody">
-                <div ng-show="model.hasCamo || model.canBeLt" id="hiddenInfoContainter">
-                    <div class="cutCornerBack" id="hiddenInfo">
-                        Hidden Information
-                    </div>
-                    <div class="cutCornerBackBottom" id="hiddenInfoBottom">
-                        <div id="camoSpace" ng-show="model.hasCamo">Camo Number:</div>
-                        <div id="ltSpace" ng-show="model.canBeLt">Is LT?
-                            <div id="ltBox"></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="backgroundFront" ng-hide="model.backgroundOnFront || model.hideBackground">
-                    <div id="backgroundHeader" class="cutCornerBack">
-                        Background
-                    </div>
-                    <div class="cutCornerBackBottom">
-                        {{model.background}}
-                    </div>
-                </div>
-                <div ng-repeat="skill in skills">
-                    <div ng-repeat="selectedSkill in model.selectedSkillsBack" ng-if="skill.name == selectedSkill">
-                        <div class="cutCornerBack skillType{{skill.type}}">
-                            <div class="skillName">{{skill.name}}</div>
-                            <div class="skillType">{{skill.type}}</div>
-                        </div>
-                        <div class="cutCornerBackBottom">{{skill.desc}}</div>
-                    </div>
-                </div>
-                <div ng-repeat="equip in equipment">
-                    <div ng-repeat="selectedEquip in model.selectedEquipmentBack" ng-if="equip.name == selectedEquip">
-                        <div class="cutCornerBack equipType{{equip.type}}">
-                            <div class="equipName">{{equip.name}}</div>
-                            <div class="equipType">{{equip.type}}</div>
-                        </div>
-                        <div class="cutCornerBackBottom">{{equip.desc}}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <card-front model="model" skills="skills" equipment="equipment"></card-front>
+        <card-back model="model" skills="skills" equipment="equipment"></card-back>
 
     </div>
     <div id="footer" ng-hide="hideInput">
-        Infinity is &copy;2015 Corvus Belli S.L.L.
-        <br> Currently used without permission. Permission is being requested.
+        <a href="http://www.infinitythegame.com">Infinity</a> is &copy;2016 Corvus Belli S.L.L. Images, logos, ideas belong to Corvus Belli.
+        <br>Their content is currently used with permission but may be taken down at their request.
         <br>
-        <a href="http://www.infinitythegame.com">Visit their site</a>
+        <a href="http://www.infinitythegame.com">Visit the Infinity Miniatures Game site</a>
     </div>
 </body>
 

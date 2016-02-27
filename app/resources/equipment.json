@@ -38,7 +38,7 @@
     }, {
         "name": "MediKit",
         "type": "Short",
-        "desc": "Target friendly trooper in the Unconscious state with 1+ W. If the target passes a PH-3 roll, recover 1 W and remove Unconcious state, else die."
+        "desc": "Target friendly Trooper in the Unconscious State with 1+ W. If the target passes a PH-3 roll, recover 1 W and remove Unconscious State, else target dies."
     }, {
         "name": "Multispectral Visor L1",
         "type": "Automatic",

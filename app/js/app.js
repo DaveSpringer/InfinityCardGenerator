@@ -1,4 +1,4 @@
-function InfinityCardController($scope, $http) {
+function InfinityCardController($scope, $http, ngDialog) {
     $scope.skills = [];
     $http.get('resources/skills.json').success(function (data) {
         $scope.skills = data;
@@ -40,6 +40,7 @@ function InfinityCardController($scope, $http) {
         "name": "Special Troop",
         "value": "Specialist"
     }];
+    $scope.orderTypes = ["Automatic", "Short", "Short-Aro", "Entire", "Deployment"];
     /* Unit Designations */
     $scope.units = [];
     $http.get('resources/aleph.json').success(function (data) {
@@ -92,13 +93,56 @@ function InfinityCardController($scope, $http) {
     $scope.model.background = "Travis is the oldest of the three Young boys, and began training to become a doctor prior to his family's debt catching up to him. After his sister was abducted by a Kazak crime syndicate, Travis left the University to help rescue her. During the failed attempt, Travis and his brothers killed over a dozen lackeys. For their own safety, Travis convinced his brothers to volunteer for the Caledonian army where they have thrived.";
     $scope.model.hasCamo = false;
     $scope.model.canBeLt = false;
+    $scope.model.cardBackground = "#DCDDDF";
+    $scope.model.headerBackground = "#0090A5";
+    $scope.model.headerTextColor = "#FFFFFF";
+    $scope.model.unitStatsBackground = "#0090A5";
+    $scope.model.unitStatsText = "#FFFFFF";
+    $scope.model.scoresBackground = "#0090A5";
+    $scope.model.scoresText = "#FFFFFF";
+    $scope.model.healthType = "W";
+    $scope.model.skillsBackground = "#888888";
+    $scope.model.skillsText = "#FFFFFF";
+    $scope.model.equipmentBackground = "#888888";
+    $scope.model.equipmentText = "#FFFFFF";
+    $scope.model.backgroundBackground = "#888888";
+    $scope.model.backgroundText = "#FFFFFF";
+    $scope.model.hiddenInfoHeaderBackground = "#000000";
+    $scope.model.hiddenInfoHeaderColor = "#FFFFFF";
+    $scope.model.hiddenInfoBackground = "#0090A5";
+    $scope.model.hiddenInfoColor = "#FFFFFF";
+    $scope.model.weaponText = "#0090A5";
+    $scope.model.ccWeaponText = "#004D58";
+    $scope.model.skillsListText = "#A54900";
+    $scope.model.equipmentListText = "#582700";
     /* End unit properties */
+
+    /* Temp Skill */
+    $scope.tempSkill = {};
+    $scope.tempSkill.name = "Your Skill Name Here";
+    $scope.tempSkill.type = "Short";
+    $scope.tempSkill.desc = "Skill description."
+    /* End Temp Skill */
+
+    /* Dialog Objects */
+    $scope.tempWeapon = {};
+    $scope.tempCcWeapon = {};
+    $scope.tempEquipment = {};
+    $scope.tempEquipment.name = "Your Equipment Name Here";
+    $scope.tempEquipment.type = "Short";
+    $scope.tempEquipment.desc = "Your description here.";
+    /* End Dialog Objects */
+
+    /* Additional Controls */
+    $scope.showSkillInput = false;
+    /* End Additional Controls */
 
     /* Event Handlers */
     $scope.setFaction = function (faction) {
-        if (typeof faction !== "undefined") {
-            $scope.model.faction = faction.faction;
+        if (typeof faction === "undefined") {
+            faction = this.temp.faction;
         }
+        $scope.model.faction = faction.faction;
     }
 
     $scope.saveToPc = function (data) {
@@ -122,7 +166,7 @@ function InfinityCardController($scope, $http) {
 
     $scope.setUnit = function (unit) {
         if (typeof unit === "undefined")
-            return;
+            unit = this.temp.unit;
         var model = $scope.model;
         model.unit = unit.unitName;
         model.MOV = unit.mov;
@@ -144,6 +188,11 @@ function InfinityCardController($scope, $http) {
         model.cube = unit.cube;
         model.fury = unit.fury;
         model.order = unit.order;
+        model.topLeft = {};
+        model.topRight = {};
+        model.bottomLeft = {};
+        model.bottomRight = {};
+
         if (typeof unit.name !== "undefined")
             model.name = unit.name;
         if (typeof unit.backgroundOnFront !== "undefined")
@@ -153,12 +202,17 @@ function InfinityCardController($scope, $http) {
         if (typeof unit.background !== "undefined")
             model.background = unit.background;
         model.specialist = unit.specialist;
+        // Defaulting health type to Wounds.
+        if (typeof unit.healthType === "undefined")
+            model.healthType = "W";
     }
 
     $scope.setLoadout = function (loadout, unit) {
-        $scope.setUnit(unit);
         if (typeof loadout === "undefined")
-            return;
+            loadout = this.temp.loadout;
+        if (typeof unit === "undefined")
+            unit = this.temp.unit;
+        $scope.setUnit(unit);
         var model = $scope.model;
         model.selectedWeapons = mergeArray(model.selectedWeapons, loadout.weapons);
         model.selectedEquipment = mergeArray(model.selectedEquipment, loadout.equipment);
@@ -171,6 +225,128 @@ function InfinityCardController($scope, $http) {
         model.swc = loadout.swc;
         model.hasCamo = loadout.hasCamo;
         model.canBeLt = loadout.canBeLt;
+    }
+
+    $scope.resetColors = function () {
+        $scope.model.cardBackground = "#DCDDDF";
+        $scope.model.headerBackground = "#0090A5";
+        $scope.model.headerTextColor = "#FFFFFF";
+        $scope.model.unitStatsBackground = "#0090A5";
+        $scope.model.unitStatsText = "#FFFFFF";
+        $scope.model.scoresBackground = "#0090A5";
+        $scope.model.scoresText = "#FFFFFF";
+        $scope.model.healthType = "W";
+        $scope.model.skillsBackground = "#888888";
+        $scope.model.skillsText = "#FFFFFF";
+        $scope.model.equipmentBackground = "#888888";
+        $scope.model.equipmentText = "#FFFFFF";
+        $scope.model.backgroundBackground = "#888888";
+        $scope.model.backgroundText = "#FFFFFF";
+        $scope.model.hiddenInfoHeaderBackground = "#000000";
+        $scope.model.hiddenInfoHeaderColor = "#FFFFFF";
+        $scope.model.hiddenInfoBackground = "#0090A5";
+        $scope.model.hiddenInfoColor = "#FFFFFF";
+        $scope.model.weaponText = "#0090A5";
+        $scope.model.ccWeaponText = "#004D58";
+        $scope.model.skillsListText = "#A54900";
+        $scope.model.equipmentListText = "#582700";
+    }
+
+    $scope.showAddSkill = function () {
+        $scope.showSkillInput = !$scope.showSkillInput;
+    }
+
+    $scope.showAddWeapon = function () {
+        $scope.showWeaponInput = !$scope.showWeaponInput;
+    }
+
+    $scope.showAddCcWeapon = function () {
+        $scope.showCcWeaponInput = !$scope.showCcWeaponInput;
+    }
+
+    $scope.showAddEquipment = function () {
+        $scope.showEquipmentInput = !$scope.showEquipmentInput;
+    }
+
+    $scope.exportSkill = function () {
+        $scope.exportObject = $scope.tempSkill;
+        var dialog = ngDialog.open({
+            template: 'template/dialog/export-object-dialog.html',
+            controller: 'InfinityCardController',
+            scope: $scope
+        })
+    }
+
+    $scope.addSkill = function (tempSkill) {
+        debugger;
+        var newSkill = {};
+        newSkill.name = $scope.tempSkill.name;
+        newSkill.type = $scope.tempSkill.type;
+        newSkill.desc = $scope.tempSkill.desc;
+        $scope.skills.push(newSkill);
+
+        return true;
+    }
+
+    $scope.exportEquipment = function () {
+        $scope.exportObject = $scope.tempEquipment;
+        var dialog = ngDialog.open({
+            template: 'template/dialog/export-object-dialog.html',
+            controller: 'InfinityCardController',
+            scope: $scope
+        })
+    }
+
+    $scope.addEquipment = function () {
+        var newEquipment = {};
+        newEquipment.name = $scope.tempEquipment.name;
+        newEquipment.type = $scope.tempEquipment.type;
+        newEquipment.desc = $scope.tempEquipment.desc;
+        $scope.equipment.push(newEquipment);
+
+        return true;
+    }
+
+    $scope.addWeapon = function () {
+        var newWeapon = {};
+        newWeapon.name = $scope.tempWeapon.name;
+        newWeapon.burst = $scope.tempWeapon.burst;
+        newWeapon.dam = $scope.tempWeapon.dam;
+        newWeapon.ammo = $scope.tempWeapon.ammo;
+        newWeapon.traits = $scope.tempWeapon.traits;
+        $scope.weapons.push(newWeapon);
+        return true;
+    }
+
+    $scope.exportWeapon = function () {
+        $scope.exportObject = $scope.tempWeapon;
+        var dialog = ngDialog.open({
+            template: 'template/dialog/export-object-dialog.html',
+            controller: 'InfinityCardController',
+            scope: $scope
+        })
+    }
+
+    $scope.addCcWeapon = function () {
+        debugger;
+        var tempCcWeapon = $scope.tempCcWeapon;
+        var newCcWeapon = {};
+        newCcWeapon.name = tempCcWeapon.name;
+        newCcWeapon.burst = tempCcWeapon.burst;
+        newCcWeapon.dam = tempCcWeapon.dam;
+        newCcWeapon.ammo = tempCcWeapon.ammo;
+        newCcWeapon.traits = tempCcWeapon.traits;
+        $scope.secondaryWeapons.push(newCcWeapon);
+        return true;
+    }
+
+    $scope.exportCcWeapon = function () {
+        $scope.exportObject = $scope.tempCcWeapon;
+        var dialog = ngDialog.open({
+            template: 'template/dialog/export-object-dialog.html',
+            controller: 'InfinityCardController',
+            scope: $scope
+        })
     }
 }
 
@@ -238,6 +414,6 @@ function jsonText() {
     };
 }
 
-angular.module('infinityCardApp', [])
+angular.module('infinityCardApp', ['color.picker', 'ngDialog'])
     .controller('InfinityCardController', InfinityCardController)
     .directive('jsonText', jsonText);

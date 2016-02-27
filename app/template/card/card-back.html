@@ -1,0 +1,42 @@
+<div class="cardBackBackground"  ng-style="{ backgroundColor: model.cardBackground }">
+    <div class="backHeader"></div>
+    <div class="cardBackBody">
+        <div ng-show="model.hasCamo || model.canBeLt" id="hiddenInfoContainter">
+            <div class="cutCornerBack" id="hiddenInfo" ng-style="{ backgroundColor: model.hiddenInfoHeaderBackground, color: model.hiddenInfoHeaderColor }">
+                Hidden Information
+            </div>
+            <div class="cutCornerBackBottom" id="hiddenInfoBottom" ng-style="{ backgroundColor: model.hiddenInfoBackground, color: model.hiddenInfoColor }">
+                <div id="camoSpace" ng-show="model.hasCamo">Camo Number:</div>
+                <div id="ltSpace" ng-show="model.canBeLt">Is LT?
+                    <div id="ltBox"></div>
+                </div>
+            </div>
+        </div>
+        <div id="backgroundFront" ng-hide="model.backgroundOnFront || model.hideBackground">
+            <div id="backgroundHeader" class="cutCornerBack" ng-style="{ backgroundColor: model.headerBackground, color: model.headerTextColor}">
+                Background
+            </div>
+            <div class="cutCornerBackBottom" ng-style="{backgroundColor: model.backgroundBackground, color: model.backgroundText}">
+                {{model.background}}
+            </div>
+        </div>
+        <div ng-repeat="skill in skills">
+            <div ng-repeat="selectedSkill in model.selectedSkillsBack" ng-if="skill.name == selectedSkill">
+                <div class="cutCornerBack skillType{{skill.type}}">
+                    <div class="skillName">{{skill.name}}</div>
+                    <div class="skillType">{{skill.type}}</div>
+                </div>
+                <div class="cutCornerBackBottom" ng-style="{backgroundColor: model.skillsBackground, color: model.skillsText}">{{skill.desc}}</div>
+            </div>
+        </div>
+        <div ng-repeat="equip in equipment">
+            <div ng-repeat="selectedEquip in model.selectedEquipmentBack" ng-if="equip.name == selectedEquip">
+                <div class="cutCornerBack equipType{{equip.type}}">
+                    <div class="equipName">{{equip.name}}</div>
+                    <div class="equipType">{{equip.type}}</div>
+                </div>
+                <div class="cutCornerBackBottom" ng-style="{backgroundColor: model.equipmentBackground, color: model.equipmentText}">{{equip.desc}}</div>
+            </div>
+        </div>
+    </div>
+</div>
