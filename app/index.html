@@ -9,11 +9,18 @@
     <script src="js/inputPanel.js"></script>
     <script src="js/cardFront.js"></script>
     <script src="js/cardBack.js"></script>
+    <script src="js/skillInputPanel.js"></script>
+    <script src="js/weaponInputPanel.js"></script>
+    <script src="js/ccWeaponInputPanel.js"></script>
+    <script src="js/equipmentInputPanel.js"></script>
     <script src="https://ruhley.github.io/angular-color-picker/bower_components/tinycolor/dist/tinycolor-min.js"></script>
     <script src="https://ruhley.github.io/angular-color-picker/bower_components/angular-color-picker/angularjs-color-picker.min.js"></script>
+    <script src="https://likeastore.github.io/ngDialog/js/ngDialog.min.js"></script>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/input-panel.css">
     <link rel="stylesheet" href="https://ruhley.github.io/angular-color-picker/bower_components/angular-color-picker/angularjs-color-picker.min.css" />
+    <link rel="stylesheet" href="https://likeastore.github.io/ngDialog/css/ngDialog.css" />
+    <link rel="stylesheet" href="https://likeastore.github.io/ngDialog/css/ngDialog-theme-default.css" />
 
     <title>Infinty Card Generator</title>
     <link href='https://fonts.googleapis.com/css?family=Orbitron:500,800' rel='stylesheet' type='text/css'>
@@ -101,6 +108,16 @@
                     </td>
                 </tr>
                 <tr>
+                    <td colspan="2">
+                        <button ng-click="showAddSkill()" ng-class="{on:showSkillInput}">Add a Skill</button>
+                    </td>
+                </tr>
+                <tr ng-show="showSkillInput">
+                    <td colspan="2">
+                        <skill-input-panel temp-skill="tempSkill" order-types="orderTypes" add-skill="addSkill()" show-skill-input="showSkillInput" export-skill="exportSkill()"></skill-input-panel>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <label>Weapons:</label>
                         <br>
@@ -118,6 +135,24 @@
                 </tr>
                 <tr>
                     <td>
+                        <button ng-click="showAddWeapon()" ng-class="{on:showWeaponInput}">Add a Weapon</button>
+                    </td>
+                    <td>
+                        <button ng-click="showAddCcWeapon()" ng-class="{on:showCcWeaponInput}">Add a CC Weapon</button>
+                    </td>
+                </tr>
+                <tr ng-show="showWeaponInput">
+                    <td colspan="2">
+                        <weapon-input-panel temp-weapon="tempWeapon" add-weapon="addWeapon()" export-weapon="exportWeapon()"></weapon-input-panel>
+                    </td>
+                </tr>
+                <tr ng-show="showCcWeaponInput">
+                    <td colspan="2">
+                        <cc-weapon-input-panel temp-cc-weapon="tempCcWeapon" add-cc-weapon="addCcWeapon()" , export-cc-weapon="exportCcWeapon()"></cc-weapon-input-panel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <label>Equipment on Front:</label>
                         <br>
                         <select multiple size="10" ng-model="model.selectedEquipment">
@@ -130,6 +165,16 @@
                         <select multiple size="10" ng-model="model.selectedEquipmentBack">
                             <option ng-repeat="equip in equipment" value="{{equip.name}}">{{equip.name}}</option>
                         </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button ng-click="showAddEquipment()" ng-class="{on:showEquipmentInput}">Add Equipment</button>
+                    </td>
+                </tr>
+                <tr ng-show="showEquipmentInput">
+                    <td colspan="2">
+                        <equipment-input-panel temp-equipment="tempEquipment" order-types="orderTypes" add-equipment="addEquipment()" export-equipment="exportEquipment()"></equipment-input-panel> 
                     </td>
                 </tr>
             </table>
@@ -309,7 +354,7 @@
         <input type="checkbox" ng-model="hideInput" />
         <label>Hide Input</label>
         <a class="directLink" href="multi-print.html">Go To Multi-Printer<img src="images/arrow-right.png"/></a>
-        <a class="directLink" href="https://github.com/DaveSpringer/InfinityCardGenerator/blob/gh-pages/README.md">Help<img src="images/question-mark.png" height="16" width="16"/></a>
+        <a class="directLink" href="https://github.com/DaveSpringer/InfinityCardGenerator/blob/gh-pages/README.md" target="_blank">Help<img src="images/question-mark.png" height="16" width="16"/></a>
         <hr>
     </div>
 

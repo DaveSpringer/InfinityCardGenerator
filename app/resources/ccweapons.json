@@ -10,6 +10,12 @@
         "ammo": "N",
         "traits": "CC"
     }, {
+        "name": "DA CCW",
+        "burst": "1",
+        "dam": "PH",
+        "ammo": "DA",
+        "traits": "CC, Anti-materiel"
+    }, {
         "name": "Knife",
         "burst": "1",
         "ammo": "Shock",

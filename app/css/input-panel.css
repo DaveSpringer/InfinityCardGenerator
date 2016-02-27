@@ -25,3 +25,13 @@
     margin: 0px;
     padding: 3px 0px 0px 0px;
 }
+
+.inputWrapper {
+    width: 98%;
+    position: relative;
+    border: 2px solid #B29584;
+    margin-top: 5px;
+    background-color: azure;
+    border-radius: 5px;
+    padding: 4px;
+}

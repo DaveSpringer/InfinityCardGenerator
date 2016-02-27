@@ -90,6 +90,7 @@
     }, {
         "name": "MULTI Sniper Rifle",
         "burst": "2",
+        "dam": "15",
         "ammo": "AP or DA",
         "traits": "Medium MULTI"
     }, {

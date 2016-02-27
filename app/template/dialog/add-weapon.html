@@ -1,0 +1,24 @@
+<div id="weaponWrapper" class="inputWrapper">
+    <div id="weaponInputDialog">
+        <h3>Add an Unavailable Weapon</h3>
+        <label>Name</label>
+        <input type="text" ng-model="tempWeapon.name" />
+        <br>
+        <label>Burst</label>
+        <input type="text" ng-model="tempWeapon.burst" />
+        <br>
+        <label>Damage</label>
+        <input type="text" ng-model="tempWeapon.dam" />
+        <br>
+        <label>Ammo</label>
+        <input type="text" ng-model="tempWeapon.ammo"/>
+        <br>
+        <label>Traits</label>
+        <br>
+        <textarea ng-model="tempWeapon.traits"></textarea>
+    </div>
+    <div id="weaponInputButtons">
+        <button ng-click="addWeapon()">Add Weapon</button>
+        <button ng-click="exportWeapon()">Export Weapon</button>
+    </div>
+</div>
